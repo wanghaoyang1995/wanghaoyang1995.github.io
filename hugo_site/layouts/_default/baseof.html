@@ -26,16 +26,18 @@
           <div class="layui-row">
             {{ partial "header.html" . }}
           </div>
-          <div class="layui-row layui-col-space10">
+          <div class="layui-row">
             {{/* 是否需要侧边栏 */}}
             {{ if and .Params.sidebar (gt (len .Params.sidebar) 0) }}
               <div class="layui-col-xs12 layui-col-md8">
-                <div class="layui-padding-4">
+                <div class="content_area">
                   {{ block "main" . }}{{ end }}
                 </div>
               </div>
               <div class="layui-col-xs12 layui-col-md4">
-                {{ partial "sidebar.html" . }}
+                <div class="content_area">
+                  {{ partial "sidebar.html" . }}
+                </div>
               </div>
             {{ else }}
               <div class="layui-col-xs12 layui-col-md12">

@@ -11,7 +11,8 @@
 /* 页面内容面板 */
 #body-panel {
 	padding: 0;
-	border-radius: {{ $panel_radius }}px;
+	border-top-left-radius: {{ $panel_radius }}px;
+	border-top-right-radius: {{ $panel_radius }}px;
 }
 
 /* 主标题和副标题 */
@@ -49,5 +50,20 @@
 	background-color: #2f363c;
 }
 #nav-bar > .layui-nav-item {
-	line-height: 40px;
+	line-height: 45px;
+}
+
+/* 正文区域 */
+.content_area {
+	padding: 30px 10px 30px 30px;
+}
+
+/* 底部导航 */
+#footer {
+	background-color: #2f363c;
+	font-size: small;
+	color: #c2c4af;
+	padding: 10px 0 10px 30px;
+	border-bottom-left-radius: {{ $panel_radius }}px;
+	border-bottom-right-radius: {{ $panel_radius }}px;
 }
