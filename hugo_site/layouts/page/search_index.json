@@ -1,0 +1,12 @@
+{{- $post_list := slice -}}
+
+{{ with .Site.GetPage "posts" }}
+    {{ range $index, $item := .Pages.ByDate }}
+      {{-
+        $post_list = $post_list | append
+        (dict "id" $index "title" $item.Title "permalink" $item.RelPermalink "tags" $item.Params.tags "categories" $item.Params.categories "series" $item.Params.series "summary" $item.Params.Summary "date" $item.Date)
+      -}}
+    {{ end }}
+{{ end }}
+
+{{-  $post_list | jsonify -}}

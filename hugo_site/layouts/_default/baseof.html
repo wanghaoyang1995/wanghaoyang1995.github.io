@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+  <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/schema.html" . }}
+  {{/* {{ template "_internal/twitter_cards.html" . }} */}}
+  {{/* {{ template "_internal/google_analytics.html" . }} */}}
+
+  <link rel="stylesheet" href="/layui-v2.9.20/css/layui.css">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  {{ $style := resources.Get "/css/main.css" | resources.ExecuteAsTemplate "/css/main.css" . | resources.Minify -}}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</head>
+
+<body class="body">
+  <div class="layui-fluid" id="body-container">
+    <div class="layui-row">
+      <div class="layui-col-xs12 layui-col-md8 layui-col-md-offset2">
+        <div class="layui-panel" id="body-panel">
+          <div class="layui-row">
+            {{ partial "header.html" . }}
+          </div>
+          <div class="layui-row layui-col-space10">
+            {{/* 是否需要侧边栏 */}}
+            {{ if and .Params.sidebar (gt (len .Params.sidebar) 0) }}
+              <div class="layui-col-xs12 layui-col-md8">
+                <div class="layui-padding-4">
+                  {{ block "main" . }}{{ end }}
+                </div>
+              </div>
+              <div class="layui-col-xs12 layui-col-md4">
+                {{ partial "sidebar.html" . }}
+              </div>
+            {{ else }}
+              <div class="layui-col-xs12 layui-col-md12">
+                <div class="layui-padding-4">
+                  {{ block "main" . }}{{ end }}
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row">
+      <div class="layui-col-xs12 layui-col-md8 layui-col-md-offset2">
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </div>
+
+  {{ if .Param "math" }} {{ partialCached "mathjax.html" . }} {{ end }}
+  <script src="/layui-v2.9.20/layui.js"></script>
+</body>
+
+</html>

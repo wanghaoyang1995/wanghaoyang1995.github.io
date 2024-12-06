@@ -1,0 +1,28 @@
+{{- $title := .Site.Title -}}
+{{- $subtitle := .Site.Params.subtitle -}}
+
+<header>
+  <div class="layui-row" id="title-bar">
+    <div id="main-title">
+      <a href="/">{{ $title }}</a>
+    </div>
+      <div id="subtitle">{{ $subtitle }}</div>
+  </div>
+
+  <div class="layui-row">
+    <nav>
+      {{- if .Site.Menus.main -}}
+        {{- $currentNode := . }}
+        <ul class="layui-nav" id="nav-bar">
+          {{- range .Site.Menus.main }}
+            {{- if .Name }}
+              <li class="layui-nav-item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} layui-this{{ end }}">
+                <a href="{{ .URL }}">{{ .Name }}</a>
+              </li>
+            {{- end }}
+          {{- end }}
+        </ul>
+      {{- end }}
+    </nav>
+  </div>
+</header>

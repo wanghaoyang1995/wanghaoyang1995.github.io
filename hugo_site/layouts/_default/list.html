@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main>
+	{{- with .Title }}
+	<header>
+		<h1>{{ . }}</h1>
+	</header>
+	{{- end }}
+	{{- with .Content }}
+	<div>
+		{{ . }}
+	</div>
+	{{- end }}
+	{{- range .Pages }}
+		{{- .Render "summary" }}
+	{{- end }}
+</main>
+{{ end }}

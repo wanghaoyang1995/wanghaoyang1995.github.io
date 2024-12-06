@@ -1,0 +1,53 @@
+{{- $themeColor := .Site.Params.themeColor | default "#e22d30" -}}
+
+{{ $panel_radius := 2}}  /* 面板圆角 */
+{{ $padding_left := 30}}  /* 标题左边距 */
+
+/* 整体上边距 */
+#body-container {
+	margin-top: 25px;
+}
+
+/* 页面内容面板 */
+#body-panel {
+	padding: 0;
+	border-radius: {{ $panel_radius }}px;
+}
+
+/* 主标题和副标题 */
+#title-bar {
+	height: 120px;
+	padding-left: {{ $padding_left }}px;
+	border-top-left-radius: {{ $panel_radius }}px;
+	border-top-right-radius: {{ $panel_radius }}px;
+	background-image: url("/img/bg.jpg");
+}
+
+/* 主标题 */
+#main-title {
+    font-size: 44px;
+	font-weight: bold;
+	color: black;
+	padding: 20px 0 3px 0;
+}
+
+/* 副标题 */
+#subtitle {
+	display: inline-block;
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-top-color: #903749;
+	font-size: 18px;
+	font-weight: bold;
+	color: #222831;
+	padding: 3px 0 0 0;
+}
+
+/* 菜单栏 */
+#nav-bar {
+	border-radius: 0;
+	background-color: #2f363c;
+}
+#nav-bar > .layui-nav-item {
+	line-height: 40px;
+}
