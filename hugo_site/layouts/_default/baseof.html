@@ -35,13 +35,13 @@
                 </div>
               </div>
               <div class="layui-col-xs12 layui-col-md4">
-                <div class="content_area">
+                <div class="layui-padding-2">
                   {{ partial "sidebar.html" . }}
                 </div>
               </div>
             {{ else }}
               <div class="layui-col-xs12 layui-col-md12">
-                <div class="layui-padding-4">
+                <div class="content_area">
                   {{ block "main" . }}{{ end }}
                 </div>
               </div>

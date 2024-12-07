@@ -3,9 +3,30 @@
   pageRef = "/"
   weight = 100
 [[main]]
+  identifier = "posts"
   name = "文章"
   pageRef = "/posts/"
   weight = 200
+  [[main]]
+    parent = "posts"
+    name = "所有文章"
+    pageRef = "/posts/"
+    weight = 210
+  [[main]]
+    parent = "posts"
+    name = "所有分类"
+    pageRef = "/categories/"
+    weight = 220
+  [[main]]
+    parent = "posts"
+    name = "所有标签"
+    pageRef = "/tags/"
+    weight = 230
+  [[main]]
+    parent = "posts"
+    name = "系列专栏"
+    pageRef = "/series/"
+    weight = 240
 [[main]]
   name = "照片墙"
   pageRef = "/gallery/"
@@ -15,6 +36,6 @@
   pageRef = "/tools/"
   weight = 400
 [[main]]
-  name = "关于本站"
+  name = "关于"
   pageRef = "/about/"
   weight = 500

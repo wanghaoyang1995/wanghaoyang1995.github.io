@@ -3,9 +3,30 @@
   pageRef = "/"
   weight = 100
 [[main]]
+  identifier = "posts"
   name = "Posts"
   pageRef = "/posts/"
   weight = 200
+  [[main]]
+    parent = "posts"
+    name = "All Posts"
+    pageRef = "/posts/"
+    weight = 210
+  [[main]]
+    parent = "posts"
+    name = "Categories"
+    pageRef = "/categories/"
+    weight = 220
+  [[main]]
+    parent = "posts"
+    name = "Tags"
+    pageRef = "/tags/"
+    weight = 230
+  [[main]]
+    parent = "posts"
+    name = "Series"
+    pageRef = "/series/"
+    weight = 240
 [[main]]
   name = "Gallery"
   pageRef = "/gallery/"

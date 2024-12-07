@@ -18,6 +18,14 @@
             {{- if .Name }}
               <li class="layui-nav-item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} layui-this{{ end }}">
                 <a href="{{ .URL }}">{{ .Name }}</a>
+                {{/*只考虑一级子菜单*/}}
+                {{- if .HasChildren }}
+                  <dl class="layui-nav-child">
+                    {{- range .Children }}
+                      <dd><a href="{{.URL}}">{{.Name}}</a></dd>
+                    {{- end }}
+                  </dl>
+                {{- end }}
               </li>
             {{- end }}
           {{- end }}
