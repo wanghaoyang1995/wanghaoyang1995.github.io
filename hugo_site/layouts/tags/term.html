@@ -1,8 +1,7 @@
 {{ define "main" }}
 <main>
   <div>
-    <h1 class="default_list_title">{{ T "tags" }} - {{ .Title }}</h1>
-    {{ .Content }}
+    <h1 class="default_list_title">{{ T "tags" }} - {{ .Title }}<span class="layui-badge layui-bg-gray" style="vertical-align:text-top;">{{.Pages.Len}}</span></h1>
     <hr />
 
     {{ range .Paginator.Pages }}
