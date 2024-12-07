@@ -1,5 +1,6 @@
 {{- if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
   <div class="pagination_comp">
+    <a href="{{ .Paginator.First.URL }}">首页</a>&nbsp;&nbsp;
     {{- if .Paginator.HasPrev }}
       <a href="{{ .Paginator.Prev.URL }}">上一页</a>
     {{ else }}
@@ -11,5 +12,6 @@
     {{ else }}
       <a class="layui-disabled">下一页</a>
     {{- end }}
+    &nbsp;&nbsp;<a href="{{ .Paginator.Last.URL }}">尾页</a>
   </div>
 {{- end }}
