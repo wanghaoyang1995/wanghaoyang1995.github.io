@@ -10,6 +10,10 @@ defaultContentLanguageInSubdir = false
     languageName = "中文"
     title = "Wang的个人站点"
     weight = 1
+    [languages.zh-cn.pagination]
+      disableAliases = true
+      pagerSize = 5
+      path = 'page'
     [languages.zh-cn.Params]
       description = "站点描述"
       subtitle = "比较长的子标题"
@@ -20,14 +24,13 @@ defaultContentLanguageInSubdir = false
     languageName = "English"
     title = "Wang's site"
     weight = 2
+    [languages.en-us.pagination]
+      disableAliases = true
+      pagerSize = 10
+      path = 'page'
     [languages.en-us.Params]
       description = "desc"
       subtitle = "subtitle"
-
-[pagination]
-  disableAliases = false
-  pagerSize = 10
-  path = 'page'
 
 [outputFormats]
   [outputFormats.search_index]

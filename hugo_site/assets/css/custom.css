@@ -54,7 +54,7 @@
 	line-height: {{$menu_height}}px;
 }
 .layui-nav-child {  /* 子菜单 */
-	background-color: #cbcbcb;
+	background-color: #d8d8d8;
 	top: {{$menu_height}}px;
 }
 
@@ -71,4 +71,15 @@
 	padding: 10px 0 10px 30px;
 	border-bottom-left-radius: {{ $panel_radius }}px;
 	border-bottom-right-radius: {{ $panel_radius }}px;
+}
+
+/* 分页组件 */
+.pagination_text {
+	color: #903749;
+	font-size: large;
+}
+.pagination_comp {
+    line-height: 50px;
+	font-size: 16px;
+	text-align: right;
 }
