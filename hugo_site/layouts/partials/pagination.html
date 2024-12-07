@@ -1,4 +1,5 @@
 {{- if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+  <div id="pagination-slider-ID" style="margin-top: 10px;"></div>
   <div class="pagination_comp">
     <a href="{{ .Paginator.First.URL }}">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;
     {{- if .Paginator.HasPrev }}
@@ -6,7 +7,7 @@
     {{ else }}
       <a class="layui-disabled">上一页</a>
     {{- end }}
-    &nbsp;&nbsp;{{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}&nbsp;&nbsp;
+    &nbsp;&nbsp;<span id="current_page_number">{{ .Paginator.PageNumber }}</span> / {{ .Paginator.TotalPages }}&nbsp;&nbsp;
     {{- if .Paginator.HasNext }}
       <a href="{{ .Paginator.Next.URL }}">下一页</a>
     {{ else }}
@@ -14,4 +15,35 @@
     {{- end }}
     &nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ .Paginator.Last.URL }}">尾页</a>
   </div>
+
+  {{ $use_page_slider := false }}
+  {{ if $use_page_slider }}
+    <script>
+      {{ $current_page := .Paginator.PageNumber }}
+      {{ $max_page := .Paginator.TotalPages }}
+      layui.use(function(){
+        let $ = layui.$;
+        let slider = layui.slider;
+        slider.render({
+          elem: '#pagination-slider-ID',
+          value: {{$current_page}},
+          //step: 10,
+          min: 1,
+          max: {{$max_page}},
+          //showstep: true,
+          input: true,
+          theme: "#7FB1E2",
+          change: function(value){
+            $("#current_page_number").val(value);
+          },
+          done: function(value){
+            if (value !== {{$current_page}}) {
+              let url = "{{.RelPermalink}}page/" + value.toString() + "/";
+              location.href = url;
+            }
+          }
+        });
+      });
+    </script>
+  {{end}}
 {{- end }}

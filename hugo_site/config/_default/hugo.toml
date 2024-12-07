@@ -11,7 +11,7 @@ defaultContentLanguageInSubdir = false
     title = "Wang的个人站点"
     weight = 1
     [languages.zh-cn.pagination]
-      disableAliases = true
+      disableAliases = false
       pagerSize = 5
       path = 'page'
     [languages.zh-cn.Params]
@@ -25,7 +25,7 @@ defaultContentLanguageInSubdir = false
     title = "Wang's site"
     weight = 2
     [languages.en-us.pagination]
-      disableAliases = true
+      disableAliases = false
       pagerSize = 5
       path = 'page'
     [languages.en-us.Params]

@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{ $syntax.RelPermalink }}">
   <link rel="stylesheet" href="{{ $style.RelPermalink }}">
   <link rel="stylesheet" href="{{ $custom.RelPermalink }}">
+  <script src="/layui-v2.9.20/layui.js"></script>
 </head>
 
 <body class="body">
@@ -39,7 +40,7 @@
                 </div>
               </div>
               <div class="layui-col-xs12 layui-col-md4">
-                <div class="layui-padding-2">
+                <div class="sidebar_box">
                   {{ partial "sidebar.html" . }}
                 </div>
               </div>
@@ -62,7 +63,8 @@
   </div>
 
   {{ if .Param "math" }} {{ partialCached "mathjax.html" . }} {{ end }}
-  <script src="/layui-v2.9.20/layui.js"></script>
+  {{ $custom_js := resources.Get "/js/custom.js" | resources.ExecuteAsTemplate "/js/custom.js" . | resources.Minify -}}
+  <script src="{{ $custom_js.RelPermalink}}"></script>
 </body>
 
 </html>
