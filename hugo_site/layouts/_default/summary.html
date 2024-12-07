@@ -1,8 +1,14 @@
 <article class="posts_summary_block">
   <header style="margin-bottom: 10px;">
-    <h2><i class="layui-edge layui-edge-right" style="vertical-align: 12%;"></i><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <h3 class="summary_title"><i class="layui-edge layui-edge-right" style="vertical-align: 12%;"></i><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   </header>
-  {{- if .Summary -}} {{- truncate 128 .Summary -}} {{- else -}} {{T "empty"}}  {{- end -}}
+  <div class="posts_summary_body">
+    {{- if .Summary -}}
+      {{- truncate 128 .Summary -}}
+    {{- else -}}
+      {{- truncate 128 .Content -}}
+    {{- end -}}
+  </div>
   <footer class="posts_summary_footer">
     <div>{{ .Date.Format "2006-01-02 15:04:05" }}
          - {{ T "words" }}: {{ .FuzzyWordCount }}

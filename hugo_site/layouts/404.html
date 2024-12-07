@@ -1,8 +1,23 @@
-{{ define "main" }}
-<main class="main" role="main">
-	<div class="warning">
-		<h1 class="warning__headline">{{ T "404_title" }}</h1>
-		<p class="warning__text">{{ T "404_text" }} <a href="{{ "" | relLangURL }}">{{ T "404_linktext" }}</a>.</p>
-	</div>
-</main>
-{{ end }}
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+  <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  {{ $style := resources.Get "/css/style.css" | resources.ExecuteAsTemplate "/css/style.css" . | resources.Minify -}}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</head>
+
+<body class="body">
+  <div class="warning" style="margin-top: 12%;">
+    <h1 class="warning__headline">{{ T "404_title" }}</h1>
+    <p class="warning__text">{{ T "404_text" }} <a href="{{ "" | relLangURL }}">{{ T "404_linktext" }}</a>.</p>
+  </div>
+</body>
+
+</html>

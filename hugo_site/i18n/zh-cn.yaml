@@ -1,4 +1,7 @@
 # General
+- id: released_on
+  translation: "发布于"
+
 - id: series
   translation: "系列"
 

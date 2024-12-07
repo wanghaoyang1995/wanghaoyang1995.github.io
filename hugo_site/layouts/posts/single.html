@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <header><h2 class="article_title">{{ .Title }}</h2></header>
+  <div class="article_meta_bar">
+      <div>{{ T "released_on" }} {{ .Date.Format "2006-01-02 15:04:05" }}</div>
+      <div>
+        {{if .Params.categories}}{{ T "categories" }}: {{ range .Params.categories }}{{ with index $.Site.Taxonomies.categories .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-blue" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+        {{if .Params.tags}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ T "tags" }}: {{ range .Params.tags }}{{ with index $.Site.Taxonomies.tags .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-green" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+        {{if .Params.series}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ T "series" }}: {{ range .Params.series }}{{ with index $.Site.Taxonomies.series .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-purple" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+      </div>
+  </div>
+  <hr style="margin-bottom: 15px;" />
+  <div class="article_content">
+    {{ .Content }}
+  </div>
+{{ end }}

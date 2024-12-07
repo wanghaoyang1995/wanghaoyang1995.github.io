@@ -1,4 +1,6 @@
-# General
+- id: released_on
+  translation: "Released on"
+
 - id: series
   translation: "series"
 

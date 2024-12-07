@@ -14,8 +14,12 @@
 
   <link rel="stylesheet" href="/layui-v2.9.20/css/layui.css">
   <link rel="shortcut icon" href="/img/favicon.ico">
-  {{ $style := resources.Get "/css/custom.css" | resources.ExecuteAsTemplate "/css/custom.css" . | resources.Minify -}}
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ $syntax := resources.Get "/css/syntax.css" | resources.ExecuteAsTemplate "/css/syntax.css" . | resources.Minify -}}
+  {{ $style := resources.Get "/css/style.css" | resources.ExecuteAsTemplate "/css/style.css" . | resources.Minify -}}
+  {{ $custom := resources.Get "/css/custom.css" | resources.ExecuteAsTemplate "/css/custom.css" . | resources.Minify -}}
+  <link rel="stylesheet" href="{{ $syntax.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $custom.RelPermalink }}">
 </head>
 
 <body class="body">

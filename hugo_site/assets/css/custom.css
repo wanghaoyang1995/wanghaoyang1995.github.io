@@ -29,7 +29,7 @@
     font-size: 44px;
 	font-weight: bold;
 	color: black;
-	padding: 20px 0 3px 0;
+	padding: 15px 0 0px 0;
 }
 
 /* 副标题 */
@@ -41,7 +41,7 @@
 	font-size: 18px;
 	font-weight: bold;
 	color: #222831;
-	padding: 3px 0 0 0;
+	padding: 0px 0 0 0;
 }
 
 /* 菜单栏 */
@@ -54,7 +54,7 @@
 	line-height: {{$menu_height}}px;
 }
 .layui-nav-child {  /* 子菜单 */
-	background-color: #d8d8d8;
+	background-color: #b7b5b5;
 	top: {{$menu_height}}px;
 }
 
@@ -89,14 +89,48 @@
 .default_list_title {
 	font-weight: bold;
 	color: black;
+	margin-bottom: 5px;
 }
 
+/* 博客列表页摘要标题 */
+.summary_title {
+	margin-bottom: 0;
+}
+
+/* 博客列表页摘要 */
 .posts_summary_block {
 	line-height: 160%;
 	font-size: 14px;
 }
-
+/*
+.posts_summary_body {
+	background-color: #f7f7f7;
+	padding: 5px;
+}
+*/
 .posts_summary_footer {
-	margin-top: 10px;
-	font-size: 12px;
+	margin-top: 6px;
+	margin-bottom: 3px;
+	font-size: 13px;
+}
+
+/* 博客正文页标题 */
+.article_title {
+    font-weight: bold;
+	font-size: 28px;
+	color: #222226;
+	margin-bottom: 5px;
+}
+
+/* 博客正文页metadata栏 */
+.article_meta_bar {
+	padding: 3px 0 2px 0px;
+	line-height: 20px;
+}
+
+/* 博客正文 */
+.article_content {
+	padding-top: 6px;
+	line-height: 160%;
+	font-size: 110%;
 }
