@@ -1,0 +1,15 @@
+<article class="posts_summary_block">
+  <header style="margin-bottom: 10px;">
+    <h2><i class="layui-edge layui-edge-right" style="vertical-align: 12%;"></i><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  </header>
+  {{- if .Summary -}} {{- truncate 128 .Summary -}} {{- else -}} {{T "empty"}}  {{- end -}}
+  <footer class="posts_summary_footer">
+    <div>{{ .Date.Format "2006-01-02 15:04:05" }}
+         - {{ T "words" }}: {{ .FuzzyWordCount }}
+         {{if .Params.categories}} - {{ T "categories" }}: {{ range .Params.categories }}{{ with index $.Site.Taxonomies.categories .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-blue" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+         {{if .Params.tags}} - {{ T "tags" }}: {{ range .Params.tags }}{{ with index $.Site.Taxonomies.tags .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-green" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+         {{if .Params.series}} - {{ T "series" }}: {{ range .Params.series }}{{ with index $.Site.Taxonomies.series .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-purple" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+    </div>
+  </footer>
+  <hr>
+</article>

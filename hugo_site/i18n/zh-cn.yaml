@@ -1,8 +1,11 @@
 # General
+- id: series
+  translation: "系列"
+
 - id: tags
   translation: "标签"
 
-- id: categorize
+- id: categories
   translation: "分类"
 
 - id: words

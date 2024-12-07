@@ -1,9 +1,12 @@
 # General
+- id: series
+  translation: "series"
+
 - id: tags
   translation: "tags"
 
-- id: categorize
-  translation: "categorize"
+- id: categories
+  translation: "categories"
 
 - id: words
   translation: "words"

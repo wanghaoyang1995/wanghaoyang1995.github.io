@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main>
+  <div>
+    <h1 class="default_list_title">{{ T "categories" }} - {{ .Title }}</h1>
+    {{ .Content }}
+    <hr />
+
+    {{ range .Paginator.Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+    {{ partial "pagination.html" . }}
+  </div>
+</main>
+{{ end }}

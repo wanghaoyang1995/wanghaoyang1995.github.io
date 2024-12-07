@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main>
+  <div>
+    <h1 class="default_list_title">{{ T "series" }}</h1>
+    {{ .Content }}
+    <hr />
+
+    {{ range .Paginator.Pages }}
+      <header style="margin-bottom: 10px;">
+        <h2><i class="layui-edge layui-edge-right" style="vertical-align: 12%;"></i><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      </header>
+    {{ end }}
+    {{ partial "pagination.html" . }}
+  </div>
+</main>
+{{ end }}
