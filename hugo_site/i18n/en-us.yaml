@@ -1,4 +1,16 @@
 # General
+- id: tags
+  translation: "tags"
+
+- id: categorize
+  translation: "categorize"
+
+- id: words
+  translation: "words"
+
+- id: empty
+  translation: "(empty)"
+
 - id: read_more
   translation: "Read more…"
 
