@@ -102,16 +102,17 @@
 	line-height: 160%;
 	font-size: 14px;
 }
-/*
+
+{{ $summary_block_padding_left := 12 }}
 .posts_summary_body {
-	background-color: #f7f7f7;
-	padding: 5px;
+	padding-left: {{$summary_block_padding_left}}px;
 }
-*/
+
 .posts_summary_footer {
 	margin-top: 6px;
 	margin-bottom: 3px;
 	font-size: 13px;
+	padding-left: {{$summary_block_padding_left}}px;
 }
 
 /* 博客正文页标题 */
