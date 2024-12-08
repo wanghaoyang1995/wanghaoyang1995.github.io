@@ -23,10 +23,11 @@
   <script src="/layui-v2.9.20/layui.js"></script>
 </head>
 
+{{ $main_panel_width_class := "layui-col-xs12 layui-col-md9" }}
 <body class="body">
   <div class="layui-fluid" id="body-container">
-    <div class="layui-row">
-      <div class="layui-col-xs12 layui-col-md8 layui-col-md-offset2">
+    <div class="layui-row" style="display: flex; justify-content: center;">
+      <div class="{{$main_panel_width_class}}">
         <div class="layui-panel" id="body-panel">
           <div class="layui-row">
             {{ partial "header.html" . }}
@@ -34,14 +35,14 @@
           <div class="layui-row content_paper">
             {{/* 是否需要侧边栏 */}}
             {{ if and .Params.sidebar (gt (len .Params.sidebar) 0) }}
-              <div class="layui-col-xs12 layui-col-md8">
+              <div class="layui-col-xs12 layui-col-md9">
                 <div class="layui-card content_area">
                   <div class="layui-card-body">
                     {{ block "main" . }}{{ end }}
                   </div>
                 </div>
               </div>
-              <div class="layui-col-xs12 layui-col-md4">
+              <div class="layui-col-xs12 layui-col-md3">
                 <div class="layui-card sidebar_area">
                   <div class="layui-card-body sidebar_box">
                     {{ partial "sidebar.html" . }}
@@ -61,8 +62,8 @@
         </div>
       </div>
     </div>
-    <div class="layui-row">
-      <div class="layui-col-xs12 layui-col-md8 layui-col-md-offset2">
+    <div class="layui-row" style="display: flex; justify-content: center;">
+      <div class="{{$main_panel_width_class}}">
         {{ partial "footer.html" . }}
       </div>
     </div>

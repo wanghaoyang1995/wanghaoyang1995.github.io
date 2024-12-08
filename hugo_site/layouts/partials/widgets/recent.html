@@ -15,8 +15,8 @@
               <li class="widget__item">
                 <a class="widget__link" href="{{ .RelPermalink }}">
                   <div class="layui-row">
-                    <span class="layui-col-md8 truncate">{{ .Title }}</span>
-                    <span class="layui-col-md4" style="text-align: center;font-weight: lighter;font-size: small;">
+                    <span class="layui-col-md9 layui-col-xs9 truncate">{{ .Title }}</span>
+                    <span class="layui-col-md3 layui-col-xs3" style="text-align: center;font-weight: lighter;font-size: small;">
                       {{- partial "inline/widgets/recent/get_post_date_tag.html" (dict "date" .Date "now" now) }}
                     </span>
                   </div>
@@ -44,6 +44,6 @@
   {{ $level_3 := "#8f8f8f" }}
   */}}
 
-  {{ $postDateStr := (time.Format "2006-01-02" $postDate) }}
+  {{ $postDateStr := (time.Format "01-02" $postDate) }}
   <span>{{$postDateStr}}</span>
 {{ end }}
