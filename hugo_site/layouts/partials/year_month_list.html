@@ -1,0 +1,21 @@
+{{- $postsByYearMonth := dict -}}
+
+{{- if not (.Scratch.Get "postsByYearMonth") }}
+  {{- with .Site.GetPage "posts" }}
+    {{- range .Pages.ByDate }}
+      {{- $date := .Date }}
+      {{- $year := $date.Format "2006" }}
+      {{- $month := $date.Format "01" }}
+      {{- $link := .RelPermalink }}
+      {{- $yearDict := index $postsByYearMonth $year | default (dict) }}
+      {{- $monthList := index $yearDict $month | default (slice) }}
+      {{- $monthList = append $link $monthList }}
+      {{- $yearDict = merge $yearDict (dict $month $monthList) }}
+      {{- /* json数据 */ -}}
+      {{- $postsByYearMonth = merge $postsByYearMonth (dict $year $yearDict) }}
+    {{- end }}
+  {{- end }}
+  {{- .Scratch.Set "postsByYearMonth" $postsByYearMonth }}
+{{- else }}
+  {{- $postsByYearMonth = .Scratch.Get "postsByYearMonth" }}
+{{- end }}
