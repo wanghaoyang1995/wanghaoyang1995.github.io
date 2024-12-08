@@ -54,7 +54,7 @@
 	line-height: {{$menu_height}}px;
 }
 .layui-nav-child {  /* 子菜单 */
-	background-color: #b7b5b5;
+	background-color: #d5d4d4;
 	top: {{$menu_height}}px;
 }
 
@@ -218,9 +218,14 @@
 #ID-laydate-cell-render table {
 	border-width: 0;
 }
+#ID-laydate-cell-render table {
+	border-width: 0;
+}
 #ID-laydate-cell-render .layui-laydate {
 	border-width: 0;
 	box-shadow: none;
 }
-
+.date-cell-inner {
+	/*background-color: rgb(230, 230, 230);*/
+}
 
