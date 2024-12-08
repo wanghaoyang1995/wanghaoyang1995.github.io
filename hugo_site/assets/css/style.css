@@ -4,7 +4,7 @@
 	All credits go to the original author. This file remains the intellectual property of the original author.
 */}}
 
-{{- $highlightColor := "#188AB6" -}}
+{{- $highlightColor := "#ff1493" -}}
 
 {{- $fontSans := `"Open Sans", Helvetica, Arial, sans-serif` -}}
 {{- $fontMono := `SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace` -}}

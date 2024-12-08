@@ -1,8 +1,20 @@
 
 <div class="layui-card">
-  <div class="layui-card-header" style="font-weight: bold; font-size: large;">标签</div>
+  <div class="layui-card-header" style="font-weight: bold; font-size: large;">{{ T "tags" }}</div>
   <div class="layui-card-body">
-    卡片式面板面板通常用于非白色背景色的主体内<br>
-    从而映衬出边框投影
+    {{- $tags := .Site.Taxonomies.tags }}
+    {{- if gt (len $tags) 0 }}
+    <div class="widget-taglist widget">
+      <div class="widget__content">
+      {{- range $name, $taxonomy := $tags }}
+        {{- with $.Site.GetPage (printf "/tags/%s" $name) }}
+        <a class="layui-badge theme_color_tags" href="{{ .RelPermalink }}" title="{{ .Title }}">
+          {{- .Title -}}{{- if .Site.Params.widgets.tags_counter }} ({{ $taxonomy.Count }}){{ end -}}
+        </a>
+        {{- end }}
+      {{- end }}
+      </div>
+    </div>
+    {{- end }}
   </div>
 </div>

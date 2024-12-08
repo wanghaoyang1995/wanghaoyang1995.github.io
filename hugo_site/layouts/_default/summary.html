@@ -12,9 +12,9 @@
   <footer class="posts_summary_footer">
     <div>{{ .Date.Format "2006-01-02 15:04:05" }}
           - {{ T "words" }}: {{ .FuzzyWordCount }}
-          {{if .Params.categories}} - {{ T "categories" }}: {{ range .Params.categories }}{{ with index $.Site.Taxonomies.categories .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-blue" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
-          {{if .Params.tags}} - {{ T "tags" }}: {{ range .Params.tags }}{{ with index $.Site.Taxonomies.tags .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-green" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
-          {{if .Params.series}} - {{ T "series" }}: {{ range .Params.series }}{{ with index $.Site.Taxonomies.series .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge layui-bg-purple" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+          {{if .Params.categories}} - {{ T "categories" }}: {{ range .Params.categories }}{{ with index $.Site.Taxonomies.categories .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge theme_color_categories" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+          {{if .Params.tags}} - {{ T "tags" }}: {{ range .Params.tags }}{{ with index $.Site.Taxonomies.tags .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge theme_color_tags" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
+          {{if .Params.series}} - {{ T "series" }}: {{ range .Params.series }}{{ with index $.Site.Taxonomies.series .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge theme_color_series" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
     </div>
   </footer>
   <hr>

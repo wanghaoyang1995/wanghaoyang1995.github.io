@@ -170,4 +170,16 @@
 	overflow: hidden;          /* 超出部分隐藏 */
 	text-overflow: ellipsis;   /* 显示省略号 */
 	/*max-width: 200px;*/          /* 设置最大宽度（可根据需要调整） */
-  }
+}
+
+.theme_color_categories {
+	background-color: rgb(116, 144, 145);
+}
+
+.theme_color_tags {
+	background-color: rgb(161, 128, 62);
+}
+
+.theme_color_series {
+	background-color: rgb(168, 91, 192);
+}
