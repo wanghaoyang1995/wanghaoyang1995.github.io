@@ -1,0 +1,9 @@
+{{- $days_to_mark := dict -}}
+
+{{- with .Site.GetPage "posts" }}
+    {{- range .Pages.ByDate }}
+      {{- $days_to_mark = merge $days_to_mark (dict (time.Format "2006-01-02" .Date) "") }}
+    {{- end }}
+{{- end }}
+
+{{-  $days_to_mark | jsonify -}}

@@ -6,52 +6,34 @@
 </div>
 
 <script>
+  let days_to_mark = null;
   layui.use(function () {
     var laydate = layui.laydate;
     var $ = layui.$;
     var util = layui.util;
 
-    laydate.render({
-      elem: "#ID-laydate-cell-render",
-      lang: "en",
-      position: "static",
-      isPreview: false,
-      showBottom: false,
-      theme: ["#257b28"],
-      change: function(value, date, endDate){
-        console.log(value); // 日期字符，如： 2017-08-18
-        console.log(date); // 包含年月日时分秒各项值的对象
-        console.log(endDate); // 结束日期时间对象，当设置 range 时才会返回。对象成员同上。
-      },
-      mark: {
-        "2024-12-5": "生日",
-        "2024-12-7": ""
-      },
-      cellRender: function (ymd, render, info) {
-        let that = this;
-        let y = ymd.year;
-        let m = ymd.month;
-        let d = ymd.date;
+    let render_calendar = function (days_to_mark) {
+      laydate.render({
+        elem: "#ID-laydate-cell-render",
+        lang: "en",
+        position: "static",
+        isPreview: false,
+        showBottom: false,
+        theme: ["#878787"],
+        change: function(value, date, endDate){
+          console.log(value); // 日期字符，如： 2017-08-18
+          console.log(date); // 包含年月日时分秒各项值的对象
+          console.log(endDate); // 结束日期时间对象，当设置 range 时才会返回。对象成员同上。
+        },
+        mark: days_to_mark,
+      });
+    };
 
-        if (!render) return;
-        // 面板类型
-        if (info.type === 'date') {
-          let clazz = [
-            'date-cell-inner',
-          ].join(' ');
-          let content = [
-            '<div class="' + clazz + '">',
-              '<b>' + d + '</b>',
-            '</div>',
-          ].join('');
-          // render(content)
-          // render($(content)[0])
-          let contentEl = $(content);
-          render(contentEl);
-        } else if (info.type === 'year') {
-        } else if (info.type === 'month') {
-        }
-      }
+    $.getJSON("/post_day_mark.json", function (data) {
+      render_calendar(data);
+    }).fail(function (jqxhr, textStatus, error) {
+      console.error('Error fetching JSON file:', textStatus, error);
+      render_calendar(null);
     });
   });
 </script>

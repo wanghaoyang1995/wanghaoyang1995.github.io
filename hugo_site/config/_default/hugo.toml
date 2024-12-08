@@ -39,6 +39,18 @@ defaultContentLanguageInSubdir = false
     baseName = "search_index"
     isPlainText = true
     notAlternative = true
+  [outputFormats.year_month_index]
+    name = "json"
+    mediaType = "application/json"
+    baseName = "year_month_index"
+    isPlainText = true
+    notAlternative = true
+  [outputFormats.post_day_mark]
+    name = "json"
+    mediaType = "application/json"
+    baseName = "post_day_mark"
+    isPlainText = true
+    notAlternative = true
 
 [taxonomies]
   category = "categories"
