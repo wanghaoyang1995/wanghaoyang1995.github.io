@@ -1,0 +1,19 @@
+<div class="layui-card">
+  <div class="layui-card-header" style="font-weight: bold; font-size: large;">Calendar</div>
+  <div class="layui-card-body">
+    <div class="layui-inline" id="ID-laydate-cell-renderxx"></div>
+  </div>
+</div>
+
+<script>
+  layui.use(function () {
+    var laydate = layui.laydate;
+    var $ = layui.$;
+    var util = layui.util;
+
+    laydate.render({
+      elem: '#ID-laydate-cell-render',
+      position: 'static'
+    });
+  });
+</script>

@@ -1,39 +1,7 @@
-
-<div class="layui-card">
-  <div class="layui-card-header" style="font-weight: bold; font-size: large;">{{ print .Params.sidebar }}</div>
-  <div class="layui-card-body">
-    卡片式面板面板通常用于非白色背景色的主体内<br>
-    从而映衬出边框投影
-  </div>
-</div>
-
-<div class="layui-card">
-  <div class="layui-card-header" style="font-weight: bold; font-size: large;">近期发布</div>
-  <div class="layui-card-body">
-    卡片式面板面板通常用于非白色背景色的主体内<br>
-    从而映衬出边框投影
-    <br>
-    asdalknflkanwelnsd
-    asdlkanfsdlaksnfknlsakdnfl
-    <br>
-    234252624
-    <br>
-    1561.0156151
-  </div>
-</div>
-
-<div class="layui-card">
-  <div class="layui-card-header" style="font-weight: bold; font-size: large;">分类</div>
-  <div class="layui-card-body">
-    卡片式面板面板通常用于非白色背景色的主体内<br>
-    从而映衬出边框投影
-  </div>
-</div>
-
-<div class="layui-card">
-  <div class="layui-card-header" style="font-weight: bold; font-size: large;">标签</div>
-  <div class="layui-card-body">
-    卡片式面板面板通常用于非白色背景色的主体内<br>
-    从而映衬出边框投影
-  </div>
-</div>
+{{ $page := . }}
+{{- with .Params.sidebar -}}
+  {{- range $widget := . }}
+		{{- $widgetPath := printf "widgets/%s.html" $widget }}
+    {{- partial $widgetPath $page }}
+	{{- end }}
+{{end}}

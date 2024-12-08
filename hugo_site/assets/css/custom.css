@@ -142,9 +142,32 @@
 	font-size: 110%;
 }
 
+/* 侧边栏外边框 */
 .sidebar_box {
 	margin: 10px 5px 10px 5px;
 	background-color: #f3f3f3;
 	padding: 6px;
 }
+.layui-card {
+	margin-bottom: 8px;
+}
+.layui-card-header {
+	border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ebebeb;
+}
 
+/* 日历组件 */
+#layui-laydate1 {
+	border-style: none;
+}
+.layui-laydate-main {
+	width: 200px;
+}
+
+.truncate {
+	white-space: nowrap;       /* 保持单行显示 */
+	overflow: hidden;          /* 超出部分隐藏 */
+	text-overflow: ellipsis;   /* 显示省略号 */
+	/*max-width: 200px;*/          /* 设置最大宽度（可根据需要调整） */
+  }

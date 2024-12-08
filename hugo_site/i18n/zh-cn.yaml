@@ -1,4 +1,19 @@
 # General
+- id: two_days_ago
+  translation: "今天"
+
+- id: two_days_ago
+  translation: "昨天"
+
+- id: two_days_ago
+  translation: "两天前"
+
+- id: one_week_ago
+  translation: "一周前"
+
+- id: unknown
+  translation: "未知"
+
 - id: released_on
   translation: "发布于"
 

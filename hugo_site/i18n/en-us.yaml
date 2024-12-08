@@ -1,3 +1,18 @@
+- id: two_days_ago
+  translation: "today"
+
+- id: two_days_ago
+  translation: "yesterday"
+
+- id: two_days_ago
+  translation: "2 days ago"
+
+- id: one_week_ago
+  translation: "1 week ago"
+
+- id: unknown
+  translation: "unknown"
+
 - id: released_on
   translation: "Released on"
 

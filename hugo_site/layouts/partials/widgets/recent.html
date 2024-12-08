@@ -1,0 +1,49 @@
+
+<div class="layui-card">
+  <div class="layui-card-header" style="font-weight: bold; font-size: large;">{{ T "recent_title" }}</div>
+  <div class="layui-card-body">
+    {{- $recent := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    {{- $recent := $recent.ByDate.Reverse }}
+    {{- $recent_num := 5 }}
+
+    {{- if $recent }}
+      <div class="widget-recent widget">
+        {{/*<h4 class="widget__title">{{ T "recent_title" }}</h4>*/}}
+        <div class="widget__content">
+          <ul class="widget__list">
+            {{- range first $recent_num $recent }}
+            <li class="widget__item">
+              <a class="widget__link" href="{{ .RelPermalink }}">
+                <div class="layui-row">
+                  <span class="layui-col-md8 truncate">{{ .Title }}</span>
+                  <span class="layui-col-md4" style="text-align: center;font-weight: lighter;font-size: small;">
+                    {{- partial "inline/widgets/recent/get_post_date_tag.html" (dict "date" .Date "now" now) }}
+                  </span>
+                </div>
+              </a>
+            </li>
+            {{- end }}
+          </ul>
+        </div>
+      </div>
+    {{- end }}
+  </div>
+</div>
+
+{{- define "partials/inline/widgets/recent/get_post_date_tag.html" }}
+  {{ $postDate := index . "date" }}
+  {{ $now := index . "now" }}
+
+  {{/*
+  {{ $yesterday := $now.AddDate 0 0 -1 }}
+  {{ $twoDaysAgo := $now.AddDate 0 0 -2 }}
+  {{ $oneWeekAgo := $now.AddDate 0 0 -7 }}
+
+  {{ $level_1 := "#188ab6" }}
+  {{ $level_2 := "#000000" }}
+  {{ $level_3 := "#8f8f8f" }}
+  */}}
+
+  {{ $postDateStr := (time.Format "2006-01-02" $postDate) }}
+  <span>{{$postDateStr}}</span>
+{{ end }}
