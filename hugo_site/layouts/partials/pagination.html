@@ -27,7 +27,11 @@
       form.on("submit(page-submit)", function(data){
         let value = $("#current_page_number").val();
         if (value != {{$current_page}}) {
-          if (value > 0 && value <= {{$max_page}}) {
+          if (value == 1) {
+            let url = "{{.RelPermalink}}";
+            location.href = url;
+          }
+          if (value > 1 && value <= {{$max_page}}) {
             let url = "{{.RelPermalink}}page/" + value + "/";
             location.href = url;
           }
