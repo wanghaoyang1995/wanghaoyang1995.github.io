@@ -58,9 +58,13 @@
 	top: {{$menu_height}}px;
 }
 
+.content_paper {
+	background-color: #f3f3f3;
+}
+
 /* 正文区域 */
 .content_area {
-	padding: 25px 10px 30px 30px;
+	margin: 5px 5px 5px 5px !important;
 }
 
 /* 底部导航 */
@@ -143,11 +147,17 @@
 }
 
 /* 侧边栏外边框 */
-.sidebar_box {
-	margin: 10px 5px 10px 5px;
-	background-color: #f3f3f3;
-	padding: 6px;
+.sidebar_area {
+	margin: 5px;
+	padding: 0;
 }
+
+.sidebar_box {
+	padding: 0;
+	background-color: #f3f3f3;
+	margin-bottom: 2px;
+}
+
 .layui-card {
 	margin-bottom: 8px;
 }
@@ -155,14 +165,6 @@
 	border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: #ebebeb;
-}
-
-/* 日历组件 */
-#layui-laydate1 {
-	border-style: none;
-}
-.layui-laydate-main {
-	width: 200px;
 }
 
 .truncate {
@@ -183,3 +185,42 @@
 .theme_color_series {
 	background-color: rgb(168, 91, 192);
 }
+
+/* 搜索框 */
+.widget-search__form {
+	padding: 0;
+}
+.widget-search {
+	margin-bottom: 8px;
+}
+
+/* 日历组件 */
+.calendar_box {
+	padding: 0;
+}
+#ID-laydate-cell-render {
+	display: block;
+}
+#ID-laydate-cell-render .layui-laydate-static {
+	display: block;
+}
+#ID-laydate-cell-render .layui-laydate-main {
+	width: 100%;
+}
+#ID-laydate-cell-render .layui-laydate-header {
+	border-bottom-width: 0;
+	line-height: 18px;
+}
+#ID-laydate-cell-render .layui-laydate-content {
+	padding: 0;
+	border-width: 0;
+}
+#ID-laydate-cell-render table {
+	border-width: 0;
+}
+#ID-laydate-cell-render .layui-laydate {
+	border-width: 0;
+	box-shadow: none;
+}
+
+

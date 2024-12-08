@@ -1,7 +1,7 @@
 <div class="layui-card">
-  <div class="layui-card-header" style="font-weight: bold; font-size: large;">Calendar</div>
-  <div class="layui-card-body">
-    <div class="layui-inline" id="ID-laydate-cell-renderxx"></div>
+  {{/*<div class="layui-card-header" style="font-weight: bold; font-size: large;">Calendar</div>*/}}
+  <div class="layui-card-body calendar_box">
+    <div class="layui-inline" id="ID-laydate-cell-render"></div>
   </div>
 </div>
 
@@ -12,8 +12,12 @@
     var util = layui.util;
 
     laydate.render({
-      elem: '#ID-laydate-cell-render',
-      position: 'static'
+      elem: "#ID-laydate-cell-render",
+      lang: "en",
+      position: "static",
+      isPreview: false,
+      showBottom: false,
+      theme: ["#66815b"],
     });
   });
 </script>

@@ -31,23 +31,29 @@
           <div class="layui-row">
             {{ partial "header.html" . }}
           </div>
-          <div class="layui-row">
+          <div class="layui-row content_paper">
             {{/* 是否需要侧边栏 */}}
             {{ if and .Params.sidebar (gt (len .Params.sidebar) 0) }}
               <div class="layui-col-xs12 layui-col-md8">
-                <div class="content_area">
-                  {{ block "main" . }}{{ end }}
+                <div class="layui-card content_area">
+                  <div class="layui-card-body">
+                    {{ block "main" . }}{{ end }}
+                  </div>
                 </div>
               </div>
               <div class="layui-col-xs12 layui-col-md4">
-                <div class="sidebar_box">
-                  {{ partial "sidebar.html" . }}
+                <div class="layui-card sidebar_area">
+                  <div class="layui-card-body sidebar_box">
+                    {{ partial "sidebar.html" . }}
+                  </div>
                 </div>
               </div>
             {{ else }}
               <div class="layui-col-xs12 layui-col-md12">
-                <div class="content_area">
-                  {{ block "main" . }}{{ end }}
+                <div class="layui-card content_area">
+                  <div class="layui-card-body">
+                    {{ block "main" . }}{{ end }}
+                  </div>
                 </div>
               </div>
             {{ end }}
