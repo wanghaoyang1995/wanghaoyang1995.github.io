@@ -11,12 +11,6 @@
 {{- $fontFamilyPrimary := .Site.Params.style.vars.fontFamilyPrimary | default $fontSans -}}
 {{- $fontFamilySecondary := .Site.Params.style.vars.fontFamilySecondary | default $fontMono -}}
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
 article,
 aside,
 dialog,
@@ -359,20 +353,22 @@ dl {
 	margin: 0 0 10px 20px;
 }
 
-dt,
+/*dt,
 dd {
 	display: list-item;
-}
+}*/
 
 dt {
 	font-weight: bold;
 	list-style-type: square;
 }
 
+/*
 dd {
 	margin-left: 20px;
 	list-style-type: circle;
 }
+*/
 
 select {
 	max-width: 100%;

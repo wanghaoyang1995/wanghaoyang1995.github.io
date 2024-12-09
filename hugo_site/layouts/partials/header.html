@@ -12,12 +12,44 @@
   <div class="layui-row">
     <nav>
       {{- if .Site.Menus.main -}}
-        {{- $currentNode := . }}
         <ul class="layui-nav" id="nav-bar">
+          <div class="layui-row normal_nav_menu">
+            {{- $currentNode := . }}
+            {{- range .Site.Menus.main }}
+              {{- if .Name }}
+                <li class="layui-nav-item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} layui-this{{ end }}">
+                  <a {{ if not .HasChildren }} href="{{ .URL }}" {{else}} href="javascript:;" {{end}}>{{ .Name }}</a>
+                  {{/*只考虑一级子菜单*/}}
+                  {{- if .HasChildren }}
+                    <dl class="layui-nav-child">
+                      {{- range .Children }}
+                        <dd><a href="{{.URL}}">{{.Name}}</a></dd>
+                      {{- end }}
+                    </dl>
+                  {{- end }}
+                </li>
+              {{- end }}
+            {{- end }}
+          </div>
+          <div class="layui-row collapsible_menu_button">
+            <div class="layui-col-xs2 layui-col-xs-offset10">
+              <li class="layui-nav-item">
+                <a lay-on="collapsible_menu_show"><i class="layui-icon layui-icon-spread-left"></i></a>
+              </li>
+            </div>
+          </div>
+        </ul>
+      {{- end }}
+    </nav>
+    <nav>
+      {{/* 侧边垂直导航 */}}
+      <div id="nav_side">
+        <ul class="layui-nav layui-nav-tree layui-nav-side">
+          {{- $currentNode := . }}
           {{- range .Site.Menus.main }}
             {{- if .Name }}
-              <li class="layui-nav-item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} layui-this{{ end }}">
-                <a href="{{ .URL }}">{{ .Name }}</a>
+              <li class="layui-nav-item layui-nav-itemed">
+                <a {{ if not .HasChildren }} href="{{ .URL }}" {{else}} href="javascript:;" {{end}}>{{ .Name }}</a>
                 {{/*只考虑一级子菜单*/}}
                 {{- if .HasChildren }}
                   <dl class="layui-nav-child">
@@ -30,7 +62,7 @@
             {{- end }}
           {{- end }}
         </ul>
-      {{- end }}
+      </div>
     </nav>
   </div>
 </header>

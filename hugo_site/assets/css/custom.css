@@ -50,13 +50,23 @@
 	border-radius: 0;
 	background-color: #2f363c;
 }
+#nav-bar > .normal_nav_menu {
+	display: block;
+}
+.collapsible_menu_button {
+	display: none;
+}
+
 {{ $menu_height := 45 }}
-#nav-bar > .layui-nav-item {
+#nav-bar .layui-nav-item {
 	line-height: {{$menu_height}}px;
 }
 .layui-nav-child {  /* 子菜单 */
 	background-color: #d5d4d4;
 	top: {{$menu_height}}px;
+}
+#nav_side {
+	display: none;
 }
 
 .content_paper {
@@ -230,3 +240,14 @@
 	/*background-color: rgb(230, 230, 230);*/
 }
 
+@media (max-width: 768px) {
+#nav-bar > .normal_nav_menu {
+	display: none;
+}
+.collapsible_menu_button {
+	display: block;
+}
+#main-title {
+	font-size: 30px;
+}
+}

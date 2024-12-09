@@ -84,7 +84,7 @@
 
 # Recent Posts widget
 - id: recent_title
-  translation: "近期文章"
+  translation: "近期发布"
 
 # Social widget
 - id: social_title
