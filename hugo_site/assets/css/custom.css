@@ -65,9 +65,6 @@
 	background-color: #d5d4d4;
 	top: {{$menu_height}}px;
 }
-#nav_side {
-	display: none;
-}
 
 .content_paper {
 	background-color: #f3f3f3;

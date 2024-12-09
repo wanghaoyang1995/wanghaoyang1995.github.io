@@ -10,8 +10,9 @@
   </div>
 
   <div class="layui-row">
-    <nav>
-      {{- if .Site.Menus.main -}}
+    {{- if .Site.Menus.main -}}
+      <nav>
+        {{/* 页面顶部导航 */}}
         <ul class="layui-nav" id="nav-bar">
           <div class="layui-row normal_nav_menu">
             {{- $currentNode := . }}
@@ -39,12 +40,9 @@
             </div>
           </div>
         </ul>
-      {{- end }}
-    </nav>
-    <nav>
-      {{/* 侧边垂直导航 */}}
-      <div id="nav_side">
-        <ul class="layui-nav layui-nav-tree layui-nav-side">
+
+        {{/* 侧边垂直导航 */}}
+        <ul class="layui-nav layui-nav-tree layui-nav-side" id="nav_side" style="display: none;">
           {{- $currentNode := . }}
           {{- range .Site.Menus.main }}
             {{- if .Name }}
@@ -62,7 +60,7 @@
             {{- end }}
           {{- end }}
         </ul>
-      </div>
-    </nav>
+      </nav>
+    {{- end }}
   </div>
 </header>

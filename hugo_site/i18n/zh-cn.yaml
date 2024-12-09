@@ -1,4 +1,7 @@
 # General
+- id: list_by_year_month_title
+  translation: "年月归档"
+
 - id: two_days_ago
   translation: "今天"
 

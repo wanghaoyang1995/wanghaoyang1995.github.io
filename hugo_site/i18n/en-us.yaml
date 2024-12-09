@@ -1,3 +1,6 @@
+- id: list_by_year_month_title
+  translation: "Archive"
+
 - id: two_days_ago
   translation: "today"
 

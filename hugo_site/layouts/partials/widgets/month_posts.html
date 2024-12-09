@@ -1,10 +1,9 @@
 {{- partial "year_month_list.html" . -}}
 
 <div class="layui-card">
-  <div class="layui-card-header" style="font-weight: bold; font-size: large;">{{ T "recent_title" }}</div>
+  <div class="layui-card-header" style="font-weight: bold; font-size: large;">{{ T "list_by_year_month_title" }}</div>
   <div class="layui-card-body">
     <div class="widget-recent widget">
-      {{/*<h4 class="widget__title">{{ T "recent_title" }}</h4>*/}}
       <div class="widget__content">
         <ul class="widget__list">
           {{- $show_num := 5 }}
@@ -29,7 +28,10 @@
               <li class="widget__item">
                 <a class="widget__link" href="xxx">
                   <div class="layui-row">
-                    <span class="layui-col-md12 truncate">{{ printf "%s-%s" $year_key $month_key }}</span>
+                    <span class="layui-col-md12 truncate">
+                      {{ printf "%s-%s" $year_key $month_key }}
+                      &nbsp;&nbsp;<span class="layui-badge layui-bg-gray" style="vertical-align:text-top;">{{ len (index $year_obj $month_key) }}</span>
+                    </span>
                   </div>
                 </a>
               </li>
