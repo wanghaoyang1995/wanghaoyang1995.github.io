@@ -19,5 +19,13 @@ layui.use(function(){
         content: $("#nav_side"),
       });
     },
+    "btn_copy_link": function() {
+      const urlToCopy = window.location.href;
+      navigator.clipboard.writeText(urlToCopy).then(function() {
+        layer.msg('{{T "copy_link_success"}}');
+      }).catch(function(error) {
+        console.error('copy link error:', error);
+      });
+    }
   });
 });

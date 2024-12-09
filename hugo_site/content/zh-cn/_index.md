@@ -2,7 +2,7 @@
 date = "2024-12-05T16:25:36+08:00"
 title = "主页"
 description = "主页元数据"
-sidebar = ["calendar", "recent"]
+sidebar = ["search", "calendar", "recent"]
 +++
 
 ## 欢迎来到我的站点

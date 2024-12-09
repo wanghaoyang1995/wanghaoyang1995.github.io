@@ -4,7 +4,7 @@
   weight = 100
 [[main]]
   identifier = "posts"
-  name = "文章"
+  name = "我的博客"
   pageRef = "/posts/"
   weight = 200
   [[main]]

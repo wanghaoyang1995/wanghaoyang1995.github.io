@@ -14,6 +14,29 @@
   </div>
   <hr/>
   <footer>
-    分享 评论
+    <div style="display: flex;padding: 5px 0px">
+      <span style="flex: 1;"></span>
+
+      <span style="line-height: 28px;">{{T "share"}}</span>
+      <span id="btn_share_weibo" lay-on="btn_share_weibo" style="height: 30px;line-height: 30px;border-width: 0;padding: 0 5px;" class="layui-btn layui-btn-primary layui-border"><i class="layui-icon layui-icon-login-weibo"></i></span>
+      <span id="btn_share_weixin" lay-on="btn_share_weixin" style="height: 30px;line-height: 30px;border-width: 0;padding: 0 5px;margin-left: 0;" class="layui-btn layui-btn-primary layui-border"><i class="layui-icon layui-icon-login-wechat"></i></span>
+      &nbsp;|&nbsp;
+      <span id="btn_copy_link" lay-on="btn_copy_link" style="height: 30px;line-height: 30px;border-width: 0;margin: 15;padding: 0;" class="layui-btn layui-btn-primary layui-border"><i class="layui-icon layui-icon-link"></i>{{T "copy_link"}}</span>
+    </div>
+    <div style="display: flex;padding: 10px 20px;">
+      <a href="/">{{T "last_post"}}</a>
+      <span style="flex: 1;"></span>
+      <a href="/">{{T "next_post"}}</a>
+    </div>
+    {{ if .Site.Params.enable_giscus }}
+      <div class="layui-collapse" id="giscus_panel" style="margin-top: 10px;">
+        <div class="layui-colla-item">
+          <div class="layui-colla-title">{{T "comment_area"}}&nbsp;&nbsp;&nbsp;&nbsp;<i style="vertical-align: middle;" class="layui-icon layui-icon-reply-fill"></i></div>
+          <div class="layui-colla-content">
+            <span class="giscus"></span>
+          </div>
+        </div>
+      </div>
+    {{ end }}
   </footer>
 {{ end }}

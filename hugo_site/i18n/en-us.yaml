@@ -1,3 +1,24 @@
+- id: share
+  translation: "Share"
+
+- id: last_post
+  translation: "Last"
+
+- id: next_post
+  translation: "Next"
+
+- id: comment_area
+  translation: "Comments"
+
+- id: comment
+  translation: "comment"
+
+- id: copy_link
+  translation: "copy Link"
+
+- id: copy_link_success
+  translation: "Link copied!"
+
 - id: view_all
   translation: "View All..."
 

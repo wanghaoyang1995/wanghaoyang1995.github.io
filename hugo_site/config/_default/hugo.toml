@@ -60,7 +60,8 @@ defaultContentLanguageInSubdir = false
 
 [params]
   mainSections = ["posts"]  # mainSections下的文档会用于生成search_index.json, 用来文章检索
-  math = false  # 为了加载速度考虑, 默认关闭mathjax支持, 需要的话在Front Matter打开
+  math = false  # 默认关闭mathjax支持, 需要的话在Front Matter打开
+  enable_giscus = true  # 是否启用github评论功能
 
 [markup]
   [markup.goldmark]
@@ -70,14 +71,3 @@ defaultContentLanguageInSubdir = false
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
-
-[Params.sidebar]
-  home = "right"   # Configure layout for home page
-  list = "right"   # Configure layout for list pages
-  single = "right" # Configure layout for single pages
-  # Enable widgets in given order
-  widgets = ["search", "calendar", "recent", "categories", "taglist", "languages"]
-
-[Params.widgets]
-  recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)

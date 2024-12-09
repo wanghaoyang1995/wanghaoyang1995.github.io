@@ -1,4 +1,25 @@
 # General
+- id: share
+  translation: "分享"
+
+- id: last_post
+  translation: "上一篇"
+
+- id: next_post
+  translation: "下一篇"
+
+- id: comment_area
+  translation: "我来讲两句..."
+
+- id: comment
+  translation: "留言"
+
+- id: copy_link
+  translation: "复制分享链接"
+
+- id: copy_link_success
+  translation: "链接已复制！"
+
 - id: view_all
   translation: "查看全部..."
 
@@ -6,7 +27,7 @@
   translation: "归档"
 
 - id: list_by_year_month_title
-  translation: "日期归档"
+  translation: "年月归档"
 
 - id: two_days_ago
   translation: "今天"
