@@ -1,3 +1,6 @@
+- id: view_all
+  translation: "View All..."
+
 - id: archives
   translation: "archives"
 

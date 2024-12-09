@@ -19,7 +19,7 @@
             {{- range .Site.Menus.main }}
               {{- if .Name }}
                 <li class="layui-nav-item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} layui-this{{ end }}">
-                  <a {{ if not .HasChildren }} href="{{ .URL }}" {{else}} href="javascript:;" {{end}}>{{ .Name }}</a>
+                  <a href="{{ .URL }}">{{ .Name }}</a>
                   {{/*只考虑一级子菜单*/}}
                   {{- if .HasChildren }}
                     <dl class="layui-nav-child">

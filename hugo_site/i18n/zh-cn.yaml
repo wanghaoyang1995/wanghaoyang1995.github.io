@@ -1,4 +1,7 @@
 # General
+- id: view_all
+  translation: "查看全部..."
+
 - id: archives
   translation: "归档"
 

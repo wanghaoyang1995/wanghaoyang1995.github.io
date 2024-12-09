@@ -24,20 +24,33 @@
             {{- end -}}
             {{- $month_keys = sort $month_keys "value" "desc" -}}
             {{- range $month_keys -}}
-              {{- $month_key := . -}}
-              <li class="widget__item">
-                {{- /* TODO: 这里生成的URL由字符串拼接而来, 依赖于根配置下taxonomies.archives的路径名不改变. 如何直接访问到它？ */ -}}
-                <a class="widget__link" href="{{ printf "%sarchives/%s-%s/" $.Site.BaseURL $year_key $month_key | safeHTML }}">
-                  <div class="layui-row">
-                    <span class="layui-col-md12 truncate">
-                      {{ printf "%s - %s" $year_key $month_key }}
-                      &nbsp;&nbsp;<span class="layui-badge layui-bg-gray" style="vertical-align:text-top;">{{ len (index $year_obj $month_key) }}</span>
-                    </span>
-                  </div>
-                </a>
-              </li>
+              {{ if gt $show_num 0 }}
+                {{- $month_key := . -}}
+                <li class="widget__item">
+                  {{- /* TODO: 这里生成的URL由字符串拼接而来, 依赖于根配置下taxonomies.archives的路径名不改变. 如何直接访问到它？ */ -}}
+                  <a class="widget__link" href="{{ printf "%sarchives/%s-%s/" $.Site.BaseURL $year_key $month_key | safeHTML }}">
+                    <div class="layui-row">
+                      <span class="layui-col-md12 truncate">
+                        {{ printf "%s - %s" $year_key $month_key }}
+                        &nbsp;&nbsp;<span class="layui-badge layui-bg-gray" style="vertical-align:text-top;">{{ len (index $year_obj $month_key) }}</span>
+                      </span>
+                    </div>
+                  </a>
+                </li>
+              {{end}}
+              {{ $show_num = sub $show_num 1 }}
             {{- end -}}
           {{- end -}}
+
+          <li class="widget__item">
+            <a class="widget__link" href="{{ printf "%sarchives/" $.Site.BaseURL | safeHTML }}">
+              <div class="layui-row">
+                <span class="layui-col-md12 truncate" style="font-weight: lighter;">
+                  {{ T "view_all"}}
+                </span>
+              </div>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
