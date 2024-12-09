@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = false
     weight = 1
     [languages.zh-cn.pagination]
       disableAliases = false
-      pagerSize = 5
+      pagerSize = 10
       path = "page"
     [languages.zh-cn.Params]
       description = "站点描述"
@@ -26,7 +26,7 @@ defaultContentLanguageInSubdir = false
     weight = 2
     [languages.en-us.pagination]
       disableAliases = false
-      pagerSize = 5
+      pagerSize = 10
       path = "page"
     [languages.en-us.Params]
       description = "desc"

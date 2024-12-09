@@ -8,7 +8,7 @@ series = []
 lastmod = "2024-12-09T18:51:12+08:00"
 draft = false
 
-sidebar = ["search", "calendar"]
+sidebar = ["search", "calendar", "author"]
 
 date = "2024-12-09T18:51:12+08:00"
 isCJKLanguage = true

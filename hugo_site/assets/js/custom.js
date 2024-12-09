@@ -45,6 +45,14 @@ layui.use(function(){
     },
     "go_back_to_previous_page": function() {
       window.history.back();
-    }
+    },
+    "avatar_clicked": function() {
+      let elem = $("#author_avatar");
+      if (elem.hasClass("layui-anim")) {
+        elem.removeClass("layui-anim layui-anim-rotate layui-anim-loop");
+      } else {
+        elem.addClass("layui-anim layui-anim-rotate layui-anim-loop");
+      }
+    },
   });
 });
