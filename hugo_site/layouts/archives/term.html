@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main>
+  <div>
+    <h1 class="default_list_title">{{ T "archives" }} - {{ .Title }}<span class="layui-badge layui-bg-gray" style="vertical-align:text-top;">{{.Pages.Len}}</span></h1>
+    <hr />
+
+    {{ range .Paginator.Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+    {{ partial "pagination.html" . }}
+  </div>
+</main>
+{{ end }}

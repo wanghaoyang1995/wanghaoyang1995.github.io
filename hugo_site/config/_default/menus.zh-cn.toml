@@ -27,6 +27,11 @@
     name = "系列专栏"
     pageRef = "/series/"
     weight = 240
+  [[main]]
+    parent = "posts"
+    name = "归档"
+    pageRef = "/archives/"
+    weight = 250
 [[main]]
   name = "照片墙"
   pageRef = "/gallery/"

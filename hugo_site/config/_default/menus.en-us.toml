@@ -27,6 +27,11 @@
     name = "Series"
     pageRef = "/series/"
     weight = 240
+  [[main]]
+    parent = "posts"
+    name = "Archives"
+    pageRef = "/archives/"
+    weight = 250
 [[main]]
   name = "Gallery"
   pageRef = "/gallery/"

@@ -1,3 +1,6 @@
+- id: archives
+  translation: "archives"
+
 - id: list_by_year_month_title
   translation: "Archive"
 

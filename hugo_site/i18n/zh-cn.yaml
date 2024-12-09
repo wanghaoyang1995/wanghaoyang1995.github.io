@@ -1,6 +1,9 @@
 # General
+- id: archives
+  translation: "归档"
+
 - id: list_by_year_month_title
-  translation: "年月归档"
+  translation: "日期归档"
 
 - id: two_days_ago
   translation: "今天"

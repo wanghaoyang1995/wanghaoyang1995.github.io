@@ -5,6 +5,7 @@ title = "erecet2"
 draft = false
 categories = ["eng2"]
 tags = ["tag1", "tag3", "tag5"]
+archives = "2024-12"
 +++
 
 hello hugo

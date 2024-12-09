@@ -56,6 +56,7 @@ defaultContentLanguageInSubdir = false
   category = "categories"
   series = "series"
   tag = "tags"
+  archives = "archives"
 
 [params]
   mainSections = ["posts"]  # mainSections下的文档会用于生成search_index.json, 用来文章检索
