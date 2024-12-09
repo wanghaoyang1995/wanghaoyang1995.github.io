@@ -1,7 +1,90 @@
-{{ define "main" }}
-<main>
-  {{- with .Content }}
-    {{ . }}
-  {{- end }}
-</main>
-{{ end }}
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+  <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/schema.html" . }}
+  {{/* {{ template "_internal/twitter_cards.html" . }} */}}
+  {{/* {{ template "_internal/google_analytics.html" . }} */}}
+
+  <link rel="stylesheet" href="/layui-v2.9.20/css/layui.css">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  {{ $syntax := resources.Get "/css/syntax.css" | resources.ExecuteAsTemplate "/css/syntax.css" . | resources.Minify -}}
+  {{ $style := resources.Get "/css/style.css" | resources.ExecuteAsTemplate "/css/style.css" . | resources.Minify -}}
+  {{ $custom := resources.Get "/css/custom.css" | resources.ExecuteAsTemplate "/css/custom.css" . | resources.Minify -}}
+  <link rel="stylesheet" href="{{ $syntax.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $custom.RelPermalink }}">
+  <script src="/layui-v2.9.20/layui.js"></script>
+</head>
+
+{{ $main_panel_width_class := "layui-col-xs12 layui-col-md9" }}
+<body class="body">
+  <div class="layui-fluid" id="body-container">
+    <div class="layui-row" style="display: flex; justify-content: center;">
+      <div class="{{$main_panel_width_class}}">
+        <div class="layui-panel" id="body-panel">
+          <div class="layui-row">
+            {{ partial "header.html" . }}
+          </div>
+          <div class="layui-row content_paper">
+            <div class="layui-col-xs12 layui-col-md9">
+              <div class="layui-card content_area">
+                <div class="layui-card-body">
+                  {{- with .Content }}
+                    {{ . }}
+                  {{- end }}
+                </div>
+              </div>
+              <div class="layui-card content_area">
+                <div class="layui-card-body">
+                  <h4>{{T "pinned"}}</h4>
+                  {{ $pinned_pages := where .Site.RegularPages "Params.pinned" true }}
+                  {{ range $pinned_pages }}
+                    {{ .Render "summary" }}
+                  {{end}}
+                </div>
+              </div>
+              <div class="layui-card content_area">
+                <div class="layui-card-body">
+                  <h4>{{T "recent_title"}}</h4>
+                  {{ with .Site.GetPage "posts" }}
+                    {{ range first 5 .Pages }}
+                      {{ .Render "summary" }}
+                    {{end}}
+                  {{end}}
+                  {{ $pinned_pages := where .Site.RegularPages "Params.pinned" true }}
+                  {{ range $pinned_pages }}
+                    {{ .Render "summary" }}
+                  {{end}}
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-md3">
+              <div class="layui-card sidebar_area">
+                <div class="layui-card-body sidebar_box">
+                  {{ partial "sidebar.html" . }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-row" style="display: flex; justify-content: center;">
+      <div class="{{$main_panel_width_class}}">
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </div>
+
+  {{ if .Param "math" }} {{ partialCached "mathjax.html" . }} {{ end }}
+  {{ $custom_js := resources.Get "/js/custom.js" | resources.ExecuteAsTemplate "/js/custom.js" . | resources.Minify -}}
+  <script src="{{ $custom_js.RelPermalink}}"></script>
+</body>
+</html>

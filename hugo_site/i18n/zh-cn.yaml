@@ -1,4 +1,7 @@
 # General
+- id: pinned
+  translation: "置顶内容"
+
 - id: go_back_to_previous_page
   translation: "<< 返回上一页 <<"
 

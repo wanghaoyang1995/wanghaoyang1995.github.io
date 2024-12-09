@@ -1,3 +1,6 @@
+- id: pinned
+  translation: "Pinned"
+
 - id: go_back_to_previous_page
   translation: "Go Back to Previous Page"
 

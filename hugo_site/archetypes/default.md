@@ -1,5 +1,5 @@
 +++
-title = '{{- replace .File.ContentBaseName "_" " " | title -}}'
+title = "{{- replace .File.ContentBaseName '_' ' ' | title -}}"
 summary = ""
 categories = []
 tags = []

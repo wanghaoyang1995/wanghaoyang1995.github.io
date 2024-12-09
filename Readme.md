@@ -12,3 +12,6 @@
 - [ ] giscus评论支持
 - [ ] 摘要图片预览
 - [ ] AuthorCard
+- [ ] Github CI/CD
+
+### 有一些使用体验待优化
