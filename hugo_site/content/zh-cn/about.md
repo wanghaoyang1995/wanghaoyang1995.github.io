@@ -1,8 +1,11 @@
 +++
-date = "2024-12-05T16:43:00+08:00"
-title = "关于"
-description = "关于Wang的站点"
-layout = "about"
+title = "About"
+summary = ""
+
+lastmod = "2024-12-09T22:41:10+08:00"
+
+date = "2024-12-09T22:41:10+08:00"
+isCJKLanguage = true
 +++
 
 ### Wang的站点

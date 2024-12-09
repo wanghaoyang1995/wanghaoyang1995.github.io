@@ -36,14 +36,15 @@
             <div class="layui-col-xs12 layui-col-md9">
               <div class="layui-card content_area">
                 <div class="layui-card-body">
-                  {{- with .Content }}
-                    {{ . }}
-                  {{- end }}
+                  <div>
+                    {{- .Content -}}
+                  </div>
+
                 </div>
               </div>
               <div class="layui-card content_area">
                 <div class="layui-card-body">
-                  <h4 style="font-weight: 400;background-color: rgb(226, 190, 185);border-style: double;"><i class="layui-icon layui-icon-flag"></i>&nbsp;{{T "pinned"}}</h4>
+                  <h4 style="font-weight: 400;background-color: #cab2aa;border-style: double;"><i class="layui-icon layui-icon-flag"></i>&nbsp;{{T "pinned"}}</h4>
                   {{ $pinned_pages := where .Site.RegularPages "Params.pinned" true }}
                   {{ range $pinned_pages }}
                     {{ .Render "summary" }}
@@ -52,7 +53,7 @@
               </div>
               <div class="layui-card content_area">
                 <div class="layui-card-body">
-                  <h4 style="font-weight: 400;background-color: rgb(169, 169, 223);border-style: double;"><i class="layui-icon layui-icon-date"></i>&nbsp;{{T "recent_title"}}</h4>
+                  <h4 style="font-weight: 400;background-color: #ac9edb;border-style: double;"><i class="layui-icon layui-icon-date"></i>&nbsp;{{T "recent_title"}}</h4>
                   {{ with .Site.GetPage "posts" }}
                     {{ range first 5 .Pages }}
                       {{ .Render "summary" }}

@@ -3,6 +3,11 @@
 {{ $panel_radius := 2}}  /* 面板圆角 */
 {{ $padding_left := 30}}  /* 标题左边距 */
 
+@font-face {
+    font-family: "my_font_ADF";  /* 定义字体名称 */
+    src: url("/fonts/AiDianFengYaHei.ttf") format("truetype");  /* 指定字体文件的路径 */
+}
+
 /* 整体上边距 */
 #body-container {
 	margin-top: 25px;
@@ -22,11 +27,12 @@
 	padding-left: {{ $padding_left }}px;
 	border-top-left-radius: {{ $panel_radius }}px;
 	border-top-right-radius: {{ $panel_radius }}px;
-	background-image: url("/img/bg.jpg");
+	background: linear-gradient(45deg, #7c8690, #dcc3a4);
 }
 
 /* 主标题 */
 #main-title {
+	font-family: "my_font_ADF";
     font-size: 44px;
 	font-weight: bold;
 	color: rgb(15, 14, 14);
@@ -37,11 +43,12 @@
 #subtitle {
 	display: inline-block;
 	border-top-style: solid;
-	border-top-width: 2px;
-	border-top-color: #903749;
+	border-top-width: 1px;
+	border-top-color: #a5a5a5;
 	font-size: 18px;
-	font-weight: bold;
-	color: #222831;
+	font-weight: 400;
+	font-family: "my_font_ADF";
+	color: #4c0909;
 	padding: 0px 0 0 0;
 }
 
@@ -105,6 +112,7 @@
 
 /* 全局列表页大标题 */
 .default_list_title {
+	font-family: "my_font_ADF";
 	font-weight: bold;
 	color: black;
 	margin-bottom: 5px;
@@ -113,6 +121,7 @@
 /* 博客列表页摘要标题 */
 .summary_title {
 	margin-bottom: 0;
+	font-size: medium;
 }
 
 /* 博客列表页摘要 */
@@ -246,5 +255,8 @@
 }
 #main-title {
 	font-size: 30px;
+}
+.character_art_block {
+	display: none;
 }
 }

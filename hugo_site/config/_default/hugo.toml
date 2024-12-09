@@ -1,4 +1,4 @@
-baseURL = "https://127.0.0.1/"
+baseURL = "https://wanghaoyang1995.github.io/"
 timeZone = "Asia/Shanghai"
 
 defaultContentLanguage = "zh-cn"
@@ -8,29 +8,33 @@ defaultContentLanguageInSubdir = false
     contentDir = "content/zh-cn"
     languageCode = "zh-CN"
     languageName = "中文"
-    title = "Wang的个人站点"
+    title = "WHY的博客空间"
     weight = 1
     [languages.zh-cn.pagination]
       disableAliases = false
       pagerSize = 10
       path = "page"
     [languages.zh-cn.Params]
-      description = "站点描述"
-      subtitle = "比较长的子标题"
+      description = "WHY的个人站点"
+      subtitle = "我什么也不做，并且睡得很晚"
+      author = "WHY"
+      author_desc = "有什么好说的？这个卡片只是为了占位"
 
   [languages.en-us]
     contentDir = "content/en-us"
     languageCode = "en-US"
     languageName = "English"
-    title = "Wang's site"
+    title = "WHY's site"
     weight = 2
     [languages.en-us.pagination]
       disableAliases = false
       pagerSize = 10
       path = "page"
     [languages.en-us.Params]
-      description = "desc"
-      subtitle = "subtitle"
+      description = "WHY's site"
+      subtitle = "Just a confused ?"
+      author = "why?"
+      author_desc = "no reason"
 
 [outputFormats]
   [outputFormats.search_index]
@@ -63,6 +67,8 @@ defaultContentLanguageInSubdir = false
   math = false  # 默认关闭mathjax支持, 需要的话在Front Matter打开
   enable_giscus = true  # 是否启用github评论功能
   widgets.search.url = "https://www.bing.com/search"
+  author_github = "https://github.com/wanghaoyang1995"
+  author_bilibili = "https://space.bilibili.com/114557736"
 
 [markup]
   [markup.goldmark]

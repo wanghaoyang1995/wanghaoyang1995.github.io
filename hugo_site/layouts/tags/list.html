@@ -4,16 +4,7 @@
     <h2 class="default_list_title">{{ T "tags" }}<span class="layui-badge theme_color_tags" style="vertical-align:text-top;">{{.Pages.Len}}</span></h2>
     <hr />
 
-    {{ range .Paginator.Pages }}
-      <header style="margin-bottom: 10px;">
-        <h3>
-          <i class="layui-edge layui-edge-right" style="vertical-align: 12%;"></i>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <span class="layui-badge layui-bg-gray" style="vertical-align:text-top;">{{.Pages.Len}}</span>
-        </h3>
-      </header>
-    {{ end }}
-    {{ partial "pagination.html" . }}
+    {{ partial "taxonomies_list.html" . }}
   </div>
 </main>
 {{ end }}
