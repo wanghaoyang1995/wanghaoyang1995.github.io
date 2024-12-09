@@ -70,26 +70,19 @@
   </div>
 
   {{ if .Param "math" }} {{ partialCached "mathjax.html" . }} {{ end }}
+  <script src="/js/url_share/qrcode.min.js"></script>
+  <script>
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: window.location.href,
+      width: 128,
+      height: 128,
+      colorDark : "#000000",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+  </script>
+  <script src="/js/url_share/share.js"></script>
   {{ $custom_js := resources.Get "/js/custom.js" | resources.ExecuteAsTemplate "/js/custom.js" . | resources.Minify -}}
   <script src="{{ $custom_js.RelPermalink}}"></script>
-  {{- if .Site.Params.enable_giscus -}}
-    <script src="https://giscus.app/client.js"
-          data-repo="https://github.com/wanghaoyang1995/wanghaoyang1995.github.io.git"
-          data-repo-id="[在此输入仓库 ID]"
-          data-category="[在此输入分类名]"
-          data-category-id="[在此输入分类 ID]"
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="top"
-          data-theme="noborder_light"
-          data-lang="zh-CN"
-          data-loading="lazy"
-          crossorigin="anonymous"
-          async>
-    </script>
-  {{- end -}}
 </body>
-
 </html>

@@ -1,3 +1,9 @@
+- id: go_back_to_previous_page
+  translation: "Go Back to Previous Page"
+
+- id: see_also
+  translation: "See also"
+
 - id: share
   translation: "Share"
 

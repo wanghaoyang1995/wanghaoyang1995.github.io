@@ -19,16 +19,41 @@
 
       <span style="line-height: 28px;">{{T "share"}}</span>
       <span id="btn_share_weibo" lay-on="btn_share_weibo" style="height: 30px;line-height: 30px;border-width: 0;padding: 0 5px;" class="layui-btn layui-btn-primary layui-border"><i class="layui-icon layui-icon-login-weibo"></i></span>
+      <span id="btn_share_qq" lay-on="btn_share_qq" style="height: 30px;line-height: 30px;border-width: 0;padding: 0 5px;margin-left: 0;" class="layui-btn layui-btn-primary layui-border"><i class="layui-icon layui-icon-login-qq"></i></span>
       <span id="btn_share_weixin" lay-on="btn_share_weixin" style="height: 30px;line-height: 30px;border-width: 0;padding: 0 5px;margin-left: 0;" class="layui-btn layui-btn-primary layui-border"><i class="layui-icon layui-icon-login-wechat"></i></span>
       &nbsp;|&nbsp;
       <span id="btn_copy_link" lay-on="btn_copy_link" style="height: 30px;line-height: 30px;border-width: 0;margin: 15;padding: 0;" class="layui-btn layui-btn-primary layui-border"><i class="layui-icon layui-icon-link"></i>{{T "copy_link"}}</span>
     </div>
     <div style="display: flex;padding: 10px 20px;">
-      <a href="/">{{T "last_post"}}</a>
+      {{ with .PrevInSection  }}
+        <a href="{{.RelPermalink}}">{{T "last_post"}} - <span style="color: rgb(171, 21, 21);">{{ .Title }}</span></a>
+      {{ end }}
       <span style="flex: 1;"></span>
-      <a href="/">{{T "next_post"}}</a>
+      {{ with .NextInSection }}
+        <a href="{{.RelPermalink}}">{{T "next_post"}} - <span style="color: rgb(171, 21, 21);">{{ .Title }}</span></a>
+      {{ end }}
     </div>
+    <div style="display: flex;padding: 10px 20px;">
+      <a id="go_back_to_previous_page" style="font-weight: bold;" lay-on="go_back_to_previous_page" href="javascript:;">{{T "go_back_to_previous_page"}}</a>
+    </div>
+
     {{ if .Site.Params.enable_giscus }}
+      <script src="https://giscus.app/client.js"
+            data-repo="https://github.com/wanghaoyang1995/wanghaoyang1995.github.io.git"
+            data-repo-id="[在此输入仓库 ID]"
+            data-category="[在此输入分类名]"
+            data-category-id="[在此输入分类 ID]"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="noborder_light"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+      </script>
       <div class="layui-collapse" id="giscus_panel" style="margin-top: 10px;">
         <div class="layui-colla-item">
           <div class="layui-colla-title">{{T "comment_area"}}&nbsp;&nbsp;&nbsp;&nbsp;<i style="vertical-align: middle;" class="layui-icon layui-icon-reply-fill"></i></div>
@@ -38,5 +63,6 @@
         </div>
       </div>
     {{ end }}
+    <div id="qrcode" style="display: none;"></div>
   </footer>
 {{ end }}

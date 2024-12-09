@@ -1,4 +1,10 @@
 # General
+- id: go_back_to_previous_page
+  translation: "<< 返回上一页 <<"
+
+- id: see_also
+  translation: "继续阅读"
+
 - id: share
   translation: "分享"
 
