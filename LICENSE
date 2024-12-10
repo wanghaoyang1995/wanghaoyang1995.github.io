@@ -26,6 +26,6 @@ Copyright Notice:
 
 All source code in this project is licensed under the MIT License, allowing anyone to freely use, copy, modify, and distribute it. For details, please refer to the included LICENSE file.
 
-However, all content within the `content/posts` directory (including but not limited to articles, images, and multimedia files) remains the property of the author and may not be copied, reproduced, or used for commercial purposes without permission.
+However, all content within the `hugo_site/content` directory (including but not limited to articles, images, and multimedia files) remains the property of the author and may not be copied, reproduced, or used for commercial purposes without permission.
 
 For any inquiries, please contact the project author.
