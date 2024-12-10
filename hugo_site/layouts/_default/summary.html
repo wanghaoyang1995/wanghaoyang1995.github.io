@@ -3,11 +3,8 @@
     <h3 class="summary_title"><i class="layui-edge layui-edge-right" style="vertical-align: 12%;"></i><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   </header>
   <div class="posts_summary_body">
-    {{- if .Summary -}}
-      {{- truncate 128 .Summary -}}
-    {{- else -}}
-      {{- truncate 128 .Content -}}
-    {{- end -}}
+    {{- $text := .Summary | plainify -}}
+    {{- truncate 100 $text -}}
   </div>
   <footer class="posts_summary_footer">
     <div>{{ .Date.Format "2006-01-02 15:04:05" }}

@@ -8,6 +8,15 @@
     src: url("/fonts/AiDianFengYaHei.ttf") format("truetype");  /* 指定字体文件的路径 */
 }
 
+/* 解决列表渲染与layui.css冲突 */
+li {
+	list-style: inside !important;
+	list-style-type: decimal !important;
+}
+ol {
+	margin: 20px !important;
+}
+
 /* 整体上边距 */
 #body-container {
 	margin-top: 25px;
@@ -158,7 +167,7 @@
 
 /* 博客正文 */
 .article_content {
-	padding-top: 6px;
+	padding: 6px 10px;
 	line-height: 160%;
 	font-size: 110%;
 }
