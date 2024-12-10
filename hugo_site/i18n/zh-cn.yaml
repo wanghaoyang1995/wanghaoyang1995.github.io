@@ -1,4 +1,7 @@
 # General
+- id: theme_color_img_title
+  translation: "主题配色来源 (有块云好像哥哥的中分)"
+
 - id: pinned
   translation: "置顶内容"
 
@@ -36,7 +39,7 @@
   translation: "归档"
 
 - id: list_by_year_month_title
-  translation: "年月归档"
+  translation: "按月归档"
 
 - id: two_days_ago
   translation: "今天"
@@ -135,7 +138,7 @@
 
 # Footer
 - id: footer_credits
-  translation: "xxx"
+  translation: "本站由<a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a>生成"
 
 # 404
 - id: 404_title

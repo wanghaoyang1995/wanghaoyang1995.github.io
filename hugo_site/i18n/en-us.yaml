@@ -1,3 +1,6 @@
+- id: theme_color_img_title
+  translation: "The Color Scheme of This Site Is Inspired By"
+
 - id: pinned
   translation: "Pinned"
 

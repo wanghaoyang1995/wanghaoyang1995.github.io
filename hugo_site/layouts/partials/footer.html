@@ -1,6 +1,7 @@
 <footer>
   <div id="footer">
-    &copy; {{ now.Format "2006" }} {{ .Site.Params.copyright | default .Site.Title }}.
+    <a href="/" style="color: #bab9b7;">&copy; {{ now.Format "2006" }} {{ .Site.Params.copyright | default .Site.Title }}.</a>
+    &nbsp;
     <span>{{ T "footer_credits" | safeHTML }}</span>
   </div>
 </footer>

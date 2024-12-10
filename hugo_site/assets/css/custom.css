@@ -246,6 +246,11 @@
 	/*background-color: rgb(230, 230, 230);*/
 }
 
+/*about*/
+#theme_color_source_img {
+	box-shadow: 2px 2px 2px 2px rgb(173, 171, 161);
+}
+
 @media (max-width: 768px) {
 #nav-bar > .normal_nav_menu {
 	display: none;

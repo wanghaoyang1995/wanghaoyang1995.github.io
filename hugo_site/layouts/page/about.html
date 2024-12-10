@@ -1,5 +1,13 @@
 {{ define "main" }}
 <main>
-	{{ .Content }}
+  <div class="layui-row layui-col-space22">
+    <div class="layui-col-md7 layui-col-xs12">
+      {{ .Content }}
+    </div>
+    <div class="layui-col-md5">
+      <img id="theme_color_source_img" src="/img/theme.jpg" alt="theme color"/>
+      <div style="text-align: center; font-weight: 400;">{{T "theme_color_img_title"}}</div>
+    </div>
+  </div>
 </main>
 {{ end }}
