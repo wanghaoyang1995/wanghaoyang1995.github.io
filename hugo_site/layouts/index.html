@@ -59,10 +59,6 @@
                       {{ .Render "summary" }}
                     {{end}}
                   {{end}}
-                  {{ $pinned_pages := where .Site.RegularPages "Params.pinned" true }}
-                  {{ range $pinned_pages }}
-                    {{ .Render "summary" }}
-                  {{end}}
                 </div>
               </div>
             </div>
