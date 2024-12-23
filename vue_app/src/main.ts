@@ -1,9 +1,9 @@
-import './assets/main.css'
+//import './assets/main.css'
 
 import { createApp } from 'vue'
 import ElementPlus from 'element-plus'
-import App from './App.vue'
+import KeKeListening from './KeKeListening.vue'
 
-const app = createApp(App)
-app.use(ElementPlus, { size: 'small', zIndex: 3000 })
-app.mount('#app')
+const keke_app = createApp(KeKeListening)
+keke_app.use(ElementPlus, { size: 'small', zIndex: 3000 })
+keke_app.mount('#app')
