@@ -9,4 +9,4 @@ date = "2024-12-10T12:49:00+08:00"
 isCJKLanguage = true
 +++
 
-### 还没有开发完成...
+### 1. [英语听写练习](https://wanghaoyang1995.github.io/keke_scraper)

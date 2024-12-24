@@ -37,9 +37,15 @@
   pageRef = "/gallery/"
   weight = 300
 [[main]]
+  identifier = "tools"
   name = "在线工具"
   pageRef = "/tools/"
   weight = 400
+    [[main]]
+    parent = "tools"
+    name = "听写练习"
+    pageRef = "/keke_scraper/"
+    weight = 410
 [[main]]
   name = "关于"
   pageRef = "/about/"

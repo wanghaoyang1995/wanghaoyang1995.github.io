@@ -12,6 +12,14 @@ import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vite.dev/config/
 export default defineConfig({
+	/*build: {
+    rollupOptions: {
+      external: ['vue-jsdiff'],
+    },
+  },*/
+	build: {
+    commonjsOptions: { transformMixedEsModules: true }
+  },
   plugins: [
     vue(),
     vueDevTools(),
@@ -38,7 +46,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 })

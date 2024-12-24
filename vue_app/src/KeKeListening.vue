@@ -135,8 +135,8 @@ const on_sentence_changed = (sentence_index: number) => {
 <template>
   <el-config-provider :size="size" :z-index="zIndex">
     <el-row class="main_container">
-      <el-col :xs="1" :md="4"></el-col>
-      <el-col :xs="23" :md="16">
+      <el-col :xs="1" :md="3"></el-col>
+      <el-col :xs="23" :md="18">
         <el-row>
           <el-col :xs="18" :md="18">
             <el-form :inline="true" :model="keke_id_form" size="default">

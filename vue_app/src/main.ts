@@ -11,4 +11,4 @@ import 'vue-diff/dist/index.css'
 const keke_app = createApp(KeKeListening);
 keke_app.use(ElementPlus, { size: 'small', zIndex: 3000 });
 keke_app.use(VueDiff);
-keke_app.mount('#app');
+keke_app.mount('#keke_scraper');

@@ -37,9 +37,15 @@
   pageRef = "/gallery/"
   weight = 300
 [[main]]
+  identifier = "tools"
   name = "Gadgets"
   pageRef = "/tools/"
   weight = 400
+  [[main]]
+    parent = "tools"
+    name = "KeKe Scraper"
+    pageRef = "/keke_scraper/"
+    weight = 410
 [[main]]
   name = "About"
   pageRef = "/about/"

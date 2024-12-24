@@ -73,7 +73,7 @@ watch(() => props.user_content, (newVal, oldVal) => {
   let total_count = 0;
   const diff = JsDiff.diffWords(props.answer_content, props.user_content);
   const display = document.getElementById("display");
-  display.innerHTML = "";
+  display!.innerHTML = "";
   const fragment = document.createDocumentFragment();
 
   diff.forEach((part : any) => {
@@ -91,7 +91,7 @@ watch(() => props.user_content, (newVal, oldVal) => {
     fragment.appendChild(span);
   });
 
-  display.appendChild(fragment);
+  display!.appendChild(fragment);
   score.value = correct_count / total_count;
   console.log("correct_count: ", correct_count);
   console.log("total_count: ", total_count);

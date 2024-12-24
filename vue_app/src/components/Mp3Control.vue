@@ -171,7 +171,7 @@ const search_sentence_index = (time: number) => {
 const audio_speed_options = ["0.3", "0.5", "0.8", "1.0", "1.2", "1.5", "2.0", "3.0"];
 let audio_speed_index = 3;
 
-const audio = ref<HTMLAudioElement | null>(null);
+const audio = ref<HTMLAudioElement>(new Audio());
 const audio_duration = ref<number>(0);
 const current_time = ref<number>(0);
 const stop_at_sentence = ref<boolean>(false);
@@ -371,7 +371,7 @@ onBeforeUnmount(() => {
   line-height: 36px;
 }
 .main_container {
-  boxShadow: var(--el-box-shadow-light);
+  box-shadow: var(--el-box-shadow-light);
   border-radius: var(--el-border-radius-base);
   border: 1px solid var(--el-border-color);
   padding: 10px 20px;
