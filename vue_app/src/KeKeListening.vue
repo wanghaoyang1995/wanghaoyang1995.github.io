@@ -112,9 +112,9 @@ const on_query_article = () => {
 const on_help = () => {
   console.log("on_help");
   ElMessageBox.confirm(
-    "<p>这是一个英语听写练习的网页应用，音频与文本内容来自<a href='https://listen.kekenet.com/#/'>可可英语-听力训练</a>。</p>" +
+    "<p>这是一个英语听写练习的网页应用，音频与文本内容来自<a href='https://listen.kekenet.com/#/'>可可英语-听写训练</a>。</p>" +
     "<p>原网站的批改功能需要付费，且原文只能下载手机app查看，所以本项目做了原文爬取和本地批改功能。</p>" +
-    "<p>由于用了站外接口，需要安装<a href='https://microsoftedge.microsoft.com/addons/detail/cors-unblock/hkjklmhkbkdhlgnnfbbcihcajofmjgbh?hl=zh-CN'>CORS Unblock</a>插件才可正常使用，否则会报跨域错误。</p>" +
+    "<p>由于用了站外接口，需要安装<a href='https://microsoftedge.microsoft.com/addons/detail/cors-unblock/hkjklmhkbkdhlgnnfbbcihcajofmjgbh?hl=zh-CN'>CORS Unblock</a>(<strong>并启用!</strong>)插件才可正常使用，否则会报跨域错误。手机暂不能安装此插件，所以请用电脑Chrome/Edge浏览器打开。</p>" +
     "<p>输入<strong>文章ID</strong>(原文链接地址中的最后一串数字)点击获取，解析内容后，在输入框输入答案，点击提交，查看批改结果与准确率。</p>" +
     "<p>其中<strong>准确率=匹配词数/总词数</strong>，多余词不计数。</p>" +
     "<p>本网页仅供个人学习使用，请勿用于商业用途。如果你觉得有所收获，请记得支持原网站：<a href='https://www.kekenet.com/'>可可英语</a>。</p>",
