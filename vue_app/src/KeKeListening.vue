@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { h, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
 import { ElConfigProvider, ElMessageBox, ElNotification } from 'element-plus'
+import axios from 'axios'
+
 import Mp3Control from './components/Mp3Control.vue'
 import SourceTextList from './components/SourceTextList.vue'
-import axios from 'axios'
+import DiffPanel from './components/DiffPanel.vue'
+
 
 interface Sentence {
   cn: string,
@@ -24,7 +27,9 @@ const activated_line_index = ref<number>(0);
 const input_text_form = reactive({
   input_text: ""
 });
-
+const user_content = ref<string>("");
+const answer_content = ref<string>("");
+const not_submitted = ref<boolean>(true);
 const keke_id_form = reactive({
   id: "698455"
 });
@@ -51,6 +56,14 @@ const extract_source_text = (content: Array<Sentence>) => {
   return temp_list;
 }
 
+const extract_answer_content = (content: Array<Sentence>) => {
+  let answer_content = "";
+  content.forEach((sentence) => {
+    answer_content += sentence.en + "\n";
+  });
+  return answer_content;
+}
+
 const fetchArticle = async (article_id: string) => {
   const raw_text_param = `{"Method":"v9_news_getcontent","Params":{"id":${article_id}},"Token":"","Terminal":"11","Version":"4.0","UID":0,"AppFlag":"18","Sign":"","ApVersionCode":1}`;
   const mp3_url_prefix = "https://k7.kekenet.com/";
@@ -74,6 +87,8 @@ const fetchArticle = async (article_id: string) => {
     article_title.value = response.data.Data.title;
     mark_list.value = extract_mark_list(response.data.Data.content);
     source_text_list.value = extract_source_text(response.data.Data.content);
+    answer_content.value = extract_answer_content(response.data.Data.content);
+    not_submitted.value = true;
   } catch (error) {
     console.error("Error sending POST request:", error);
     ElNotification({
@@ -85,7 +100,9 @@ const fetchArticle = async (article_id: string) => {
 };
 
 const on_submit = () => {
-  console.log("submit: " + input_text_form.input_text);
+  activeTab.value = "diff_panel";
+  not_submitted.value = false;
+  user_content.value = input_text_form.input_text;
 }
 
 const on_query_article = () => {
@@ -97,9 +114,10 @@ const on_help = () => {
   ElMessageBox.confirm(
     "<p>这是一个英语听写练习的网页应用，音频与文本内容来自<a href='https://listen.kekenet.com/#/'>可可英语-听力训练</a>。</p>" +
     "<p>原网站的批改功能需要付费，且原文只能下载手机app查看，所以本项目做了原文爬取和本地批改功能。</p>" +
-    "<p>输入<strong>文章ID</strong>(原文链接地址中的最后一串数字)点击获取，解析内容后，在输入框输入答案，点击提交，查看批改结果与准确率。</p>" +
     "<p>由于用了站外接口，需要安装<a href='https://microsoftedge.microsoft.com/addons/detail/cors-unblock/hkjklmhkbkdhlgnnfbbcihcajofmjgbh?hl=zh-CN'>CORS Unblock</a>插件才可正常使用，否则会报跨域错误。</p>" +
-    "<p>本网页仅供个人学习使用，请勿用于商业用途。如果你有所收获，请记得支持原网站：<a href='https://www.kekenet.com/'>可可英语</a>。</p>",
+    "<p>输入<strong>文章ID</strong>(原文链接地址中的最后一串数字)点击获取，解析内容后，在输入框输入答案，点击提交，查看批改结果与准确率。</p>" +
+    "<p>其中<strong>准确率=匹配词数/总词数</strong>，多余词不计数。</p>" +
+    "<p>本网页仅供个人学习使用，请勿用于商业用途。如果你觉得有所收获，请记得支持原网站：<a href='https://www.kekenet.com/'>可可英语</a>。</p>",
     "使用说明",
     {
       dangerouslyUseHTMLString: true,
@@ -112,15 +130,6 @@ const on_sentence_changed = (sentence_index: number) => {
   console.log("on_sentence_changed: " + sentence_index.toString());
   activated_line_index.value = sentence_index;
 }
-
-onMounted(() => {
-
-});
-
-onBeforeUnmount(() => {
-
-});
-
 </script>
 
 <template>
@@ -160,7 +169,7 @@ onBeforeUnmount(() => {
           <el-tab-pane label="听写批改" name="compare_panel">
             <el-form :model="input_text_form" label-width="auto">
               <el-form-item>
-                <el-input :autosize="{ minRows: 20, maxRows: 20 }" v-model="input_text_form.input_text" maxlength="8000" class="textarea_input" placeholder="请输入文本，评分时将忽略标点符号与空白符，大小写敏感。" show-word-limit type="textarea" />
+                <el-input :autosize="{ minRows: 20, maxRows: 20 }" v-model="input_text_form.input_text" maxlength="8000" class="textarea_input" placeholder="请输入文本，评分时将忽略空白符，大小写敏感。" show-word-limit type="textarea" />
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" size="default" @click="on_submit">提交</el-button>
@@ -170,8 +179,8 @@ onBeforeUnmount(() => {
           <el-tab-pane label="译文参考" name="source_text">
             <SourceTextList :source_text_list="source_text_list" :activated_line_index="activated_line_index" />
           </el-tab-pane>
-          <el-tab-pane label="答案对照" name="diff_panel">
-
+          <el-tab-pane label="答案对照" name="diff_panel" :disabled="not_submitted">
+            <DiffPanel language="plaintext" :user_content="user_content" :answer_content="answer_content" :folding="false" />
           </el-tab-pane>
         </el-tabs>
       </el-col>
