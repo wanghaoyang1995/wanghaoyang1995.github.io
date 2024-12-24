@@ -1,35 +1,101 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue'
-import { ElConfigProvider } from 'element-plus'
+import { ElConfigProvider, ElNotification } from 'element-plus'
 import Mp3Control from './components/Mp3Control.vue'
+import axios from 'axios'
+
+interface Sentence {
+  cn: string,
+  en: string,
+  millisecond: number,  // 起始时间标记, 毫秒
+}
 
 const zIndex = ref<number>(3000);
-const size = ref<'small'>('small');
+const size = ref<"small">("small");
 const activeTab = ref<string>("compare_panel");
 const left_time = ref(Date.now() + 1000 * 60 * 60 * 1)
 
-const article_title = ref<string>("微软正在扩展其人工智能工具产品");
-const mp3_url = ref<string>("https://k7.kekenet.com/Sound/2024/12/voatech2412183_3806493Fp4.mp3");
-const mark_list = ref<number[]>([5.0, 10.0, 14.0, 20.0]);
-
+const article_title = ref<string>("xxx");
+const playurl = ref<string>("");
+const mark_list = ref<number[]>([]);
+const source_text_list = ref<Array<SourceTextItem>>([]);
+const activated_line_index = ref<number>(0);
 const input_text_form = reactive({
   input_text: ""
 });
 
 const keke_id_form = reactive({
-  id: ""
+  id: "698455"
 });
 
+
+
+const extract_mark_list = (content: Array<Sentence>) => {
+  let mark_list : number[] = content.map(sentence => sentence.millisecond / 1000.0);
+  return mark_list;
+}
+
+interface SourceTextItem {
+  cn: string,
+  en: string,
+  index: number
+}
+const extract_source_text = (content: Array<Sentence>) => {
+  let temp_list : Array<SourceTextItem> = [];
+  content.forEach((sentence, index) => {
+    temp_list.push({
+      cn: sentence.cn,
+      en: sentence.en,
+      index: index
+    });
+  });
+  return temp_list;
+}
+
+const fetchArticle = async (article_id: string) => {
+  const raw_text_param = `{"Method":"v9_news_getcontent","Params":{"id":${article_id}},"Token":"","Terminal":"11","Version":"4.0","UID":0,"AppFlag":"18","Sign":"","ApVersionCode":1}`;
+  const mp3_url_prefix = "https://k7.kekenet.com/";
+
+  try {
+    const response = await axios.post(
+      "https://mob2015.kekenet.com/keke/mobile/index.php",
+      raw_text_param,
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "application/json",
+          "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-US;q=0.7",
+          "Cache-Control": "no-cache",
+        }
+      }
+    );
+
+    console.log("Response:", response.data);
+    playurl.value = mp3_url_prefix + response.data.Data.playurl;
+    article_title.value = response.data.Data.title;
+    mark_list.value = extract_mark_list(response.data.Data.content);
+    source_text_list.value = extract_source_text(response.data.Data.content);
+  } catch (error) {
+    console.error("Error sending POST request:", error);
+    ElNotification({
+      title: "Error",
+      message: "POST请求出错!",
+      type: "error",
+    });
+  }
+};
+
 const on_submit = () => {
-  console.log('submit: ' + input_text_form.input_text)
+  console.log("submit: " + input_text_form.input_text);
 }
 
 const on_query_article = () => {
-  console.log("onQueryArticle: " + keke_id_form.id)
+  fetchArticle(keke_id_form.id);
 }
 
 const on_sentence_changed = (sentence_index: number) => {
-  console.log("on_sentence_changed: " + sentence_index.toString())
+  console.log("on_sentence_changed: " + sentence_index.toString());
+  activated_line_index.value = sentence_index;
 }
 
 onMounted(() => {
@@ -51,7 +117,12 @@ onBeforeUnmount(() => {
           <el-col :xs="18" :md="18">
             <el-form :inline="true" :model="keke_id_form" size="default">
               <el-form-item label="文章ID">
-                <el-input v-model="keke_id_form.id" placeholder="698455" />
+                <el-tooltip
+                  effect="light"
+                  content="例如: 原文链接为 https://mob.kekenet.com/lesson/96/698455, 此处输入698455"
+                >
+                  <el-input v-model="keke_id_form.id" placeholder="输入文章ID" />
+                </el-tooltip>
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" @click="on_query_article">获取</el-button>
@@ -66,7 +137,7 @@ onBeforeUnmount(() => {
             />
           </el-col>
         </el-row>
-        <Mp3Control :title="article_title" :mp3_url="mp3_url" :mark_list="mark_list" @current-sentence-changed="on_sentence_changed" />
+        <Mp3Control :title="article_title" :mp3_url="playurl" :mark_list="mark_list" @current-sentence-changed="on_sentence_changed" />
         <el-tabs v-model="activeTab" class="tab_container">
           <el-tab-pane label="听写批改" name="compare_panel">
             <el-form :model="input_text_form" label-width="auto">
@@ -79,7 +150,7 @@ onBeforeUnmount(() => {
             </el-form>
           </el-tab-pane>
           <el-tab-pane label="译文参考" name="source_text">
-
+            <SourceTextList :source_text_list="source_text_list" :activated_line_index="activated_line_index" />
           </el-tab-pane>
           <el-tab-pane label="答案对照" name="diff_panel">
 

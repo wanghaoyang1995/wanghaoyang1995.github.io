@@ -92,7 +92,7 @@ C: 开启/关闭单句循环</pre>
           <el-select
             v-model="audio_speed"
             placeholder="Select"
-            style="width: 85px;"
+            style="width: 65px;"
             @change="audio_speed_change"
           >
             <el-option v-for="(item, index) in audio_speed_options"
@@ -104,6 +104,7 @@ C: 开启/关闭单句循环</pre>
         </el-tooltip>
       </el-col>
     </el-row>
+    <audio :src="props.mp3_url" ref="audio" controls style="display: none;"></audio>
   </div>
 </template>
 
@@ -116,17 +117,14 @@ const props = defineProps({
   title: {
     type: String,
     required: true,
-    default: "<无标题>"
   },
   mp3_url: {
     type: String,
     required: true,
-    default: ""
   },
   mark_list: {
     type: Array as PropType<number[]>,
     required: true,
-    default: () => []
   }
 });
 const emit = defineEmits<{
@@ -134,10 +132,14 @@ const emit = defineEmits<{
 }>();
 
 type Marks = Record<number, string>;
-const marks = props.mark_list.reduce((acc:Marks, num:number) => {
+const marks = ref<Marks>([]);
+watch(() => props.mark_list, (new_mark_list) => {
+  marks.value = new_mark_list.reduce((acc:Marks, num:number) => {
   acc[num] = "";
   return acc;
 }, {});
+});
+
 const current_sentence_index = ref<number>(0);
 const search_sentence_index = (time: number) => {
   if (time <= props.mark_list[0]) {
@@ -169,6 +171,7 @@ const search_sentence_index = (time: number) => {
 const audio_speed_options = ["0.3", "0.5", "0.8", "1.0", "1.2", "1.5", "2.0", "3.0"];
 let audio_speed_index = 3;
 
+const audio = ref<HTMLAudioElement | null>(null);
 const audio_duration = ref<number>(0);
 const current_time = ref<number>(0);
 const stop_at_sentence = ref<boolean>(false);
@@ -176,41 +179,12 @@ const playing = ref<boolean>(false);
 const sentence_loop = ref<boolean>(false);
 const audio_speed = ref<string>(audio_speed_options[audio_speed_index]);
 
-const audio : HTMLAudioElement = new Audio(props.mp3_url);
-audio.addEventListener("loadedmetadata", () => {
-  audio_duration.value = audio.duration;
-});
-audio.addEventListener("timeupdate", () => {
-  current_time.value = audio.currentTime;
-  let index = search_sentence_index(current_time.value);
-  if (index === current_sentence_index.value) {
-    return;
-  }
-
-  if (sentence_loop.value) {
-    current_time.value = props.mark_list[current_sentence_index.value];
-    audio.currentTime = current_time.value;
-  } else {
-    current_sentence_index.value = index;
-  }
-
-  if (stop_at_sentence.value) {
-    playing.value = true;
-    togglePlay();
-  }
-
-  emit("currentSentenceChanged", current_sentence_index.value);
-});
-audio.addEventListener("ended", () => {
-  playing.value = false;
-});
-
 const togglePlay = () => {
   if (audio) {
     if (playing.value) {
-      audio.pause();
+      audio.value.pause();
     } else {
-      audio.play();
+      audio.value.play();
     }
     playing.value = !playing.value;
   }
@@ -235,7 +209,7 @@ const seek = () => {
   if (audio) {
     let index = search_sentence_index(current_time.value);
     current_sentence_index.value = index;
-    audio.currentTime = current_time.value;
+    audio.value.currentTime = current_time.value;
     emit("currentSentenceChanged", current_sentence_index.value);
   }
 };
@@ -270,7 +244,7 @@ const seekLastSentence = () => {
 
 const audio_speed_change = () => {
   if (audio) {
-    audio.playbackRate = parseFloat(audio_speed.value);
+    audio.value.playbackRate = parseFloat(audio_speed.value);
   }
 };
 
@@ -281,7 +255,7 @@ const audio_speed_up = () => {
       audio_speed_index = audio_speed_options.length - 1;
     }
     audio_speed.value = audio_speed_options[audio_speed_index];
-    audio.playbackRate = parseFloat(audio_speed.value);
+    audio.value.playbackRate = parseFloat(audio_speed.value);
   }
 }
 
@@ -292,7 +266,7 @@ const audio_speed_down = () => {
       audio_speed_index = 0;
     }
     audio_speed.value = audio_speed_options[audio_speed_index];
-    audio.playbackRate = parseFloat(audio_speed.value);
+    audio.value.playbackRate = parseFloat(audio_speed.value);
   }
 }
 
@@ -342,6 +316,38 @@ const keydown_handler = (e: KeyboardEvent) => {
 
 onMounted(() => {
   document.addEventListener("keydown", keydown_handler, true);
+  if (!audio.value) {
+    console.error("BUG: audio is empty!");
+    return;
+  }
+
+  audio.value.addEventListener("loadedmetadata", () => {
+    audio_duration.value = audio.value.duration;
+  });
+  audio.value.addEventListener("timeupdate", () => {
+    current_time.value = audio.value.currentTime;
+    let index = search_sentence_index(current_time.value);
+    if (index === current_sentence_index.value) {
+      return;
+    }
+
+    if (sentence_loop.value) {
+      current_time.value = props.mark_list[current_sentence_index.value];
+      audio.value.currentTime = current_time.value;
+    } else {
+      current_sentence_index.value = index;
+    }
+
+    if (stop_at_sentence.value) {
+      playing.value = true;
+      togglePlay();
+    }
+
+    emit("currentSentenceChanged", current_sentence_index.value);
+  });
+  audio.value.addEventListener("ended", () => {
+    playing.value = false;
+  });
 });
 
 onBeforeUnmount(() => {
