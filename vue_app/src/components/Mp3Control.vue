@@ -1,10 +1,10 @@
 <template>
   <div class="main_container">
     <el-row class="title" :gutter="20">
-      <el-col :xs="14" :md="20">
+      <el-col :xs="14" :sm="14" :md="20">
         <el-text class="mx-1 title" size="large" tag="b">{{ props.title }}</el-text>
       </el-col>
-      <el-col :xs="6" :md="2" :offset="1">
+      <el-col :xs="6" :sm="6" :md="2" :offset="1">
         <el-popover
           placement="top-start"
           title="快捷按键"
@@ -27,11 +27,11 @@ C: 开启/关闭单句循环</pre>
       </el-col>
     </el-row>
     <el-row :gutter="20" class="time_bar">
-      <el-col :xs="6" :md="2">{{ formattedTime(current_time) }}</el-col>
-      <el-col :xs="12" :md="20">
+      <el-col :xs="6" :sm="6" :md="2">{{ formattedTime(current_time) }}</el-col>
+      <el-col :xs="12" :sm="12" :md="20">
         <el-slider v-model="current_time" @input="seek" :format-tooltip="formattedTime" :min="0" :max="audio_duration" :marks="marks" />
       </el-col>
-      <el-col :xs="6" :md="2">{{ formattedTime(audio_duration) }}</el-col>
+      <el-col :xs="6" :sm="6" :md="2">{{ formattedTime(audio_duration) }}</el-col>
     </el-row>
     <el-row :gutter="20" class="control_bar">
       <el-col :span="5" style="margin-left: 10px;">
@@ -44,7 +44,7 @@ C: 开启/关闭单句循环</pre>
           inactive-text="连续播放"
         />
       </el-col>
-      <el-col :xs="0" :md="4"></el-col>
+      <el-col :xs="0" :sm="0" :md="4"></el-col>
       <el-col :span="2">
         <el-tooltip
           effect="dark"
@@ -72,7 +72,7 @@ C: 开启/关闭单句循环</pre>
           <el-button size="large" @click="seekNextSentence" style="font-size: 28px;" :icon="CaretRight" circle text />
         </el-tooltip>
       </el-col>
-      <el-col :xs="1" :md="4"></el-col>
+      <el-col :xs="1" :sm="1" :md="4"></el-col>
       <el-col :span="2">
         <el-tooltip
           effect="dark"
@@ -82,7 +82,7 @@ C: 开启/关闭单句循环</pre>
           <el-button size="large" @click="toggleSentenceLoop" :style="{ color: sentence_loop ? '#54D038' : null, fontSize: '28px' }" :icon="RefreshLeft" circle text />
         </el-tooltip>
       </el-col>
-      <el-col :xs="1" :md="0"></el-col>
+      <el-col :xs="1" :sm="1" :md="0"></el-col>
       <el-col :span="2">
         <el-tooltip
           effect="dark"

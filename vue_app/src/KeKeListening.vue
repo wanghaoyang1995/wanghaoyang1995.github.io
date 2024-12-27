@@ -180,7 +180,7 @@ const on_sentence_changed = (sentence_index: number) => {
             <SourceTextList :source_text_list="source_text_list" :activated_line_index="activated_line_index" />
           </el-tab-pane>
           <el-tab-pane label="答案对照" name="diff_panel" :disabled="not_submitted">
-            <DiffPanel language="plaintext" :user_content="user_content" :answer_content="answer_content" :folding="false" />
+            <DiffPanel language="plaintext" :user_content="user_content" :answer_content="answer_content" :folding="false" :audio_url="playurl" :article_id="keke_id_form.id" />
           </el-tab-pane>
         </el-tabs>
       </el-col>
