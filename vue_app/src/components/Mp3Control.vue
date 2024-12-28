@@ -14,15 +14,16 @@
           <template #reference>
             <el-button class="m-2" text><el-text tag="b">快捷键说明</el-text></el-button>
           </template>
-            <pre>Left: 上一句
-Right: 下一句
-Ctrl+Left: 后退10秒
-Ctrl+Right: 前进10秒
-Up: 增加播放速度
-Down: 降低播放速度
-Space: 播放/暂停
-X: 开启/关闭断句播放
-C: 开启/关闭单句循环</pre>
+            <pre>Alt+J: 上一句
+Alt+K: 重播当前句
+Alt+L: 下一句
+Alt+Left: 后退10秒
+Alt+Right: 前进10秒
+Alt+Up: 增加播放速度
+Alt+Down: 降低播放速度
+Alt+P: 播放/暂停
+Alt+X: 开启/关闭断句播放
+Alt+C: 开启/关闭单句循环</pre>
         </el-popover>
       </el-col>
     </el-row>
@@ -224,6 +225,11 @@ const seekBackward = () => {
   seek();
 };
 
+const seekCurrentSentence = () => {
+  current_time.value = props.mark_list[current_sentence_index.value];
+  seek();
+};
+
 const seekNextSentence = () => {
   current_sentence_index.value += 1;
   if (current_sentence_index.value >= props.mark_list.length) {
@@ -271,25 +277,25 @@ const audio_speed_down = () => {
 }
 
 const keydown_handler = (e: KeyboardEvent) => {
-  if (e.target !== document.body && !(e.target instanceof HTMLBodyElement)) return;
-  if (e.ctrlKey) {
+  if (e.altKey) {
     switch (e.key) {
+      case "j":
+      case "J":
+        seekLastSentence();
+        break;
+      case "k":
+      case "K":
+        seekCurrentSentence();
+        break;
+      case "l":
+      case "L":
+        seekNextSentence();
+        break;
       case "ArrowLeft":
         seekBackward();
         break;
       case "ArrowRight":
         seekForward();
-        break;
-      default:
-        break;
-    }
-  } else {
-    switch (e.key) {
-      case "ArrowLeft":
-        seekLastSentence();
-        break;
-      case "ArrowRight":
-        seekNextSentence();
         break;
       case "ArrowUp":
         audio_speed_up();
@@ -297,7 +303,8 @@ const keydown_handler = (e: KeyboardEvent) => {
       case "ArrowDown":
         audio_speed_down();
         break;
-      case " ":
+      case "p":
+      case "P":
         togglePlay();
         break;
       case "x":
@@ -311,6 +318,7 @@ const keydown_handler = (e: KeyboardEvent) => {
       default:
         break;
     }
+    e.preventDefault();
   }
 };
 

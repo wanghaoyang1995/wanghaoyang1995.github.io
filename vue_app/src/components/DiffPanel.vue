@@ -119,7 +119,7 @@ const on_download = () => {
     <html>
       <head>
         <meta charset="utf-8">
-        <title>${date_str} ${time_str}</title>
+        <title>听写练习_${date_str}</title>
       </head>
       <body>
         <div>
@@ -143,13 +143,18 @@ const on_download = () => {
         </div>
         <hr />
         <div>
-          <div><strong>我的输入</strong></div>
-          <div>${diff_html.value}</div>
+          <div><strong>差异对照</strong></div>
+          <div style="margin-top: 10px;">${diff_html.value}</div>
         </div>
         <hr />
         <div>
-          <div><strong>原文</strong></div>
-          <div style="background-color: #eeebd6; font-weight: 600; line-height: 18px;">${props.answer_content}</div>
+          <div><strong>参考原文</strong></div>
+          <div style="background-color: #bde1de; font-weight: 600; line-height: 18px; margin-top: 10px;">${props.answer_content}</div>
+        </div>
+        <hr />
+        <div>
+          <div><strong>我的输入</strong></div>
+          <div style="background-color: #dbd8c1; line-height: 18px; margin-top: 10px;">${props.user_content}</div>
         </div>
       </body>
     </html>
@@ -157,7 +162,7 @@ const on_download = () => {
   `;
 
   let blob = new Blob([template_html], {type: "text/html;charset=utf-8"});
-  saveAs(blob, `听写练习_${date_str}.html`);
+  saveAs(blob, `${date_str}.html`);
 };
 
 </script>
