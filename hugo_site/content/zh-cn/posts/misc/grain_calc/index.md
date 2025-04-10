@@ -71,7 +71,7 @@ $$S_{\Delta{PBC}}:S_{\Delta{PCA}}:S_{\Delta{PAB}}=\lambda_A:\lambda_B:\lambda_C$
 ---
 
 > - 输入一点p，以及一个封闭STL实体，以及一个包围盒内的网格节点。对每一个节点：
-> - &nsp遍历每一个三角面片，对每一个面片：
+> - 遍历每一个三角面片，对每一个面片：
 > - 在x轴方向正投影平面上，判断点P是否在三角形内部。如果否，标记该节点为外部点并返回。
 > - 如果是内部，就计算它的重心坐标分量比（面积比），此时我们已知了交点的y,z坐标，需要进一步求出交点x坐标。
 > - 用重心坐标定义，求出交点的x坐标。
@@ -89,12 +89,18 @@ $$S_{\Delta{PBC}}:S_{\Delta{PCA}}:S_{\Delta{PAB}}=\lambda_A:\lambda_B:\lambda_C$
 #include "../define.h"
 #include "../stl.h"
 
-// 计算三角形 (0, 0) (x1, y1) (x2, y2) 的有向面积
+// 计算三角形 O(0, 0) A(x1, y1) B(x2, y2) 的有向面积, OAB逆时针排列时是正
 int orientation(float x1, float y1, float x2, float y2, float& twice_signed_area) {
     twice_signed_area = x1 * y2 - x2 * y1;
     if (twice_signed_area > 0) return 1;
     else if (twice_signed_area < 0) return -1;
-    else return 0;
+    // twice_signed_area 为0, 有可能是OAB共线(或AB重合), 此时点可能在边AB上, 此时根据AB的关系返回其符号
+    // 区分以下几种情况, 是为了避免点位于两相邻三角形的共向边上时重复计数
+    else if(y1 > y2) return 1;
+    else if(y1 < y2) return -1;
+    else if(x1 < x2) return 1;
+    else if(x1 > x2) return -1;
+    else return 0;  // 此时OAB三点有任意两点重合, 直接认为在三角形外
 }
 
 // 判断平面上一点P(x0, y0)是否在三角形ABC内部, 其中 A(x1, y1), B(x2, y2), C(x3, y3)
@@ -106,7 +112,7 @@ bool point_in_triangle_2d(float x0, float y0, float x1, float y1, float x2, floa
     y1 -= y0; y2 -= y0; y3 -= y0;
 
     int sign1 = orientation(x2, y2, x3, y3, lambda_a);  // 三角形PBC 的有向面积*2
-    if (sign1 == 0) return false;  // 在边上, 认为不在三角形内部
+    if (sign1 == 0) return false;  // 此时面片与x轴平行, 认为不相交
     int sign2 = orientation(x3, y3, x1, y1, lambda_b);  // 三角形PCA
     if (sign2 != sign1) return false;  // 符号不同, 在三角形外部
     int sign3 = orientation(x1, y1, x2, y2, lambda_c);  // 三角形PAB
@@ -145,7 +151,7 @@ TEST(SDFTest, test_ray_casting) {
     STL::read_binary_stl("../data/grain_bin.stl", triangles, min_bound, max_bound);
     EXPECT_EQ(triangles.size(), 780);
 
-    Vertice p((max_bound - min_bound)*0.5);
+    Vertice p((max_bound - min_bound)*0.3);
     printf("p (%f, %f, %f)\n", p.x, p.y, p.z);
 
     uint count = 0;
@@ -172,12 +178,115 @@ int main(int argc, char **argv) {
 }
 ```
 
-#### 一个问题，刚好落在三角形边上的点算不算穿过面片？
+#### 一个关键问题，刚好落在三角形边上或顶点上的点算不算穿过面片？
 
-1. 按上面的代码实现是不算，但有潜在问题 ：
+以上代码实现中，落在三角形边上或顶点上的点O，返回的三角形OAB的有向面积等于0，但仍需要对不同情况进行区分。
 
-**潜在问题**：刚好穿过边的的顶点会被认为在面片外部，可能造成内部节点被错误标记成外部。
+当三角形OAB有向面积为零时，有可能
+1. 三角形其中两点重合（别忘了它是空间三角形在x方向的正投影）。此时要么射线刚好穿过顶点，要么面片与射线平行。
+2. 三个点共线，分两种情况，AB指向正方向或负方向，此时AB的方向来决定其符号。
 
-**解决办法**：在多个方向作同样的射线交叉检测，只要某一个方向的判断结果为内部，就认为它在内部。理论上仍不能完全避免网格节点与面片节点刚好三个方向都重合的极端情况。
+以下这段逻辑来处理有向面积为零时的不同情况：
 
-2. 如果也算内部，那可能出现一个点被判定与两个相邻面片同时相交的问题，造成统计出来的计数比真实情况高，也是问题。
+```cpp
+int orientation(float x1, float y1, float x2, float y2, float& twice_signed_area) {
+    twice_signed_area = x1 * y2 - x2 * y1;
+    if (twice_signed_area > 0) return 1;
+    else if (twice_signed_area < 0) return -1;
+    else if(y1 > y2) return 1;
+    else if(y1 < y2) return -1;
+    else if(x1 < x2) return 1;
+    else if(x1 > x2) return -1;
+    else return 0;
+}
+```
+
+---
+
+对于射线落在共享边的情形，该处理可以保证只被计数一次。如下图，P点与（有向）边AB组成的三角形PAB有向面积为正0，而与边BA组成三角形PBA的有向面积为负0，最终判定P与三角形ABC相交，与三角形ADB不相交。
+
+![image](./p1.png)
+
+测试代码：
+
+```cpp
+// 射线交点在共享边
+TEST(SDFTest, test_point_in_triangle_2d) {
+    // p (0, 0)
+    // A (-1, 5)
+    // B (1, -5)
+    // C (5, 3)
+    // D (-6, -2)
+
+    float a, b, c;
+
+    // P是否在ABC内部
+    bool b1 = point_in_triangle_2d(0.0f, 0.0f,
+                                   -1.0f, 5.0f,
+                                   1.0f, -5.0f,
+                                   5.0f, 3.0f,
+                                   a, b, c
+    );
+
+    // P是否在ADB内部
+    bool b2 = point_in_triangle_2d(0.0f, 0.0f,
+                                   -1.0f, 5.0f,
+                                   -6.0f, -2.0f,
+                                   1.0f, -5.0f,
+                                   a, b, c
+    );
+
+    ASSERT_TRUE(b1);
+    ASSERT_FALSE(b2);
+}
+```
+
+---
+
+对于射线落在共享顶点的情况，计数也是正确的，如下情形，只会对三角形AED判定穿过。
+
+![image](./p2.png)
+
+测试代码：
+
+```cpp
+// 射线交点在共享顶点
+TEST(SDFTest, test_point_in_triangle_2d_2) {
+    // p (0, 0)
+    // A (0, 0)
+    // B (-3, 5)
+    // C (-5, -2)
+    // D (3, 6)
+    // E (4, -3)
+    // F (-1, -6)
+    Vertice p(0.0f, 0.0f, 0.0f);
+    Vertice A(0.0f, 0.0f, 0.0f);
+    Vertice B(-3.0f, 5.0f, 0.0f);
+    Vertice C(-5.0f, -2.0f, 0.0f);
+    Vertice D(3.0f, 6.0f, 0.0f);
+    Vertice E(4.0f, -3.0f, 0.0f);
+    Vertice F(-1.0f, -6.0f, 0.0f);
+
+    float a, b, c;
+
+    std::vector<std::vector<Vertice>> test_case = {{p, A, B, C}, {p, A, C, F}, {p, A, F, E}, {p, A, E, D}, {p, A, D, B}};
+    std::vector<bool> result;
+    std::vector<bool> assertion = { false, false, false, true, false };
+    for (const auto& v : test_case) {
+        bool ret = point_in_triangle_2d(v[0].x, v[0].y,
+                             v[1].x, v[1].y,
+                             v[2].x, v[2].y,
+                             v[3].x, v[3].y,
+                             a, b, c
+                             );
+        result.push_back(ret);
+    }
+
+    for (int i = 0; i < result.size(); i++) {
+        ASSERT_EQ(result[i], assertion[i]);
+    }
+}
+```
+
+这个算法来自:
+[mesh2sdf - https://github.com/wang-ps/mesh2sdf/blob/master/csrc/makelevelset3.cpp](https://github.com/wang-ps/mesh2sdf/blob/master/csrc/makelevelset3.cpp)
