@@ -6,6 +6,7 @@ tags = []
 series = []
 
 lastmod = "2025-04-10T23:47:02+08:00"
+draft = true
 
 date = "2025-04-10T23:47:02+08:00"
 archives = '2025-04'

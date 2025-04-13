@@ -5,7 +5,7 @@ categories = ["杂项"]
 tags = []
 series = []
 
-lastmod = "2025-04-09T23:51:57+08:00"
+lastmod = "2025-04-13T23:29:52+08:00"
 
 date = "2025-04-09T23:51:57+08:00"
 archives = '2025-04'
@@ -290,3 +290,140 @@ TEST(SDFTest, test_point_in_triangle_2d_2) {
 
 这个算法来自:
 [mesh2sdf - https://github.com/wang-ps/mesh2sdf/blob/master/csrc/makelevelset3.cpp](https://github.com/wang-ps/mesh2sdf/blob/master/csrc/makelevelset3.cpp)
+
+---
+
+2025.04.13 补充：实测上面的代码有几率会错判（内点判为外，外点判为内）。原因是float的精度问题，大部分情况下不会出现0面积，所以需要做一个修正：
+
+```cpp
+__device__ int orientation(float x1, float y1, float x2, float y2, float& twice_signed_area) {
+    twice_signed_area = x1 * y2 - x2 * y1;
+//    if (twice_signed_area != 0.0f && abs(twice_signed_area - 0) < FLOAT_TOLERANCE) printf("float error!!\n");
+    if (abs(twice_signed_area - 0) < FLOAT_TOLERANCE) {  // 小于一定容差的都算为0, 避免误判
+        if(y1 > y2) return 1;
+        else if(y1 < y2) return -1;
+        else if(x1 < x2) return 1;
+        else if(x1 > x2) return -1;
+        else return 0;
+    } else {
+        if (twice_signed_area > 0) return 1;
+        else return -1;
+    }
+}
+```
+
+这个代码运行得很好。
+
+测试代码：
+
+```cpp
+//
+// Created by wangh on 2025/4/13.
+//
+
+#include <gtest/gtest.h>
+
+#include <cuda_runtime.h>
+#include "../define.h"
+#include "../stl.h"
+
+Grid field_grid;
+std::vector<float> field;
+std::vector<Triangle> triangles_cube;
+std::vector<Vertice> vertices;
+
+float *d_field;
+Grid *d_grid;
+Triangle *d_triangles_cube;
+
+void create_cube() {
+    // 正方体8个顶点
+    vertices = {
+            {0.0f, 0.0f, 0.0f},
+            {1.0f, 0.0f, 0.0f},
+            {1.0f, 0.0f, 1.0f},
+            {0.0f, 0.0f, 1.0f},
+            {0.0f, 1.0f, 0.0f},
+            {1.0f, 1.0f, 0.0f},
+            {1.0f, 1.0f, 1.0f},
+            {0.0f, 1.0f, 1.0f}
+    };
+
+    // 向x,y,z轴三个方向平移1
+//    Vertice v1 = {1.0f, 1.0f, 1.0f};
+//    for (Vertice& vertice : vertices) {
+//        vertice = vertice + v1;
+//    }
+
+    triangles_cube = {{vertices[1 - 1], vertices[2 - 1], vertices[3 - 1]},
+                      {vertices[1 - 1], vertices[3 - 1], vertices[4 - 1]},
+                      {vertices[4 - 1], vertices[3 - 1], vertices[7 - 1]},
+                      {vertices[4 - 1], vertices[7 - 1], vertices[8 - 1]},
+                      {vertices[8 - 1], vertices[7 - 1], vertices[6 - 1]},
+                      {vertices[8 - 1], vertices[6 - 1], vertices[5 - 1]},
+                      {vertices[5 - 1], vertices[6 - 1], vertices[2 - 1]},
+                      {vertices[5 - 1], vertices[2 - 1], vertices[1 - 1]},
+                      {vertices[2 - 1], vertices[6 - 1], vertices[7 - 1]},
+                      {vertices[2 - 1], vertices[7 - 1], vertices[3 - 1]},
+                      {vertices[5 - 1], vertices[1 - 1], vertices[4 - 1]},
+                      {vertices[5 - 1], vertices[4 - 1], vertices[8 - 1]},
+    };
+
+    STL::write_ascii_stl("./cube.stl", triangles_cube);
+}
+
+void init_cuda_memory() {
+    cudaMalloc((void**)&d_field, field.size() * sizeof(float));
+    cudaMalloc((void**)&d_triangles_cube, triangles_cube.size() * sizeof(Triangle));
+    cudaMalloc((void**)&d_grid, sizeof(Grid));
+
+    cudaMemcpy(d_field, field.data(), field.size() * sizeof(float), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_triangles_cube, triangles_cube.data(), triangles_cube.size() * sizeof(Triangle), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_grid, &field_grid, sizeof(Grid), cudaMemcpyHostToDevice);
+}
+
+TEST(SIGNED_FIELD_TEST, test_cube) {
+    field_grid.grid_size = {8, 8, 8};
+    field_grid.min_bound = { -0.05f, -0.05f, -0.05f };
+    field_grid.grid_step = { 0.1f, 0.1f, 0.1f };
+    field_grid.num_grid_points = field_grid.grid_size.x * field_grid.grid_size.y * field_grid.grid_size.z;
+
+    field.resize(field_grid.num_grid_points, FLT_MAX);
+
+    create_cube();
+    init_cuda_memory();
+
+    init_signed_field(d_field, d_grid, d_triangles_cube, triangles_cube.size(), field_grid.num_grid_points, field);
+
+    cudaMemcpy(field.data(), d_field, field.size() * sizeof(float), cudaMemcpyDeviceToHost);
+
+    uint count = 0;
+    for (uint i = 0; i < field.size(); i++) {
+        if (field[i] > 0) {
+            count++;
+        }
+
+        float3 coord = field_grid.coordinate(i);
+        if (coord.x > 0.0f && coord.x < 1.0f && coord.y > 0.0f && coord.y < 1.0f && coord.z > 0.0f && coord.z < 1.0f) {
+            if (field[i] < 0) {  // 内点误判成外点
+                uint3 ijk = field_grid.index_3d(i);
+                printf("error1 ijk: %d, %d, %d\n", ijk.x, ijk.y, ijk.z);
+            }
+            ASSERT_TRUE(field[i] >= 0);
+        } else {
+            if (field[i] >= 0) {  // 外点误判成内点
+                uint3 ijk = field_grid.index_3d(i);
+                printf("error2 ijk: %d, %d, %d\n", ijk.x, ijk.y, ijk.z);
+            }
+            ASSERT_TRUE(field[i] < 0);
+        }
+    }
+
+    printf("count: %d\n", count);
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+```
