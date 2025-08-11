@@ -19,7 +19,7 @@
         disabled
         show-score
         text-color="#292929"
-        score-template="{value}"
+        :score-template="formatted_score"
       />
     </el-col>
     <el-col :xs="6" :sm="6" :md="4" :offset="1">
@@ -67,7 +67,10 @@ const props = defineProps({
 const selector = ref<string>("vue-jsdiff");
 const score = ref<number>(0);
 const rate = computed(() => {
-  return (score.value * 5.0).toFixed(1);
+  return score.value * 5.0;
+});
+const formatted_score = computed(() => {
+  return `${(score.value * 5.0).toFixed(1)}`
 });
 const diff_html = ref<string>("");
 const total_words = ref<number>(0);
