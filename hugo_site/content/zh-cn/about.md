@@ -5,6 +5,7 @@ summary = ""
 lastmod = "2024-12-09T22:41:10+08:00"
 
 layout = "about"
+type = "page"
 date = "2024-12-09T22:41:10+08:00"
 isCJKLanguage = true
 +++
