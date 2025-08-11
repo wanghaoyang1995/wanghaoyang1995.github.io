@@ -65,7 +65,7 @@ const extract_answer_content = (content: Array<Sentence>) => {
 }
 
 const fetchArticle = async (article_id: string) => {
-  const raw_text_param = `{"Method":"v9_news_getcontent","Params":{"id":${article_id}},"Token":"","Terminal":"11","Version":"4.0","UID":0,"AppFlag":"18","Sign":"","ApVersionCode":1}`;
+  const raw_text_param = `{"Method":"web_ting_getcontent","Params":{"id":${article_id}},"Token":"","Terminal":"13","Version":"4.0","UID":0,"AppFlag":"18","Sign":"","ApVersionCode":100}`;
   const mp3_url_prefix = "https://k7.kekenet.com/";
 
   try {
@@ -77,7 +77,6 @@ const fetchArticle = async (article_id: string) => {
           "Content-Type": "application/x-www-form-urlencoded",
           "Accept": "application/json",
           "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-US;q=0.7",
-          "Cache-Control": "no-cache",
         }
       }
     );

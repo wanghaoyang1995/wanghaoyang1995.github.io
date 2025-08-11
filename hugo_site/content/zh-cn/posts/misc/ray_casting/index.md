@@ -25,11 +25,11 @@ $$\textbf{u} \times \textbf{v} = |\textbf{u}||\textbf{v}|\sin\theta\textbf{n}$$
 
 矩阵表示：
 $$\textbf{u} \times \textbf{v} =
-\begin{bmatrix}
+\begin{vmatrix}
 \textbf{i} & \textbf{j} & \textbf{k} \\
 u_1 & u_2 & u_3 \\
 v_1 & v_2 & v_3
-\end{bmatrix}
+\end{vmatrix}
 $$
 
 **几何意义**：叉积的结果是一个向量，模长等于两个向量为边所构成的平行四边形的面积，方向与两向量垂直，由右手定则决定。
