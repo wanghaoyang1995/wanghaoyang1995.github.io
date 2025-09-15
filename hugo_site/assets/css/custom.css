@@ -5,7 +5,8 @@
 
 @font-face {
     font-family: "my_font_ADF";  /* 定义字体名称 */
-    src: url("/fonts/AiDianFengYaHei.ttf") format("truetype");  /* 指定字体文件的路径 */
+    src: url("/fonts/AiDianFengYaHei.woff2") format("woff2"),
+	     url("/fonts/AiDianFengYaHei.ttf") format("truetype");
 }
 
 /* 解决列表渲染与layui.css冲突 */
