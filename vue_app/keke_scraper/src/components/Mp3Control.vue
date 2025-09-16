@@ -233,7 +233,7 @@ const seekCurrentSentence = () => {
 const seekNextSentence = () => {
   current_sentence_index.value += 1;
   if (current_sentence_index.value >= props.mark_list.length) {
-    current_sentence_index.value = props.mark_list.length - 1;
+    current_sentence_index.value = 0;
   }
   current_time.value = props.mark_list[current_sentence_index.value];
   seek();
@@ -242,7 +242,7 @@ const seekNextSentence = () => {
 const seekLastSentence = () => {
   current_sentence_index.value -= 1;
   if (current_sentence_index.value < 0) {
-    current_sentence_index.value = 0;
+    current_sentence_index.value = props.mark_list.length - 1;
   }
   current_time.value = props.mark_list[current_sentence_index.value];
   seek();
@@ -355,6 +355,9 @@ onMounted(() => {
   });
   audio.value.addEventListener("ended", () => {
     playing.value = false;
+    current_time.value = 0;
+    current_sentence_index.value = 0;
+    emit("currentSentenceChanged", current_sentence_index.value);
   });
 });
 
