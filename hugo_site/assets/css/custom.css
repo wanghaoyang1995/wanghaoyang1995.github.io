@@ -9,11 +9,25 @@
 	font-display: swap;
 }
 
-/* 解决列表渲染与layui.css冲突 */
-li {
-	list-style: inside !important;
-	list-style-type: decimal !important;
+/* 解决markdown列表没有序号的问题 */
+ul > li {
+  list-style-type: disc;
+  list-style-position: inside
 }
+
+ol > li {
+  list-style-type: decimal;
+  list-style-position: inside
+}
+
+a.external-link {
+  color: #237dc2;
+}
+
+a.external-link:hover {
+  color: #2497f1;
+}
+
 ol {
 	margin: 20px !important;
 }

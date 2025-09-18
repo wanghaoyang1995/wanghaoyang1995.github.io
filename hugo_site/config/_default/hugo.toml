@@ -18,7 +18,7 @@ defaultContentLanguageInSubdir = false
       description = "WHY的个人站点"
       subtitle = "我什么也不做，并且睡得很晚"
       author = "WHY"
-      author_desc = "想不出来要写什么，这个卡片只是为了占位"
+      author_desc = "..."
 
   [languages.en-us]
     contentDir = "content/en-us"

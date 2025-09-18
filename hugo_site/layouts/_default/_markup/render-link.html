@@ -1,0 +1,8 @@
+{{ $base := .Page.Site.BaseURL | urls.Parse }}
+{{ $dest := .Destination | urls.Parse }}
+{{ $isExternal := and (ne $dest.Host "") (ne $dest.Host $base.Host) }}
+<a href="{{ .Destination }}"
+  class="{{ if $isExternal }}external-link{{ end }}"
+  {{ if $isExternal }}target="_blank" rel="noopener noreferrer"{{ end }}>
+  {{ .Text }}
+</a>
