@@ -44,7 +44,7 @@
     [[main]]
     parent = "tools"
     name = "听写练习"
-    pageRef = "/keke_scraper/"
+    pageRef = "/tools/keke_scraper/"
     weight = 410
 [[main]]
   name = "关于"

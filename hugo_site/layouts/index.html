@@ -54,11 +54,10 @@
               <div class="layui-card content_area">
                 <div class="layui-card-body">
                   <h4 style="font-weight: 400;background-color: #ac9edb;border-style: double;"><i class="layui-icon layui-icon-date"></i>&nbsp;{{T "recent_title"}}</h4>
-                  {{ with .Site.GetPage "posts" }}
-                    {{ range first 5 .Pages }}
-                      {{ .Render "summary" }}
-                    {{end}}
-                  {{end}}
+                  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+                  {{ range first 5 (sort $posts "Date" "desc") }}
+                    {{ .Render "summary" }}
+                  {{ end }}
                 </div>
               </div>
             </div>

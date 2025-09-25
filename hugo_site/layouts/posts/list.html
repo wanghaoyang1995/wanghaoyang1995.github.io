@@ -1,10 +1,14 @@
 {{ define "main" }}
 <main>
   <div>
-    <h2 class="default_list_title">{{ .Title }}<span class="layui-badge layui-bg-gray" style="vertical-align:text-top;">{{.Pages.Len}}</span></h2>
+    {{ $allPosts := where .Site.RegularPages "Section" "posts" }}
+    {{ $sortedPosts := sort $allPosts "Date" "desc" }}
+    {{ $paginator := .Paginate $sortedPosts }}
+
+    <h2 class="default_list_title">{{ .Title }}<span class="layui-badge layui-bg-gray" style="vertical-align:text-top;">{{ $paginator.TotalNumberOfElements }}</span></h2>
     <hr />
 
-    {{ range .Paginator.Pages }}
+    {{ range $paginator.Pages }}
       {{ .Render "summary" }}
     {{ end }}
     {{ partial "pagination.html" . }}
