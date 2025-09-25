@@ -1,9 +1,8 @@
 {{- $days_to_mark := dict -}}
 
-{{- with .Site.GetPage "posts" }}
-    {{- range .Pages.ByDate }}
-      {{- $days_to_mark = merge $days_to_mark (dict (time.Format "2006-01-02" .Date) "") }}
-    {{- end }}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ range $index, $item := $posts.ByDate.Reverse }}
+  {{- $days_to_mark = merge $days_to_mark (dict (time.Format "2006-01-02" .Date) "") }}
 {{- end }}
 
 {{-  $days_to_mark | jsonify -}}
