@@ -1,8 +1,8 @@
 +++
 title = "射线交叉法判断点是否位于几何体内部"
 summary = ""
-categories = ["杂项"]
-tags = []
+categories = ["图形学"]
+tags = ["图形学"]
 series = []
 
 lastmod = "2025-04-13T23:29:52+08:00"
