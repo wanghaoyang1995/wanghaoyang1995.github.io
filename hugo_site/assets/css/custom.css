@@ -18,35 +18,35 @@
 }
 
 /* 解决markdown列表没有序号的问题 */
-ul > li {
+.content_area ul > li {
   list-style-type: disc;
   list-style-position: inside
 }
-li li {
+.content_area li li {
 	list-style-type: circle;
 }
-li li li {
+.content_area li li li {
 	list-style-type: square;
 }
-ul {
+.content_area ul {
 	margin: 0 0 1.25rem;
 	padding-left: 2em;
 }
 
-ol > li {
+.content_area ol > li {
   list-style-type: decimal;
   list-style-position: inside
 }
 
-a.external-link {
+.content_area a.external-link {
   color: #237dc2;
 }
 
-a.external-link:hover {
+.content_area a.external-link:hover {
   color: #2497f1;
 }
 
-ol {
+.content_area ol {
 	margin: 20px !important;
 }
 
