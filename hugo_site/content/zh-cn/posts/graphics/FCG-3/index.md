@@ -93,7 +93,7 @@ $$R=[-0.5,n_{x}-0.5]\times[-0.5,n_{y}-0.5]$$
 
 ##### 3.2.1 像素值
 
-*HDR*：high dynamic range。HDR图像是指以浮点数保存、具有很宽颜色范围的图像。
+*HDR*：high dynamic range。HDR图像是指以浮点数保存、具有很宽颜色范围的图像。  
 *LDR*：low dynamic range。以整数保存，颜色范围有限。
 
 像素格式类型：
