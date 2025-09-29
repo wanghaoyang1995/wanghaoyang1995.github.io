@@ -5,11 +5,11 @@ categories = ["图形学"]
 tags = ["读书笔记", "图形学"]
 series = []
 
-lastmod = "2025-09-29T12:30:44+08:00"
-draft = true
+lastmod = "2025-09-29T22:46:02+08:00"
+draft = false
 math = true
 
-date = "2025-09-29T12:30:40+08:00"
+date = "2025-09-29T22:45:58+08:00"
 archives = '2025-09'
 isCJKLanguage = true
 +++

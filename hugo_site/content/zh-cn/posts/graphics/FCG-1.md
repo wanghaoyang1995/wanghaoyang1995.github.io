@@ -1,6 +1,6 @@
 +++
 title = "FCG-Chapter-1"
-summary = "《Fundamentals of Computer Graphics》"
+summary = ""
 categories = ["图形学"]
 tags = ["读书笔记", "图形学"]
 series = []
@@ -18,7 +18,7 @@ isCJKLanguage = true
 >
 > 在工作中模模糊糊学习了不少碎片化图形学知识，但只见树木不见森林，总有一种不踏实的感觉。有必要系统地学习一遍。  
 > 看了一部分闫神的中文教程[GAMES101](https://www.bilibili.com/video/BV1X7411F744/?vd_source=72a1e8619f1b5c4fb3d3d80df57cbec8)，这是个很好的学习材料。  
-> 为了印象深刻，我还是决定把虎书读一遍，记下学习笔记。
+> 为了印象深刻，我决定把《Fundamentals of Computer Graphics》读一遍，记下学习笔记。
 >
 > 平时要做的事情太多，希望能坚持下来。
 >
