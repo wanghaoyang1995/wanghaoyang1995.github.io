@@ -1,6 +1,6 @@
 +++
 title = "FCG-Chapter-1"
-summary = ""
+summary = "《Fundamentals of Computer Graphics》"
 categories = ["图形学"]
 tags = ["读书笔记", "图形学"]
 series = []
@@ -155,7 +155,7 @@ if (a > 0) then
 - transform：一个用于变换的4*4矩阵。你可以包括一个矩阵乘，以及应用到位置、方向、表面法向量的成员函数。见第7章。
 - image：一个2维RGB像素，有一个输出操作。
 
-另外，可能增加一些类，用于间隔、标准正交基以及标架。
+另外，可能增加一些类，用于区间、标准正交基以及标架。
 
 > 你可能还考虑定义一个单位向量，但我发现它们带来更多的是麻烦而非收益。——P.S.
 

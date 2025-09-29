@@ -9,14 +9,28 @@
 	font-display: swap;
 }
 
+/* markdown figure短代码图片属性 */
+.center-figure {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
 /* 解决markdown列表没有序号的问题 */
 ul > li {
   list-style-type: disc;
   list-style-position: inside
 }
-
+li li {
+	list-style-type: circle;
+}
+li li li {
+	list-style-type: square;
+}
 ul {
 	margin: 0 0 1.25rem;
+	padding-left: 2em;
 }
 
 ol > li {
