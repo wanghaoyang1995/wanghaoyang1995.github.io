@@ -1,7 +1,7 @@
 {{ define "main" }}
   <header><h2 class="article_title">{{ .Title }}</h2></header>
   <div class="article_meta_bar">
-      <div>{{ T "released_on" }} {{ .Date.Format "2006-01-02 15:04:05" }}</div>
+      <div>{{ T "created_on" }} {{ .Date.Format "2006-01-02 15:04:05" }}&nbsp;&nbsp;&nbsp;&nbsp;{{ T "meta_lastmod" }} {{ .Lastmod.Format "2006-01-02 15:04:05" }}</div>
       <div>
         {{if .Params.categories}}{{ T "categories" }}: {{ range .Params.categories }}{{ with index $.Site.Taxonomies.categories .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge theme_color_categories" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}
         {{if .Params.tags}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ T "tags" }}: {{ range .Params.tags }}{{ with index $.Site.Taxonomies.tags .}}<a href="{{ .Page.RelPermalink }}" class="layui-badge theme_color_tags" style="margin-left: 2px;">{{.Page.Title}}</a>{{end}}{{end}}{{end}}

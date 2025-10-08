@@ -5,7 +5,7 @@ categories = ["图形学"]
 tags = ["读书笔记", "图形学"]
 series = []
 
-lastmod = "2025-10-07T10:22:48+08:00"
+lastmod = "2025-10-08T16:19:30+08:00"
 draft = false
 math = true
 

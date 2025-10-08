@@ -59,6 +59,9 @@
 - id: released_on
   translation: "发布于"
 
+- id: created_on
+  translation: "创建于"
+
 - id: series
   translation: "系列"
 
@@ -85,7 +88,7 @@
 
 # Post meta
 - id: meta_lastmod
-  translation: "最后修改"
+  translation: "最近修改"
 
 - id: meta_translations
   translation: "翻译"
