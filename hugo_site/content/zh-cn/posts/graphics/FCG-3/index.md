@@ -157,7 +157,7 @@ RGB颜色空间的基本思想：不同颜色借助红、绿、蓝三种原色�
 如果我们想在背景色\(c_{b}\)上对前景色\(c_{f}\)进行混合，像素被前景遮盖的比例为\(\alpha\)，我们可以使用这个公式：
 $$c=\alpha c_{f}+(1-\alpha)c_{b}$$
 
-这个\(\alpha\)值可能被存储在一张独立的灰度图中，这个灰度图叫做*"alpha蒙版(alpha mask)"*或者*"transparency mask"*。或者，这个信息也可存储为RGB图像的第四个分量，它叫做*"alpha通道(alpha channel)"*。
+这个\(\alpha\)值可能被存储在一张独立的灰度图中，这个灰度图叫做"*alpha蒙版(alpha mask)*"或者"*transparency mask*"。或者，这个信息也可存储为RGB图像的第四个分量，它叫做"*alpha通道(alpha channel)*"。
 
 ##### 3.4.1 图像存储
 

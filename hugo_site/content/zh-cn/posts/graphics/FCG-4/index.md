@@ -114,3 +114,39 @@ ray.\(\textbf{d}\) ← -d\(\textbf{w}\) + u\(\textbf{u}\)+v\(\textbf{v}\)
 #### 4.4 射线-物体求交
 
 ##### 4.4.1 射线与球相交
+
+给定一条射线 \(\textbf{p}(t)=\textbf{e}+t\textbf{d}\) 以及一个隐式表面 \(f(\textbf{p})=0\)，其交点的t值可用如下方程计算：
+$$f(\textbf{p}(t))=0 \quad or \quad f(\textbf{e}+t\textbf{d})=0$$
+
+球心为 \(\textbf{c}=(x_c,y_c,z_c)\)、半径为\(R\)的球面方程为：
+$$(x-x_c)^2+(y-y_c)^2+(z-z_c)^2-R^2=0$$
+
+或者以向量表示：
+$$(\textbf{p}-\textbf{c})\cdot(\textbf{p}-\textbf{c})-R^2=0$$
+$$\Rightarrow(\textbf{e}+t\textbf{d}-\textbf{c})\cdot(\textbf{e}+t\textbf{d}-\textbf{c})-R^2=0$$
+$$\Rightarrow(\textbf{d}\cdot\textbf{d})t^2+2\textbf{d}\cdot(\textbf{e}-\textbf{c})t+(\textbf{e}-\textbf{c})\cdot(\textbf{e}-\textbf{c})-R^2=0$$
+
+这是一个二次方程，其解为：
+$$t=\frac{-\textbf{d}\cdot(\textbf{e}-\textbf{c})\pm\sqrt{(\textbf{d}\cdot(\textbf{e}-\textbf{c}))^2-(\textbf{d}\cdot\textbf{d})((\textbf{e}-\textbf{c})\cdot(\textbf{e}-\textbf{c})-R^2)}}{(\textbf{d}\cdot\textbf{d})}$$
+
+在实际实现中，你应该首先检查其判别式(discriminant)，以确定有几个解。
+
+交点\(\textbf{p}\)上的法向量可以通过梯度计算：
+$$\textbf{n}=2(\textbf{p}-\textbf{c})$$
+其单位法向量为:
+$$(\textbf{p}-\textbf{c})/R$$
+
+##### 4.4.2 射线与三角形相交
+
+射线与参数曲面相交，其笛卡尔坐标满足：
+$$\left. \begin{matrix}
+  x_e+tx_d=f(u,v)\\
+  y_e+ty_d=g(u,v)\\
+  z_e+tz_d=h(u,v)
+\end{matrix} \right\}\quad \mathrm{or,} \quad \textbf{e}+t\textbf{d}=\textbf{f}(u,v)$$
+
+在本节中三角形顶点为\(a\)，\(b\)和\(c\)一个参数平面，使用[2.9.2节]({{< ref "/posts/graphics/fcg-2" >}}#section-2_9_2)的向量形式表示，则交点满足：
+$$\textbf{e}+t\textbf{d}=\textbf{a}+\beta(\textbf{b}-\textbf{a})+\gamma(\textbf{c}-\textbf{a})$$
+
+当且仅当\(\beta>0\)，\(\gamma>0\)且\(\beta+\gamma<1\)时交点位于三角形内。
+
