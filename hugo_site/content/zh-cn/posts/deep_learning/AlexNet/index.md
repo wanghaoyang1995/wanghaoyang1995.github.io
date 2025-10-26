@@ -182,7 +182,7 @@ CNN中的池化层汇总了同一个核特征图中相邻的神经元组。
 尽管ILSVRC的1000个类别使得每个样本对"图像到标签映射"施加10比特的约束，在不考虑过拟合的情况下，这也被证明是不够学习如此之多参数的。  
 下面，我们描述了我们对抗过拟合的两种主要方式。
 
-> 这里第二句有点让人疑惑，原句是"Although the 1000 classes of ILSVRC make each training example impose 10 bits of constraint on the mapping from image to label, this turns out to be insufficient to learn so many parameters without considerable overfitting."。这里10 bits是说1000种类别大概需要10个比特位来存储（$2^10$），作者要说的是"6000万参数"这个模型的表达能力非常大，而数据集所包含的总信息量（"每样本10比特" \(\times\) "每类别1000张图片"）相比这6000万参数来说还是太少了，很容易过拟合，必须要考虑这个问题，然后顺着引出了本章的内容。
+> 这里第二句有点让人疑惑，原句是"Although the 1000 classes of ILSVRC make each training example impose 10 bits of constraint on the mapping from image to label, this turns out to be insufficient to learn so many parameters without considerable overfitting."。这里10 bits是说1000种类别大概需要10个比特位来存储（\(2^{10}\)），作者要说的是"6000万参数"这个模型的表达能力非常大，而数据集所包含的总信息量（"每样本10比特" \(\times\) "每类别1000张图片"）相比这6000万参数来说还是太少了，很容易过拟合，必须要考虑这个问题，然后顺着引出了本章的内容。
 
 ##### 4.1 数据增广
 
