@@ -174,7 +174,7 @@ CNN中的池化层汇总了同一个核特征图中相邻的神经元组。
 第四层卷积层有384个 \(3 \times 3 \times 192\) 的核，第五层卷积有256个 \(3 \times 3 \times 192\) 的核。  
 每个全连接层有4096个神经元。
 
-![architecture](./architecture_compressed.png)
+{{< figure src="architecture_compressed.png" caption="CNN模型整体架构" class="center-figure" width="75%" >}}
 
 #### 4. 降低过拟合
 
