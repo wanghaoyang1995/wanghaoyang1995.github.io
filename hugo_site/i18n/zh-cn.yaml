@@ -141,7 +141,7 @@
 
 # Footer
 - id: footer_credits
-  translation: "本站由<a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a>生成"
+  translation: "本站由<a href=\"https://gohugo.io/\" rel=\"nofollow noopener\" target=\"_blank\">Hugo</a>构建"
 
 # 404
 - id: 404_title
