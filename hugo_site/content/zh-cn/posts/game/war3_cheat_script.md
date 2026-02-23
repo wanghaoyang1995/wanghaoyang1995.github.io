@@ -1,5 +1,5 @@
 +++
-title = "我在 20 年前的老游戏里当上帝"
+title = "电子拐杖的制作方法"
 summary = ""
 categories = ["游戏"]
 tags = ["war3"]
