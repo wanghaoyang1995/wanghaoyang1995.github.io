@@ -6,30 +6,85 @@
 </div>
 
 <script>
-  let days_to_mark = null;
+  // 获取当前站点语言并映射到 laydate 支持的语言代码
+  var currentLanguage = "{{ .Site.Language.Lang }}";
+  var laydateLang = "en"; // 默认英文
+
+  // 语言代码映射
+  if (currentLanguage === "zh-cn") {
+    laydateLang = "cn";
+  } else if (currentLanguage === "en" || currentLanguage === "en-us") {
+    laydateLang = "en";
+  }
+
   layui.use(function () {
     var laydate = layui.laydate;
     var $ = layui.$;
     var util = layui.util;
 
-    let render_calendar = function (days_to_mark) {
+    var render_calendar = function (days_to_mark) {
+      // 检查sessionStorage中是否有保存的日期
+      var savedDate = sessionStorage.getItem('calendarSelectedDate');
+      var initDate = null;
+      
+      if (savedDate) {
+        // 如果有保存的日期，使用它初始化日历
+        initDate = savedDate;
+        // 清除保存的日期，避免影响下次访问
+        sessionStorage.removeItem('calendarSelectedDate');
+      }
+
       laydate.render({
         elem: "#ID-laydate-cell-render",
-        lang: "en",
+        lang: laydateLang,
         position: "static",
         isPreview: false,
         showBottom: false,
         theme: ["#878787"],
+        value: initDate, // 使用保存的日期或默认的当前日期
         change: function(value, date, endDate){
-          console.log(value); // 日期字符，如： 2017-08-18
-          console.log(date); // 包含年月日时分秒各项值的对象
-          console.log(endDate); // 结束日期时间对象，当设置 range 时才会返回。对象成员同上。
+          console.log('Selected date:', value);
         },
         mark: days_to_mark,
+        done: function(value, date, endDate) {
+          // 日期选择完成后的回调
+          if (date) {
+            // 检查该月份是否有文章
+            var hasPosts = false;
+            var year = date.year;
+            var month = date.month < 10 ? '0' + date.month : date.month;
+            var day = date.date < 10 ? '0' + date.date : date.date;
+            var monthKey = year + '-' + month;
+            var fullDate = year + '-' + month + '-' + day;
+            
+            // 检查days_to_mark中是否有该月份的文章
+            // days_to_mark 是一个对象，键是日期字符串（格式：2006-01-02）
+            if (days_to_mark && typeof days_to_mark === 'object') {
+              for (var dateStr in days_to_mark) {
+                if (dateStr.indexOf(monthKey) === 0) {
+                  hasPosts = true;
+                  break;
+                }
+              }
+            }
+            
+            if (hasPosts) {
+              // 保存点击的日期到sessionStorage
+              sessionStorage.setItem('calendarSelectedDate', fullDate);
+              // 构建月份页面的URL：/archives/年份-月份/
+              var monthUrl = '{{ "/archives/" | relLangURL }}' + year + '-' + month + '/';
+              // 跳转到月份页面
+              window.location.href = monthUrl;
+            } else {
+              // 如果该月份没有文章，不跳转
+              console.log('No posts found for:', monthKey);
+            }
+          }
+        }
       });
     };
 
-    const postDayMarkUrl = {{ "post_day_mark.json" | relLangURL }};
+    var postDayMarkUrl = {{ "post_day_mark.json" | relLangURL }};
 
     $.getJSON(postDayMarkUrl, function (data) {
       render_calendar(data);
