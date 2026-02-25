@@ -28,7 +28,8 @@
                 {{- $month_key := . -}}
                 <li class="widget__item">
                   {{- /* TODO: 这里生成的URL由字符串拼接而来, 依赖于根配置下taxonomies.archives的路径名不改变. 如何直接访问到它？ */ -}}
-                  <a class="widget__link" href="{{ printf "%sarchives/%s-%s/" $.Site.BaseURL $year_key $month_key | safeHTML }}">
+                  {{- /* 月份归档链接 */ -}}
+                    <a class="widget__link" href="{{ (printf "/archives/%s-%s/" $year_key $month_key) | relLangURL }}">
                     <div class="layui-row">
                       <span class="layui-col-md12 truncate">
                         {{ printf "%s - %s" $year_key $month_key }}
@@ -43,7 +44,7 @@
           {{- end -}}
 
           <li class="widget__item">
-            <a class="widget__link" href="{{ printf "%sarchives/" $.Site.BaseURL | safeHTML }}">
+            <a class="widget__link" href="{{ "/archives/" | relLangURL }}">
               <div class="layui-row">
                 <span class="layui-col-md12 truncate" style="font-weight: lighter;">
                   {{ T "view_all"}}

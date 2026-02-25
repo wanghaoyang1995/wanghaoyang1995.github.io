@@ -4,9 +4,25 @@
 <header>
   <div class="layui-row" id="title-bar">
     <div id="main-title">
-      <a href="/" style="font-weight: 300;">{{ $title }}</a>
+
+      {{ if eq .Site.Language.Lang "zh-cn" }}
+        <a href="/" style="font-weight: 300;">{{ $title }}</a>
+      {{ else if eq .Site.Language.Lang "en-us" }}
+        <a href="/en-us/" style="font-weight: 300;">{{ $title }}</a>
+      {{ end }}
     </div>
-      <div id="subtitle">{{ $subtitle }}</div>
+
+    <div id="subtitle" style="display:flex; justify-content:space-between; align-items:center; font-size: 1.0rem; padding: 0 12px;">
+      <span>{{ $subtitle }}</span>
+
+      <span>
+        {{ if eq .Site.Language.Lang "zh-cn" }}
+          <a href="{{ "/en-us/" | relURL }}" style="color: #8a8a8a;">English</a>
+        {{ else if eq .Site.Language.Lang "en-us" }}
+          <a href="{{ "/" | relURL }}" style="color: #8a8a8a;">中文</a>
+        {{ end }}
+      </span>
+    </div>
   </div>
 
   <div class="layui-row">

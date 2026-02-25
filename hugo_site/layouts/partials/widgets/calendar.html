@@ -29,7 +29,9 @@
       });
     };
 
-    $.getJSON("/post_day_mark.json", function (data) {
+    const postDayMarkUrl = {{ "post_day_mark.json" | relLangURL }};
+
+    $.getJSON(postDayMarkUrl, function (data) {
       render_calendar(data);
     }).fail(function (jqxhr, textStatus, error) {
       console.error('Error fetching JSON file:', textStatus, error);

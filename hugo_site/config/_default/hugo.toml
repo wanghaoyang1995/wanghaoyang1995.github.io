@@ -24,17 +24,17 @@ defaultContentLanguageInSubdir = false
     contentDir = "content/en-us"
     languageCode = "en-US"
     languageName = "English"
-    title = "WHY's site"
+    title = "Wyatt Wang's Space"
     weight = 2
     [languages.en-us.pagination]
       disableAliases = false
       pagerSize = 10
       path = "page"
     [languages.en-us.Params]
-      description = "WHY's site"
-      subtitle = "Just a confused ?"
-      author = "why?"
-      author_desc = "no reason"
+      description = "Wyatt Wang's Space"
+      subtitle = "Some dreams sound too wild when spoken aloud."
+      author = "Wyatt Wang"
+      author_desc = "Everyone seems full and satisfied,\nenjoying feasts and festivals.\n\nI alone remain quiet and still,\nlike an infant not yet awakened."
 
 [outputFormats]
   [outputFormats.search_index]

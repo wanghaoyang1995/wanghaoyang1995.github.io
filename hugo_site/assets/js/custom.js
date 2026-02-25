@@ -22,9 +22,14 @@ layui.use(function(){
     "btn_copy_link": function() {
       const urlToCopy = window.location.href;
       navigator.clipboard.writeText(urlToCopy).then(function() {
-        layer.msg('{{T "copy_link_success"}}');
+        const lang = document.documentElement.lang || "zh-cn";
+        const msgMap = {
+          "zh-cn": "链接已复制！",
+          "en-us": "Link copied!"
+        };
+        layer.msg(msgMap[lang] || msgMap["en-us"]);
       }).catch(function(error) {
-        console.error('copy link error:', error);
+        console.error("copy link error:", error);
       });
     },
     "btn_share_weibo": function() {

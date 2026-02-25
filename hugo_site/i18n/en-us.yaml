@@ -1,8 +1,8 @@
 - id: theme_color_img_title
-  translation: "The Color Scheme of This Site Is Inspired By"
+  translation: "Theme colors inspired by"
 
 - id: pinned
-  translation: "Pinned"
+  translation: "Pinned Posts"
 
 - id: go_back_to_previous_page
   translation: "Go Back to Previous Page"
@@ -26,7 +26,7 @@
   translation: "comment"
 
 - id: copy_link
-  translation: "copy Link"
+  translation: "Copy Link"
 
 - id: copy_link_success
   translation: "Link copied!"
@@ -35,7 +35,7 @@
   translation: "View All..."
 
 - id: archives
-  translation: "archives"
+  translation: "Archives"
 
 - id: list_by_year_month_title
   translation: "Archive"
@@ -58,17 +58,20 @@
 - id: released_on
   translation: "Released on"
 
+- id: created_on
+  translation: "Created on"
+
 - id: series
-  translation: "series"
+  translation: "Series"
 
 - id: tags
-  translation: "tags"
+  translation: "Tags"
 
 - id: categories
-  translation: "categories"
+  translation: "Categories"
 
 - id: words
-  translation: "words"
+  translation: "Words"
 
 - id: empty
   translation: "(empty)"
@@ -121,7 +124,7 @@
 
 # Categories widget
 - id: categories_title
-  translation: "Categories"
+  translation: "categories"
 
 # Recent Posts widget
 - id: recent_title
