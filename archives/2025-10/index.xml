@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2025-10 on WHY的博客空间</title><link>https://wanghaoyang1995.github.io/archives/2025-10/</link><description>Recent content in 2025-10 on WHY的博客空间</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 12 Nov 2025 10:01:21 +0800</lastBuildDate><atom:link href="https://wanghaoyang1995.github.io/archives/2025-10/index.xml" rel="self" type="application/rss+xml"/><item><title>The Economist reads - On the Right Track</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20251027-729582-1/</link><pubDate>Mon, 27 Oct 2025 10:27:14 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20251027-729582-1/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://listen.kekenet.com/#/tingnews/13645/729582"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ The Economist reads - On the Right Track
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/09/eco250925_2217189snn.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 729582
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/09/eco250925_2217189snn.mp3" type="audio/mpeg">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20251027">2025.10.27&lt;/h3>
+&lt;blockquote>
+&lt;h4 id="the-economist-reads---on-the-right-track">The Economist reads - On the Right Track&lt;/h4>
+&lt;p>Culture&lt;br>
+文艺版块&lt;/p>
+&lt;p>Book review&lt;br>
+书评&lt;/p>
+&lt;p>The Economist reads&lt;br>
+《经济学人》书讯&lt;/p>
+&lt;p>On the right track&lt;br>
+走在正确的路上&lt;/p>
+&lt;p>Our critics recommend the best recent novels to read this autumn.&lt;br>
+我们的评论家推荐了今年秋季值得一读的最佳近期小说。&lt;/p></description></item><item><title>AlexNet论文精读</title><link>https://wanghaoyang1995.github.io/posts/deep_learning/alexnet/</link><pubDate>Wed, 08 Oct 2025 21:45:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/deep_learning/alexnet/</guid><description>&lt;p>原论文：
+
+
+&lt;a href="https://doi.org/10.1145/3065386"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ ImageNet Classification with Deep Convolutional Neural Networks
+&lt;/a>
+&lt;/p>
+&lt;p>作者：Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton&lt;/p>
+&lt;p>发表于：
+
+
+&lt;a href="https://proceedings.neurips.cc/paper_files/paper/2012"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ Advances in Neural Information Processing Systems 25 (NIPS 2012)
+&lt;/a>
+&lt;/p>
+&lt;hr>
+&lt;h4 id="摘要">摘要&lt;/h4>
+&lt;p>我们训练了一个大型深度卷积神经网络，该模型用于在ImageNet LSVRC-2010比赛中对1000种不同类别的120万张高分辨率图像进行分类。&lt;br>
+在测试数据中，我们达成了37.5%的top-1错误率和17.0%的top-5错误率，显著优于此前的最先进水平。&lt;br>
+该神经网络有6000万个参数、65万个神经元，由5层卷积层组成，其中有些卷积层后有最大池化层，以及三个全连接层，最后是1000分类的softmax输出。&lt;br>
+为了训练得更快，我们使用了非饱和神经元，以及一个非常高效的GPU实现的卷积操作。&lt;br>
+为了减少全连接层的过拟合，我们使用了一个近期提出的正则化方法“dropout”，它被证明十分有效。&lt;br>
+我们也将该模型的变体提交到了ILSVRC-2012比赛中，以15.3%的top-5测试错误率获得第一名，而第二名的错误率是26.2%.&lt;/p></description></item></channel></rss>

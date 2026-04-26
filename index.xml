@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home Page on WHY的博客空间</title><link>https://wanghaoyang1995.github.io/</link><description>Recent content in Home Page on WHY的博客空间</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Apr 2026 23:01:40 +0800</lastBuildDate><atom:link href="https://wanghaoyang1995.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>B站评论/弹幕批量删除脚本</title><link>https://wanghaoyang1995.github.io/posts/automation/bilibili_comments_del/</link><pubDate>Mon, 16 Mar 2026 21:12:58 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/automation/bilibili_comments_del/</guid><description>&lt;h4 id="等等先别急">等等，先别急&amp;hellip;&amp;hellip;&lt;/h4>
+&lt;p>开始动手前先停下想想——这些历史信息就像旧照片，也是宝贵的财产，为什么非要删了呢？&lt;/p>
+&lt;p>为了消除令人尴尬的黑历史，还是为了保护个人隐私？&lt;/p>
+&lt;p>如果你单纯是不想要号了，可以直接去注销账号，那样更快。&lt;/p></description></item><item><title>电子拐杖的制作方法</title><link>https://wanghaoyang1995.github.io/posts/game/war3_cheat_script/</link><pubDate>Mon, 23 Feb 2026 22:34:40 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/game/war3_cheat_script/</guid><description>&lt;h4 id="前言">前言&lt;/h4>
+&lt;p>War3是80/90后两代人的经典，在如今游戏佳作连年推新的年代，仍然有一批人执着于这款过时游戏，本人就是其中之一。&lt;/p>
+&lt;p>不过十几年前那个单纯痴迷游戏的少年早已不见踪影。现在那位中年人登上在线游戏平台，更多是为了怀旧，为了和那群同样因谋生计而奔波于全国各地务工的好兄弟们聊聊天，这已经成为了我们之间的难得的社交活动之一。&lt;/p></description></item><item><title>Hello World, Again.</title><link>https://wanghaoyang1995.github.io/posts/misc/reset-20260222/</link><pubDate>Sun, 22 Feb 2026 23:30:23 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/misc/reset-20260222/</guid><description>2026新年伊始的胡思乱想</description></item><item><title>The Economist reads - On the Right Track</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20251027-729582-1/</link><pubDate>Mon, 27 Oct 2025 10:27:14 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20251027-729582-1/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://listen.kekenet.com/#/tingnews/13645/729582"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ The Economist reads - On the Right Track
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/09/eco250925_2217189snn.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 729582
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/09/eco250925_2217189snn.mp3" type="audio/mpeg">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20251027">2025.10.27&lt;/h3>
+&lt;blockquote>
+&lt;h4 id="the-economist-reads---on-the-right-track">The Economist reads - On the Right Track&lt;/h4>
+&lt;p>Culture&lt;br>
+文艺版块&lt;/p>
+&lt;p>Book review&lt;br>
+书评&lt;/p>
+&lt;p>The Economist reads&lt;br>
+《经济学人》书讯&lt;/p>
+&lt;p>On the right track&lt;br>
+走在正确的路上&lt;/p>
+&lt;p>Our critics recommend the best recent novels to read this autumn.&lt;br>
+我们的评论家推荐了今年秋季值得一读的最佳近期小说。&lt;/p></description></item><item><title>AlexNet论文精读</title><link>https://wanghaoyang1995.github.io/posts/deep_learning/alexnet/</link><pubDate>Wed, 08 Oct 2025 21:45:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/deep_learning/alexnet/</guid><description>&lt;p>原论文：
+
+
+&lt;a href="https://doi.org/10.1145/3065386"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ ImageNet Classification with Deep Convolutional Neural Networks
+&lt;/a>
+&lt;/p>
+&lt;p>作者：Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton&lt;/p>
+&lt;p>发表于：
+
+
+&lt;a href="https://proceedings.neurips.cc/paper_files/paper/2012"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ Advances in Neural Information Processing Systems 25 (NIPS 2012)
+&lt;/a>
+&lt;/p>
+&lt;hr>
+&lt;h4 id="摘要">摘要&lt;/h4>
+&lt;p>我们训练了一个大型深度卷积神经网络，该模型用于在ImageNet LSVRC-2010比赛中对1000种不同类别的120万张高分辨率图像进行分类。&lt;br>
+在测试数据中，我们达成了37.5%的top-1错误率和17.0%的top-5错误率，显著优于此前的最先进水平。&lt;br>
+该神经网络有6000万个参数、65万个神经元，由5层卷积层组成，其中有些卷积层后有最大池化层，以及三个全连接层，最后是1000分类的softmax输出。&lt;br>
+为了训练得更快，我们使用了非饱和神经元，以及一个非常高效的GPU实现的卷积操作。&lt;br>
+为了减少全连接层的过拟合，我们使用了一个近期提出的正则化方法“dropout”，它被证明十分有效。&lt;br>
+我们也将该模型的变体提交到了ILSVRC-2012比赛中，以15.3%的top-5测试错误率获得第一名，而第二名的错误率是26.2%.&lt;/p></description></item><item><title>How Bad Are Video Games for Your Grades?</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20250930-698624/</link><pubDate>Tue, 30 Sep 2025 13:27:10 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20250930-698624/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://waikan.kekenet.com/#/waikanlisten/23/698624"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ How Bad Are Video Games for Your Grades?
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2024/12/342yw_3005777F9a.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 698624
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2024/12/342yw_3005777F9a.mp3" type="audio/mpeg">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20250930">2025.09.30&lt;/h3>
+&lt;blockquote>
+&lt;h4 id="how-bad-are-video-games-for-your-grades">How Bad Are Video Games for Your Grades?&lt;/h4>
+&lt;p>Arriving on the magical continent of Teyvat, you and your twin are attacked and separated by an unwelcoming god.&lt;br>
+你和你的孪生兄/妹来到了魔幻的提瓦特大陆，却被一个不和善的神攻击并走散。&lt;/p></description></item><item><title>FCG-Chapter-4</title><link>https://wanghaoyang1995.github.io/posts/graphics/fcg-4/</link><pubDate>Mon, 29 Sep 2025 22:45:58 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/fcg-4/</guid><description>&lt;h3 id="4-光线追踪">4. 光线追踪&lt;/h3>
+&lt;p>&lt;strong>渲染&lt;/strong>是一个将输入对象进行处理、变成输出像素数组的过程。&lt;/p>
+&lt;p>有两种渲染方式：&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>&amp;ldquo;object-order rendering&amp;rdquo;&lt;/em>：每个对象依次被处理，所有被该对象影响的像素将会被查找并更新。&lt;/li>
+&lt;li>&lt;em>&amp;ldquo;image-order randering&amp;rdquo;&lt;/em>：每个像素依次被处理，所有影响到该像素的对象将会被找到并计算。&lt;/li>
+&lt;/ul>
+&lt;p>这两种方式都可以精确地获得完全相同的图像，但其计算的效果与性能十分不同。宽泛地来说，&lt;em>image-order rendering&lt;/em>方式更容易跑起来，在可实现的视觉效果上也更灵活，并且在生成一张差不多的图像上经常（并非总是）占用更多的执行时间。&lt;/p></description></item><item><title>FCG-Chapter-3</title><link>https://wanghaoyang1995.github.io/posts/graphics/fcg-3/</link><pubDate>Mon, 29 Sep 2025 12:30:40 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/fcg-3/</guid><description>&lt;h3 id="3-栅格图像">3. 栅格图像&lt;/h3>
+&lt;p>&lt;em>栅格显示器&lt;/em>将图像显示为长方形&lt;em>像素&lt;/em>阵列。一个常见的例子是平板电脑显示器或电视机，激光打印机、喷墨打印机也是栅格设备。它们基于扫描的原理：没有物理的像素网格，但通过依次地为每一个网格点留下墨水而展示出图像。&lt;/p></description></item><item><title>FCG-Chapter-2</title><link>https://wanghaoyang1995.github.io/posts/graphics/fcg-2/</link><pubDate>Mon, 29 Sep 2025 11:44:11 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/fcg-2/</guid><description>&lt;blockquote>
+&lt;p>这一章内容繁杂，暂时跳过&lt;/p>&lt;/blockquote>
+&lt;h3 id="2-混杂的数学知识">2. 混杂的数学知识&lt;/h3>
+&lt;p>本章是数学知识大杂烩，仅作为参考而非严密教程。与“标准数学”的区别在于，本章着重于强调几何解释。建议读者跳过熟悉的内容，在需要时再返回来参阅。&lt;/p></description></item><item><title>FCG-Chapter-1</title><link>https://wanghaoyang1995.github.io/posts/graphics/fcg-1/</link><pubDate>Sun, 28 Sep 2025 21:41:57 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/fcg-1/</guid><description>&lt;blockquote>
+&lt;h5 id="前言">&lt;strong>前言&lt;/strong>&lt;/h5>
+&lt;p>在工作中模模糊糊学习了不少碎片化图形学知识，但只见树木不见森林，总有一种不踏实的感觉。有必要系统地学习一遍。&lt;br>
+看了一部分闫神的中文教程
+
+
+&lt;a href="https://www.bilibili.com/video/BV1X7411F744/?vd_source=72a1e8619f1b5c4fb3d3d80df57cbec8"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ GAMES101
+&lt;/a>
+，这是个很好的学习材料。&lt;br>
+为了印象深刻，我决定把《Fundamentals of Computer Graphics》读一遍，记下学习笔记。&lt;/p></description></item><item><title>The Economics of Attention (2)</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20250928-729988-2/</link><pubDate>Sun, 28 Sep 2025 15:20:43 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20250928-729988-2/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://waikan.kekenet.com/#/waikanlisten/23/729988"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ The Economics of Attention
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/09/459yw_5532251Qnk.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 729988
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/09/459yw_5532251Qnk.mp3" type="audio/mpeg">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20250928">2025.09.28&lt;/h3>
+&lt;blockquote>
+&lt;p>&amp;hellip;
+（续上篇）&lt;/p>
+&lt;p>Focus, being vital to most forms work, aids production and can be consumed in &lt;strong style="color: red">leisure&lt;/strong>.&lt;br>
+专注对大多数形式的工作都至关重要，它可以助力生产，也可以耗费在休闲上。&lt;/p></description></item><item><title>The Economics of Attention (1)</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20250927-729988-1/</link><pubDate>Sat, 27 Sep 2025 22:36:37 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20250927-729988-1/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://waikan.kekenet.com/#/waikanlisten/23/729988"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ The Economics of Attention
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/09/459yw_5532251Qnk.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 729988
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/09/459yw_5532251Qnk.mp3" type="audio/mpeg">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20250927">2025.09.27&lt;/h3>
+&lt;blockquote>
+&lt;h3 id="the-economics-of-attention">The Economics of Attention&lt;/h3>
+&lt;p>They call it &lt;strong style="color: orange">brainrot&lt;/strong>.&lt;br>
+人们称之为“脑腐”。&lt;/p>
+&lt;p>&lt;strong style="color: red">Inane&lt;/strong> &lt;strong style="color: orange">short-form videos&lt;/strong> just stimulating enough to keep you watching and scrolling, in a zombie-like manner, through whatever the algorithm presents next; not quite dull enough for you to &lt;strong style="color: orange">tear&lt;/strong> your &lt;strong style="color: red">monetisable&lt;/strong> eyeballs away from the screen.&lt;br>
+空洞却又足够刺激的短视频通过用算法不断展示下一条内容，让你像行尸走肉一样观看和下滑；它也不算太无聊以至于会让你那双能变现的眼球从屏幕上移开。&lt;/p></description></item><item><title>How Many Steps Do You Really Need in a Day? (2)</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20250924-728761-2/</link><pubDate>Wed, 24 Sep 2025 21:43:30 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20250924-728761-2/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://waikan.kekenet.com/#/waikanlisten/-1/728761"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ How Many Steps Do You Really Need in a Day?
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/09/454yw_2439228TMa.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 728761
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/09/454yw_2439228TMa.mp3">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20250924">2025.09.24&lt;/h3>
+&lt;blockquote>
+&lt;p>&amp;hellip;
+续上篇&lt;/p>
+&lt;p>For decades, 10,000 steps was &lt;strong style="color: red">touted&lt;/strong> as the magic number for good health.&lt;br>
+几十年来，1万步被吹捧为良好健康的神奇数字。&lt;/p>
+&lt;p>But the recommendation is more &lt;strong style="color: red">myth&lt;/strong> than science, and researchers have &lt;strong style="color: red">debunked&lt;/strong> it in recent years.&lt;br>
+但这个建议更多地是未经证实的说法而非科学，而且研究者们在最近几年已经对此辟谣。&lt;/p></description></item><item><title>韩剧BGM钢琴谱</title><link>https://wanghaoyang1995.github.io/posts/music/piano_transcription/</link><pubDate>Mon, 22 Sep 2025 22:14:26 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/music/piano_transcription/</guid><description>&lt;p>小时候看过一部韩剧，有很多不错的BGM。可是时间太久远，据说有些曲子是中配版独有的，已经找不到出处。&lt;/p>
+&lt;p>剧里有首伤感的钢琴曲，我把谱子扒了下来，谱子在这里： 
+
+
+&lt;a href="./piano1_20250922.pdf"
+ class=""
+ >
+ piano1_20250922.pdf
+&lt;/a>
+&lt;/p></description></item><item><title>How Many Steps Do You Really Need in a Day? (1)</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20250922-728761-1/</link><pubDate>Mon, 22 Sep 2025 20:52:52 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20250922-728761-1/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://waikan.kekenet.com/#/waikanlisten/-1/728761"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ How Many Steps Do You Really Need in a Day?
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/09/454yw_2439228TMa.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 728761
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/09/454yw_2439228TMa.mp3">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20250922">2025.09.22&lt;/h3>
+&lt;blockquote>
+&lt;h3 id="how-many-steps-do-you-really-need-in-a-day">How Many Steps Do You Really Need in a Day?&lt;/h3>
+&lt;p>Walking 10,000 steps a day has long been a fitness &lt;strong style="color: red">cliche&lt;/strong>.&lt;br>
+每天走1万步已经成为老生常谈的健身法则。&lt;/p>
+&lt;p>But new research suggests that the health benefits of walking &lt;strong style="color: red">ramp up&lt;/strong> until about 7,000 steps - before &lt;strong style="color: red">leveling out&lt;/strong>.&lt;br>
+但是最新研究表明，步行的健康益处持续增加直到大约7000步达到峰值。&lt;/p></description></item><item><title>Want higher pay? Don't change jobs (3)</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20250918-726201-3/</link><pubDate>Thu, 18 Sep 2025 19:24:51 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20250918-726201-3/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://waikan.kekenet.com/#/waikanlisten/23/726201"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ Want higher pay? Don&amp;rsquo;t change jobs!
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/08/444yw_2736917HnK.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 726201 
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/08/444yw_2736917HnK.mp3">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20250916">2025.09.16&lt;/h3>
+&lt;blockquote>
+&lt;p>&amp;hellip;
+（续上篇）&lt;/p>
+&lt;p>Coders have complained about poor prospects for a while; first, high interest rates hurt tech-firm valuations, then new artificial-intelligence models turned out to be particularly &lt;strong style="color: red">adept&lt;/strong> at programming.&lt;br>
+程序员们抱怨前景黯淡已有一段时间，先是高利率打击了科技公司的估值，接着新的人工智能模型被发现特别擅长编程。&lt;/p></description></item><item><title>Want higher pay? Don't change jobs (2)</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20250916-726201-2/</link><pubDate>Tue, 16 Sep 2025 21:55:54 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20250916-726201-2/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://waikan.kekenet.com/#/waikanlisten/23/726201"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ Want higher pay? Don&amp;rsquo;t change jobs!
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/08/444yw_2736917HnK.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 726201 
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/08/444yw_2736917HnK.mp3">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20250916">2025.09.16&lt;/h3>
+&lt;blockquote>
+&lt;p>&amp;hellip;
+（续上篇）&lt;/p>
+&lt;p>Now things are changing. For the first time in 15 years, &lt;strong style="color: red">barring&lt;/strong> &lt;strong style="color: red">blips&lt;/strong> in 2012 and 2018, wage growth for &amp;ldquo;job-stayers&amp;rdquo;, those who have &lt;strong style="color:red">stuck with&lt;/strong> their employer, is running fast than for &amp;ldquo;job-switchers&amp;rdquo;, those who jumped ship, according to data from the Federal Reserve Bank of Atlanta.&lt;br>
+现在情况正在发生变化。根据亚特兰大联邦储备银行的数据，除了2012和2018年的微小波动以外，那些坚持与雇主在一起的“留任者”的薪资增长，在15年里首次出现了快于那些跳船的“跳槽者”的情况。&lt;/p></description></item><item><title>Want higher pay? Don't change jobs (1)</title><link>https://wanghaoyang1995.github.io/posts/english_learning/20250915-726201-1/</link><pubDate>Mon, 15 Sep 2025 23:28:24 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/english_learning/20250915-726201-1/</guid><description>&lt;p>原文链接: 
+
+
+&lt;a href="https://waikan.kekenet.com/#/waikanlisten/23/726201"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ Want higher pay? Don&amp;rsquo;t change jobs!
+&lt;/a>
+&lt;br>
+原文音频: 
+
+
+&lt;a href="https://k7.kekenet.com/Sound/2025/08/444yw_2736917HnK.mp3"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ 726201 
+&lt;/a>
+&lt;/p>
+&lt;audio controls loop>
+ &lt;source src="https://k7.kekenet.com/Sound/2025/08/444yw_2736917HnK.mp3">
+&lt;/audio>
+&lt;hr>
+&lt;h3 id="20250915">2025.09.15&lt;/h3>
+&lt;blockquote>
+&lt;p>Want higher pay? Don&amp;rsquo;t change jobs!&lt;br>
+想要更高的薪水？不要换工作！&lt;/p>
+&lt;p>For years, America&amp;rsquo;s job market has rewarded the &lt;strong style="color: red">footloose&lt;/strong>.&lt;br>
+多年来，美国就业市场一直奖励那些行动自由的人（这里指频繁跳槽的人）。&lt;/p></description></item><item><title>射线交叉法判断点是否位于几何体内部</title><link>https://wanghaoyang1995.github.io/posts/graphics/ray_casting/</link><pubDate>Wed, 09 Apr 2025 23:51:57 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/ray_casting/</guid><description>&lt;p>&lt;strong>射线交叉法&lt;/strong>可以用来计算一点是否在几何体内部，在本文中用于初始化有符号距离场的符号。其思路是，从网格内每一个点开始，沿x轴正向（沿任意一个方向均可）发出一条射线，判断这条射线穿过几何表面的次数，奇数次为内部点，偶数次为外部点。&lt;/p></description></item><item><title>KeKe Scraper</title><link>https://wanghaoyang1995.github.io/tools/keke_scraper/</link><pubDate>Tue, 24 Dec 2024 22:07:26 +0800</pubDate><guid>https://wanghaoyang1995.github.io/tools/keke_scraper/</guid><description>KeKe Scraper</description></item><item><title>我总算有了自己的博客网站🎉🎉🎉</title><link>https://wanghaoyang1995.github.io/posts/misc/motivation/</link><pubDate>Tue, 10 Dec 2024 13:46:27 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/misc/motivation/</guid><description>&lt;p>2024年12月10日，今天是个重要的日子，我的博客站基本开发完成，准备上线了！&lt;/p>
+&lt;p>这是我的第一篇正式内容，以后这里就是我的 META-HOME，欢迎你来到我的另一个家🏡~~&lt;/p></description></item><item><title>照片墙</title><link>https://wanghaoyang1995.github.io/gallery/</link><pubDate>Tue, 10 Dec 2024 12:47:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/gallery/</guid><description>&lt;h3 id="还没有开发完成">还没有开发完成&amp;hellip;&lt;/h3></description></item><item><title>关于</title><link>https://wanghaoyang1995.github.io/about/</link><pubDate>Mon, 09 Dec 2024 22:41:10 +0800</pubDate><guid>https://wanghaoyang1995.github.io/about/</guid><description>&lt;h3 id="本站点">本站点&lt;/h3>
+&lt;p>本站是一个纯静态个人博客网站，页面托管在
+
+
+&lt;a href="https://pages.github.com/"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Github Pages&lt;/em>
+&lt;/a>
+。&lt;/p>
+&lt;p>项目基于静态网站构建工具
+
+
+&lt;a href="https://gohugo.io/"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Hugo&lt;/em>
+&lt;/a>
+开发，UI元素库使用
+
+
+&lt;a href="https://layui.dev/"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Layui&lt;/em>
+&lt;/a>
+，页面布局参考了主题
+
+
+&lt;a href="https://github.com/Vimux/Mainroad"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Mainroad&lt;/em>
+&lt;/a>
+，评论功能使用了
+
+
+&lt;a href="https://github.com/giscus/giscus"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Giscus&lt;/em>
+&lt;/a>
+扩展。&lt;/p></description></item><item><title>Posts Day Mark</title><link>https://wanghaoyang1995.github.io/post_day_mark.json</link><pubDate>Sun, 08 Dec 2024 21:43:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/post_day_mark.json</guid><description/></item><item><title>Posts Date Index</title><link>https://wanghaoyang1995.github.io/year_month_index.json</link><pubDate>Sun, 08 Dec 2024 21:15:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/year_month_index.json</guid><description/></item><item><title>Search Index</title><link>https://wanghaoyang1995.github.io/search_index.json</link><pubDate>Thu, 05 Dec 2024 16:43:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/search_index.json</guid><description/></item></channel></rss>

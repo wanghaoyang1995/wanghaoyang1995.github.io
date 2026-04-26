@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home Page on Wyatt Wang's Space</title><link>https://wanghaoyang1995.github.io/en-us/</link><description>Recent content in Home Page on Wyatt Wang's Space</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 23 Feb 2026 22:34:40 +0800</lastBuildDate><atom:link href="https://wanghaoyang1995.github.io/en-us/index.xml" rel="self" type="application/rss+xml"/><item><title>blog test</title><link>https://wanghaoyang1995.github.io/en-us/posts/test/test/</link><pubDate>Mon, 23 Feb 2026 22:34:40 +0800</pubDate><guid>https://wanghaoyang1995.github.io/en-us/posts/test/test/</guid><description>&lt;h4 id="title">title&lt;/h4>
+&lt;p>content&lt;/p>
+&lt;hr>
+&lt;p>end&lt;/p></description></item><item><title>Gallery</title><link>https://wanghaoyang1995.github.io/en-us/gallery/</link><pubDate>Tue, 10 Dec 2024 12:47:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/en-us/gallery/</guid><description>&lt;h3 id="in-progress">In progress&amp;hellip;&lt;/h3></description></item><item><title>About</title><link>https://wanghaoyang1995.github.io/en-us/about/</link><pubDate>Mon, 09 Dec 2024 22:41:10 +0800</pubDate><guid>https://wanghaoyang1995.github.io/en-us/about/</guid><description>&lt;h3 id="this-site">This Site&lt;/h3>
+&lt;p>This is a static personal blog hosted on 
+
+
+&lt;a href="https://pages.github.com/"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Github Pages&lt;/em>
+&lt;/a>
+.&lt;/p>
+&lt;p>It’s built with the 
+
+
+&lt;a href="https://gohugo.io/"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Hugo&lt;/em>
+&lt;/a>
+ static site generator, styled with the 
+
+
+&lt;a href="https://layui.dev/"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ Layui
+&lt;/a>
+ UI library, and loosely inspired by the 
+
+
+&lt;a href="https://github.com/Vimux/Mainroad"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Mainroad&lt;/em>
+&lt;/a>
+ theme. Comments are powered by the 
+
+
+&lt;a href="https://github.com/giscus/giscus"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ &lt;em>Giscus&lt;/em>
+&lt;/a>
+ integration.&lt;/p>
+&lt;p>Since private repositories on GitHub Pages require a paid plan, this site is reluctantly open-sourced. You can find the repository 
+
+
+&lt;a href="https://github.com/wanghaoyang1995/wanghaoyang1995.github.io"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ here
+&lt;/a>
+.&lt;/p></description></item><item><title>Posts Day Mark</title><link>https://wanghaoyang1995.github.io/en-us/post_day_mark.json</link><pubDate>Sun, 08 Dec 2024 21:43:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/en-us/post_day_mark.json</guid><description/></item><item><title>Posts Date Index</title><link>https://wanghaoyang1995.github.io/en-us/year_month_index.json</link><pubDate>Sun, 08 Dec 2024 21:15:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/en-us/year_month_index.json</guid><description/></item><item><title>Search Index</title><link>https://wanghaoyang1995.github.io/en-us/search_index.json</link><pubDate>Thu, 05 Dec 2024 16:43:00 +0800</pubDate><guid>https://wanghaoyang1995.github.io/en-us/search_index.json</guid><description/></item></channel></rss>

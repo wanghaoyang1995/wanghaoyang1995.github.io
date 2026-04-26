@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>图形学 on WHY的博客空间</title><link>https://wanghaoyang1995.github.io/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/</link><description>Recent content in 图形学 on WHY的博客空间</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Oct 2025 16:19:30 +0800</lastBuildDate><atom:link href="https://wanghaoyang1995.github.io/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml"/><item><title>FCG-Chapter-4</title><link>https://wanghaoyang1995.github.io/posts/graphics/fcg-4/</link><pubDate>Mon, 29 Sep 2025 22:45:58 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/fcg-4/</guid><description>&lt;h3 id="4-光线追踪">4. 光线追踪&lt;/h3>
+&lt;p>&lt;strong>渲染&lt;/strong>是一个将输入对象进行处理、变成输出像素数组的过程。&lt;/p>
+&lt;p>有两种渲染方式：&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>&amp;ldquo;object-order rendering&amp;rdquo;&lt;/em>：每个对象依次被处理，所有被该对象影响的像素将会被查找并更新。&lt;/li>
+&lt;li>&lt;em>&amp;ldquo;image-order randering&amp;rdquo;&lt;/em>：每个像素依次被处理，所有影响到该像素的对象将会被找到并计算。&lt;/li>
+&lt;/ul>
+&lt;p>这两种方式都可以精确地获得完全相同的图像，但其计算的效果与性能十分不同。宽泛地来说，&lt;em>image-order rendering&lt;/em>方式更容易跑起来，在可实现的视觉效果上也更灵活，并且在生成一张差不多的图像上经常（并非总是）占用更多的执行时间。&lt;/p></description></item><item><title>FCG-Chapter-3</title><link>https://wanghaoyang1995.github.io/posts/graphics/fcg-3/</link><pubDate>Mon, 29 Sep 2025 12:30:40 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/fcg-3/</guid><description>&lt;h3 id="3-栅格图像">3. 栅格图像&lt;/h3>
+&lt;p>&lt;em>栅格显示器&lt;/em>将图像显示为长方形&lt;em>像素&lt;/em>阵列。一个常见的例子是平板电脑显示器或电视机，激光打印机、喷墨打印机也是栅格设备。它们基于扫描的原理：没有物理的像素网格，但通过依次地为每一个网格点留下墨水而展示出图像。&lt;/p></description></item><item><title>FCG-Chapter-2</title><link>https://wanghaoyang1995.github.io/posts/graphics/fcg-2/</link><pubDate>Mon, 29 Sep 2025 11:44:11 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/fcg-2/</guid><description>&lt;blockquote>
+&lt;p>这一章内容繁杂，暂时跳过&lt;/p>&lt;/blockquote>
+&lt;h3 id="2-混杂的数学知识">2. 混杂的数学知识&lt;/h3>
+&lt;p>本章是数学知识大杂烩，仅作为参考而非严密教程。与“标准数学”的区别在于，本章着重于强调几何解释。建议读者跳过熟悉的内容，在需要时再返回来参阅。&lt;/p></description></item><item><title>FCG-Chapter-1</title><link>https://wanghaoyang1995.github.io/posts/graphics/fcg-1/</link><pubDate>Sun, 28 Sep 2025 21:41:57 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/fcg-1/</guid><description>&lt;blockquote>
+&lt;h5 id="前言">&lt;strong>前言&lt;/strong>&lt;/h5>
+&lt;p>在工作中模模糊糊学习了不少碎片化图形学知识，但只见树木不见森林，总有一种不踏实的感觉。有必要系统地学习一遍。&lt;br>
+看了一部分闫神的中文教程
+
+
+&lt;a href="https://www.bilibili.com/video/BV1X7411F744/?vd_source=72a1e8619f1b5c4fb3d3d80df57cbec8"
+ class="external-link"
+ target="_blank" rel="noopener noreferrer">
+ GAMES101
+&lt;/a>
+，这是个很好的学习材料。&lt;br>
+为了印象深刻，我决定把《Fundamentals of Computer Graphics》读一遍，记下学习笔记。&lt;/p></description></item><item><title>射线交叉法判断点是否位于几何体内部</title><link>https://wanghaoyang1995.github.io/posts/graphics/ray_casting/</link><pubDate>Wed, 09 Apr 2025 23:51:57 +0800</pubDate><guid>https://wanghaoyang1995.github.io/posts/graphics/ray_casting/</guid><description>&lt;p>&lt;strong>射线交叉法&lt;/strong>可以用来计算一点是否在几何体内部，在本文中用于初始化有符号距离场的符号。其思路是，从网格内每一个点开始，沿x轴正向（沿任意一个方向均可）发出一条射线，判断这条射线穿过几何表面的次数，奇数次为内部点，偶数次为外部点。&lt;/p></description></item></channel></rss>
