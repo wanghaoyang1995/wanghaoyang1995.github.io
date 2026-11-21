@@ -1,0 +1,142 @@
+{
+  "id": "tmnt-enhanced",
+  "version": "1.0.0",
+  "title": "忍者神龟格斗 · 龙珠增强版",
+  "subtitle": "自由选人 · 双倍耐久 · 每回合双方五颗龙珠",
+  "note": "Enter 跳过开场，自选模式和角色。VS PLAYER 设置页需双方各按 Start 继续：1P Enter，2P 小键盘 9。1P 使用 WASD、J/K；2P 使用方向键、小键盘 2/3（开启 Num Lock）。持珠后输入下 → 前下 → 前 + B 投珠（J 或小键盘 2），一次最多五连发。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动 / 招式方向",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "攻击 B / A",
+      "keys": [
+        "J",
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 游戏内暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "移动 / 招式方向",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "攻击 B / A",
+      "keys": [
+        "Numpad2",
+        "Numpad3"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始",
+      "keys": [
+        "Numpad9"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择",
+      "keys": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "A": [
+        "Numpad3"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "b70ba5149d731333c86521f519eac23c9e904ebf475ed436995e3d91a910698f",
+  "lua": "game.a9293019d57f.lua",
+  "sourceSha256": "c4e4e876790ca2e56815169da6175de3b68938b6e71374d0da19b2edec11934c",
+  "outputSha256": "a9293019d57f081a4a80060764c04912982d65a2262ba26a72c1ff01ebd42895",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

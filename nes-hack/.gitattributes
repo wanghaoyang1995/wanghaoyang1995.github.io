@@ -1,0 +1,2 @@
+# Published assets include content-hashed scripts; preserve their verified bytes.
+* -text -whitespace

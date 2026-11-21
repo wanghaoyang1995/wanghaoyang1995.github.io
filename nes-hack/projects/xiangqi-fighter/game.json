@@ -1,0 +1,171 @@
+{
+  "id": "xiangqi-fighter",
+  "version": "0.1.0",
+  "title": "中国象棋·格斗版",
+  "subtitle": "回合邀请格斗 · 单人电脑 / 本地双人 · 三局两胜",
+  "description": "象棋回合邀请格斗 · 全屏八向射击 · 三局两胜",
+  "note": "标题和菜单由1P按 K 确认。EASY/NORMAL/DIFFICULT 为人机，VS 为双人。轮到自己时按 Select+B 邀请，立即让出当前回合；对方同组合接受，直接落子拒绝，电脑有50%概率接受。格斗用方向移动瞄准、B射击；存活棋子挡人挡弹且不能击毁，先赢两小局的一方使对手在本局象棋判负。1P WASD/K/J/左Shift，2P 方向键/小键盘2/小键盘1/小键盘8，请打开 Num Lock。网页不提供即时存读档，请从菜单新开棋局。单人覆盖手柄控制1P；本地双打可用下方两组辅助触控按键。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动 / 瞄准",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "标题 / 菜单确认、选子、落子 A",
+      "keys": [
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击 B",
+      "keys": [
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择 Select",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "邀请 / 接受格斗（自己回合）",
+      "keys": [
+        "ShiftLeft",
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "Start（原作功能）",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "移动 / 瞄准",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选子 / 落子 A",
+      "keys": [
+        "Numpad2"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "射击 B",
+      "keys": [
+        "Numpad1"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择 Select",
+      "keys": [
+        "Numpad8"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "邀请 / 接受格斗（自己回合）",
+      "keys": [
+        "Numpad8",
+        "Numpad1"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "Start（原作功能）",
+      "keys": [
+        "Numpad9"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ],
+      "Start": [
+        "Enter"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "A": [
+        "Numpad2"
+      ],
+      "B": [
+        "Numpad1"
+      ],
+      "Select": [
+        "Numpad8"
+      ],
+      "Start": [
+        "Numpad9"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "f2a8aadfba05ed8566d3ec54285aca9ee2bb9408658e2a67f0cdea3aa1969f9b",
+  "lua": "game.1160cf0ce9da.lua",
+  "sourceSha256": "084469cc0ac49529abd3cedbdcd10817826118aab7a0b7dd7323fb459618b449",
+  "outputSha256": "1160cf0ce9da592a6d709734f6357d7127554eb3bb350a5f22899235289caa4e",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

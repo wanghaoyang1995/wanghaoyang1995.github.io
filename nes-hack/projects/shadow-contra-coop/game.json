@@ -1,0 +1,170 @@
+{
+  "id": "shadow-contra-coop",
+  "version": "1.0.0",
+  "title": "赤影战士 · 魂斗罗版",
+  "subtitle": "本地合作双打 · 两人各 16 命",
+  "note": "Enter 跳过开场；标题菜单用左 Shift 选择 2 PLAYER，再按 Enter，在 PLAYER SELECT 继续 Enter 确认。2P 使用方向键和小键盘（开启 Num Lock）。游戏内暂停使用 1P Enter，也可使用页面暂停按钮。下 + 跳可穿过薄平台。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动 / 瞄准",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击 / 连射",
+      "keys": [
+        "J",
+        "U"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "跳跃 / 连跳",
+      "keys": [
+        "K",
+        "I"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择单人 / 双人",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 游戏内暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "移动 / 瞄准",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "射击 / 连射",
+      "keys": [
+        "Numpad2",
+        "Numpad5"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "跳跃 / 连跳",
+      "keys": [
+        "Numpad3",
+        "Numpad6"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择",
+      "keys": [
+        "Numpad8"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始",
+      "keys": [
+        "Numpad9"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "TurboA": [
+        "KeyI"
+      ],
+      "TurboB": [
+        "KeyU"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "A": [
+        "Numpad3"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "TurboA": [
+        "Numpad6"
+      ],
+      "TurboB": [
+        "Numpad5"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "3ede04a9145cc9dbb5613e2afdf05c6c8ab77ecc2cc286a708153dfe8b3cae9d",
+  "lua": "game.33507373e8ad.lua",
+  "sourceSha256": "6031d5c5b6d0ff222928b56b8dcd8f2541aa24d6bfeab16a85d7554e694a42fb",
+  "outputSha256": "33507373e8adeae94de0363c31ec4a8a0179ef4e5b02508a8040918f48ac09bc",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

@@ -1,0 +1,110 @@
+{
+  "id": "shadow-lightning",
+  "version": "1.0.1",
+  "title": "赤影战士 · 高频闪电版",
+  "subtitle": "自由行动 · 无引导高频闪电 · 满级武器切换",
+  "note": "选择 1 PLAYER 开始，强化功能适用于 1P。闪电默认关闭，左 Shift + J 切换；左 Shift + W 切换满级武器。左 Shift + K 释放耗血必杀。重开后闪电恢复关闭。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "方向 / 加速移动",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "攻击 / 跳跃",
+      "keys": [
+        "J",
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 游戏内暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择 / 组合键修饰",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "闪电开关（同时按）",
+      "keys": [
+        "ShiftLeft",
+        "J"
+      ],
+      "touch": true
+    },
+    {
+      "player": "1P",
+      "label": "满级武器切换（同时按）",
+      "keys": [
+        "ShiftLeft",
+        "W"
+      ],
+      "touch": true
+    },
+    {
+      "player": "1P",
+      "label": "耗血必杀（同时按）",
+      "keys": [
+        "ShiftLeft",
+        "K"
+      ],
+      "touch": true
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "3ede04a9145cc9dbb5613e2afdf05c6c8ab77ecc2cc286a708153dfe8b3cae9d",
+  "lua": "game.47b9677fcfdf.lua",
+  "sourceSha256": "9dc21a96a12cccdb98066fdf7364e34f47375ef7350db0555662e38e7815f755",
+  "outputSha256": "47b9677fcfdf7fb0f6d201d4136c416add8e5cbbdcc615c31f584623b4d92dad",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}
