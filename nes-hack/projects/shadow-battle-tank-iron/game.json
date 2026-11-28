@@ -1,0 +1,134 @@
+{
+  "id": "shadow-battle-tank-iron",
+  "version": "0.1.2",
+  "title": "坦克赤影战士-子弹穿铁版",
+  "subtitle": "三星子弹开路 · 单人 / 本地双人",
+  "note": "吃满三颗星后，炮弹可破坏硬墙开路；后续星星不再提升，坦克保持原色。死亡清除武器升级。Enter 跳过开场；左 Shift 选择 2 PLAYER，Enter 确认，PLAYER SELECT 继续 Enter。双人各 16 命。 本版修复第二、第四大关剧情电梯的登台和乘梯卡住问题。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击",
+      "keys": [
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择单人 / 双人",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "移动",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "射击",
+      "keys": [
+        "Numpad2"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始",
+      "keys": [
+        "Numpad9"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择",
+      "keys": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "3ede04a9145cc9dbb5613e2afdf05c6c8ab77ecc2cc286a708153dfe8b3cae9d",
+  "lua": "game.7f61ae8ce8a2.lua",
+  "sourceSha256": "c16edf719f4f66399783f0797d54e5ddfc75e4394fdc458002048b728ccce9db",
+  "outputSha256": "7f61ae8ce8a26a8e7c917f2761ea98808b5e5b84c6dd668db40103c0cc947322",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

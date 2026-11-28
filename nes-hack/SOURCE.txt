@@ -1,0 +1,12 @@
+FC hacked games web release
+
+Mesen Community Edition browser engine: GPL-3.0-or-later.
+The application license is included in LICENSE.
+
+Browser engine corresponding build source and instructions: engine-source.zip
+The shared player/catalog JavaScript, CSS and HTML are served directly.
+Unmodified upstream engine source and third-party notices:
+https://github.com/nesdev-org/MesenCE/tree/a8e5d0239631bb5e13103f517e582f5e5bf599e0
+
+Engine build source snapshot: 36fdf855ea7accb2ba74ac1e42b9eaa59f49cd77
+ROMs are game assets and are not covered by the application source license.

@@ -1,0 +1,188 @@
+{
+  "id": "contra-battle-tank",
+  "version": "0.1.2",
+  "title": "魂斗罗 · 坦克版",
+  "subtitle": "蓝红坦克 · 四向自由移动 · 单人 / 本地双人",
+  "description": "四星高亮坦克、两列平行双发与坦克大战短音效，保留原关卡和 Boss。",
+  "note": "标题按左 Shift 选择 1 / 2 PLAYERS，Enter 开始。1P：WASD 移动、J 射击；2P：方向键、小键盘 2 射击（开启 Num Lock）。坦克可四向移动，无需跳跃；可下穿的薄平台可直接穿过，硬墙仍阻挡。0至3星炮弹伤害为 2 / 2 / 2 / 4；4星沿用3星车身并高亮，每次发射两列平行炮弹，射速与3星相同，每弹伤害4。拾星升级，B 头盔保护，R 加一命；死亡恢复初级。游戏内暂停用 Enter。触屏为单人，请选择 1 PLAYER。本版暂不支持即时存读档。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "四向移动",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击",
+      "keys": [
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "保留 A 键（坦克无需跳跃）",
+      "keys": [
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 游戏内暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "标题选择单人 / 双人",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "四向移动",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "射击",
+      "keys": [
+        "Numpad2"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "保留 A 键（坦克无需跳跃）",
+      "keys": [
+        "Numpad3"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始",
+      "keys": [
+        "Numpad9"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择",
+      "keys": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "A": [
+        "Numpad3"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "touchControls": [
+    {
+      "player": "1P",
+      "label": "四向移动",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击",
+      "keys": [
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 游戏内暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "标题选择单人 / 双人",
+      "keys": [
+        "ShiftLeft"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "26541a5550ee22deeb3d5484e4a96130219b58cff74d068fb1eb6567fa5e5519",
+  "lua": "game.0871334f5b76.lua",
+  "sourceSha256": "3adc46a6fbb19b58457042776a89c3fae97e1dc0083b93ff537e2ddac9e932c7",
+  "outputSha256": "0871334f5b76437bc7437fbf1313fc6c916cbff10a1960edcfe5f41998ea1049",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

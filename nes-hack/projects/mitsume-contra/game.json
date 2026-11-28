@@ -1,0 +1,99 @@
+{
+  "id": "mitsume-contra",
+  "version": "0.4.0",
+  "title": "三目童子 · 魂斗罗血量版",
+  "subtitle": "六格血 · 金币商店 · N / M / S / L 枪",
+  "note": "Enter 进入标题；A / D 选择 EASY 或 NORMAL，Enter 开始。WASD 移动瞄准，J 射击，K 跳跃，U 连射，I 连跳。暂停后 A / D 或左 Shift 换已购枪。左 Shift + J 蓄力，松开投出红鹰；商店 K 查看 / 购买、J 取消。",
+  "controls": [
+    {
+      "label": "移动 / 瞄准",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "label": "射击 / 连射",
+      "keys": [
+        "J",
+        "U"
+      ]
+    },
+    {
+      "label": "跳跃 / 连跳 / 商店购买",
+      "keys": [
+        "K",
+        "I"
+      ]
+    },
+    {
+      "label": "开始 / 暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "label": "选择 / 红鹰组合键",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "label": "红鹰蓄力",
+      "keys": [
+        "ShiftLeft",
+        "J"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "TurboA": [
+        "KeyI"
+      ],
+      "TurboB": [
+        "KeyU"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "87d10cecf9e2f0419d675a7705b7a797639a751064d02c77f2d77fd862052bfc",
+  "lua": "game.8ef68b1354f5.lua",
+  "sourceSha256": "39886b83f3c54199a1545878f153b4e0ab9f9a20d46e05459739a21d0bbf7b20",
+  "outputSha256": "8ef68b1354f5d10a03a904ad96ad6c4495cf4662bd0345a17f68878cf3a0bfd6",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

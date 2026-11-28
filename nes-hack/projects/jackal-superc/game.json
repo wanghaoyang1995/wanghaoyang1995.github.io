@@ -1,0 +1,143 @@
+{
+  "id": "jackal-superc",
+  "version": "0.1.1",
+  "title": "赤色要塞·魂斗罗版",
+  "subtitle": "Super C 人物、枪弹与音效融合 · 单人 / 本地双人",
+  "description": "Super C 人物与 N / M / S / L 枪弹音效 · 单人 / 本地双人",
+  "note": "标题按左 Shift 选择单人/双人，Enter 开始。1P：WASD 移动、J 开枪、K 重武器；2P：方向键、小键盘 2/3（请开启 Num Lock）。游戏中 Select 切换 N/M/S/L 等级，救援战俘也可升级。重武器用于拆建筑、救战俘。已补入开枪、命中及爆炸等短音效，保留原背景音乐。本版暂不支持即时存读档，请从标题开局。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动 / 瞄准",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开枪 B / 重武器 A",
+      "keys": [
+        "J",
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "标题选择人数 / 游戏内切换等级",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "移动 / 瞄准",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开枪 B / 重武器 A",
+      "keys": [
+        "Numpad2",
+        "Numpad3"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始",
+      "keys": [
+        "Numpad9"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择 / 切换等级",
+      "keys": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "A": [
+        "Numpad3"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "97e0e7d84ce6cca3fd3ec5eabb3fa00252de54f1354156ca2b95b95a39237373",
+  "lua": "game.11e1143bc17e.lua",
+  "sourceSha256": "bfd597e051aee6270832db742434aa375fffa14f34fb88cd6e71c0d94319ec64",
+  "outputSha256": "11e1143bc17e5c4178c144d709eb808fb0fb4ccf53e7ca6614ce30d16101a182",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

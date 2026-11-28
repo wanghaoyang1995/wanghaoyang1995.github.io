@@ -1,0 +1,99 @@
+{
+  "id": "mitsume-contra-lives",
+  "version": "0.1.1",
+  "title": "三目童子 · 魂斗罗命数版",
+  "subtitle": "一击即死 · 六命空降复活",
+  "note": "Enter 开始／暂停，WASD 移动瞄准，J 射击、K 跳跃，U 连射、I 连跳。血条表示剩余命数，初始6命；受伤即死，安全空降复活，落地约2秒无敌。补血／1UP／鸟各补1命，最多6命；无安全落点时回检查点，不额扣命。",
+  "controls": [
+    {
+      "label": "移动 / 瞄准",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "label": "射击 / 连射",
+      "keys": [
+        "J",
+        "U"
+      ]
+    },
+    {
+      "label": "跳跃 / 连跳 / 商店购买",
+      "keys": [
+        "K",
+        "I"
+      ]
+    },
+    {
+      "label": "开始 / 暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "label": "选择 / 红鹰组合键",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "label": "红鹰蓄力",
+      "keys": [
+        "ShiftLeft",
+        "J"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "TurboA": [
+        "KeyI"
+      ],
+      "TurboB": [
+        "KeyU"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "87d10cecf9e2f0419d675a7705b7a797639a751064d02c77f2d77fd862052bfc",
+  "lua": "game.04528c29f619.lua",
+  "sourceSha256": "a379a8e583d39951c4b80d775d95c59c80586c530a8d57695b1365b23c742ae4",
+  "outputSha256": "04528c29f619ec7a4ebe44f8fda01147a4cd278acb2a72ab7643056f541d6206",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

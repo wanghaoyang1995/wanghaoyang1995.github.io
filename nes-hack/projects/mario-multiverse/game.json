@@ -1,0 +1,125 @@
+{
+  "id": "mario-multiverse",
+  "version": "0.1.1",
+  "title": "超级马里奥多合一",
+  "subtitle": "原作动作与多列弹 · 子弹打开道具箱",
+  "note": "Enter开始；左Shift+J依次切换马里奥、魂斗罗、坦克、直升机、吉普和飞机，并保留武器等级。马里奥形态为小→大→火焰→青白高亮双火球，火焰形态再吃蘑菇或花进入第四形态。扩充角色用子弹打开原版道具箱，不能顶击开箱；马里奥保留原版顶击。蘑菇与花仍保持原外观和行为。普通弹破砖，三星坦克可破硬地形并抵消一次伤害降回初级，其它扩充角色一击即死。魂斗罗N/S需重复按J、M/L可按住，U可自动连射；单下伏地，方向+下+攻击为边走斜下射，空中可向下或斜下射。魂斗罗和吉普保留较低的原作跳跃，遇高障碍或宽坑可切飞行角色。直升机J同时前射主炮+斜下副炮，J+K切为斜下主炮+正下副炮，K单独不射；吉普W向后抬转炮塔、S转回前方，J沿炮塔射、K跳。直升机、吉普、飞机机头保持朝右。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动 / 魂斗罗瞄准 / 吉普转炮塔",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "攻击 / 马里奥加速",
+      "keys": [
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "跳跃 / 直升机射向修饰",
+      "keys": [
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "连射",
+      "keys": [
+        "U"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "连跳（地面角色）",
+      "keys": [
+        "I"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "切换角色",
+      "keys": [
+        "ShiftLeft",
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "直升机俯射模式",
+      "keys": [
+        "J",
+        "K"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "TurboB": [
+        "KeyU"
+      ],
+      "TurboA": [
+        "KeyI"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "f61548fdf1670cffefcc4f0b7bdcdd9eaba0c226e3b74f8666071496988248de",
+  "lua": "game.895842203855.lua",
+  "sourceSha256": "f14cb7f82feb2201b9efd7f4ae7b351b2bf040eb4f58dc2d01ef9ebbfc5f50b9",
+  "outputSha256": "895842203855b1ef4e8dc8f128143f776741a0c07d168e92bd9b7f78ddce1df0",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

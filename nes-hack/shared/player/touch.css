@@ -1,0 +1,88 @@
+/* 1P overlay; input and dynamic elements are owned by touch.js. */
+#game-screen{position:relative;isolation:isolate}
+#virtual-gamepad{display:none;position:absolute;inset:0;z-index:3;pointer-events:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;--pad-size:132px;--pad-edge:12px;--pad-lift:0px;--action-size:54px;--action-gap:8px;--action-width:116px}
+#virtual-gamepad[hidden]{display:none!important}
+#virtual-gamepad [hidden]{display:none!important}
+.touch-mode #virtual-gamepad:not([hidden]){display:block}
+#touch-hint{display:none;margin:10px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+.touch-mode #touch-hint{display:block}
+.touch-mode #touch-controls{display:none!important}
+.touch-mode #game-screen{height:65vh;height:65dvh;min-height:320px;max-height:780px;touch-action:none}
+.touch-mode #game{touch-action:none}
+#touch-mode[aria-pressed="true"]{background:#e3f0e7;border-color:#78a68b;color:#245b37}
+.gamepad-launch{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:auto;min-height:52px;min-width:130px;border:1px solid #bce8c8;background:#245b3deb;color:#fff;box-shadow:0 6px 24px #0006;font-size:16px;border-radius:14px;touch-action:manipulation}
+
+.gamepad-dpad,.gamepad-actions,.gamepad-menu,.gamepad-tools,.gamepad-extras,.gamepad-exit{pointer-events:auto;touch-action:none;-webkit-tap-highlight-color:transparent}
+.gamepad-button,.gamepad-launch{-webkit-tap-highlight-color:transparent}
+.gamepad-dpad{position:absolute;width:var(--pad-size);height:var(--pad-size);left:var(--pad-edge);bottom:calc(var(--pad-edge) + var(--pad-lift));left:calc(var(--pad-edge) + env(safe-area-inset-left,0px));bottom:calc(var(--pad-edge) + var(--pad-lift) + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:0;gap:0;border:0;background:transparent;border-radius:24px;cursor:move}
+.gamepad-dpad::before{content:"";position:absolute;left:33.333%;top:33.333%;width:33.334%;height:33.334%;border:1px solid #ffffff40;background:#edf8f021;pointer-events:none}
+.gamepad-center{grid-area:2/2;display:flex;align-items:center;justify-content:center;color:#ffffffa8;font:600 22px system-ui;pointer-events:none}
+.gamepad-dpad [data-direction]{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0;margin:0;gap:0;border:1px solid #ffffff80;color:#fff;background:#edf8f02e;box-shadow:0 1px 3px #0004;text-shadow:0 1px 2px #0008;font:700 20px system-ui;line-height:1;cursor:inherit;touch-action:none}
+.gamepad-dpad [data-direction="up"]{grid-area:1/2;border-radius:12px 12px 0 0}
+.gamepad-dpad [data-direction="down"]{grid-area:3/2;border-radius:0 0 12px 12px}
+.gamepad-dpad [data-direction="left"]{grid-area:2/1;border-radius:12px 0 0 12px}
+.gamepad-dpad [data-direction="right"]{grid-area:2/3;border-radius:0 12px 12px 0}
+.gamepad-dpad[data-held="true"]::before{background:#a7dfb457}
+.gamepad-dpad[aria-disabled="true"]{opacity:.28;cursor:default}
+.gamepad-dpad [data-held="true"],.gamepad-dpad[data-direction="up"] [data-direction="up"],.gamepad-dpad[data-direction="down"] [data-direction="down"],.gamepad-dpad[data-direction="left"] [data-direction="left"],.gamepad-dpad[data-direction="right"] [data-direction="right"]{background:#a7dfb48c;border-color:#e4ffeb;box-shadow:inset 0 1px 4px #0004;color:#fff}
+
+.gamepad-actions{position:absolute;right:var(--pad-edge);bottom:calc(var(--pad-edge) + var(--pad-lift));right:calc(var(--pad-edge) + env(safe-area-inset-right,0px));bottom:calc(var(--pad-edge) + var(--pad-lift) + env(safe-area-inset-bottom,0px));display:grid;width:var(--action-width);grid-template-columns:repeat(2,var(--action-size));grid-template-rows:repeat(2,var(--action-size));gap:var(--action-gap);grid-template-areas:"turbo-b turbo-a" "b a"}
+.gamepad-button{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:8px;border:1px solid #ffffff80;border-radius:50%;color:#fff;background:#edf8f02e;box-shadow:0 2px 5px #0004;font:650 12px system-ui;line-height:1.15;text-align:center;text-shadow:0 1px 2px #0009;white-space:normal;touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer;transition:none}
+.gamepad-actions .gamepad-button{width:var(--action-size);height:var(--action-size)}
+.gamepad-actions [data-action="a"]{grid-area:a;background:#d2ebff38}
+.gamepad-actions [data-action="b"]{grid-area:b;background:#d5f7dc38}
+.gamepad-actions [data-action="turbo-a"]{grid-area:turbo-a;font-size:11px}
+.gamepad-actions [data-action="turbo-b"]{grid-area:turbo-b;font-size:11px}
+.gamepad-actions .gamepad-button:only-child{grid-area:2/2}
+.gamepad-button:hover:not(:disabled){background:#e7f7ec45;border-color:#fff;box-shadow:0 2px 5px #0004}
+.gamepad-button[data-held="true"]{background:#a7dfb499!important;border-color:#f1fff3!important;box-shadow:inset 0 2px 5px #0004!important}
+.gamepad-button:disabled{opacity:.28;cursor:default}
+.gamepad-button:focus-visible,.gamepad-dpad:focus-visible{outline:3px solid #d4ffe0;outline-offset:3px}
+
+.gamepad-menu{position:absolute;left:50%;bottom:var(--pad-edge);bottom:calc(var(--pad-edge) + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:8px;max-width:calc(100% - 24px)}
+.gamepad-menu .gamepad-button{width:68px;min-width:68px;height:44px;min-height:44px;border-radius:12px;padding:6px 8px;font-size:10.5px;line-height:1.15}
+.gamepad-tools{position:absolute;left:50%;top:10px;top:calc(10px + env(safe-area-inset-top,0px));transform:translateX(-50%);display:flex;gap:6px;max-width:calc(100% - 112px)}
+.gamepad-tools .gamepad-button{min-width:52px;min-height:44px;border-radius:12px;padding:7px 9px;font-size:11px}
+.gamepad-extras{position:absolute;left:12px;right:12px;top:62px;top:calc(62px + env(safe-area-inset-top,0px));display:flex;justify-content:center;align-items:flex-start;flex-wrap:wrap;gap:6px;pointer-events:none}
+.gamepad-extra{pointer-events:auto;border-radius:12px;min-width:60px;max-width:110px;min-height:44px;padding:7px 9px;font-size:11px}
+.gamepad-exit{position:absolute;right:8px;top:10px;right:calc(8px + env(safe-area-inset-right,0px));top:calc(10px + env(safe-area-inset-top,0px));width:44px;min-width:44px;height:44px;min-height:44px;padding:5px;border-radius:12px;font-size:10px;line-height:1.15;color:#fff;border:1px solid #ffffff80;background:#edf8f02e;box-shadow:0 2px 5px #0004;white-space:normal;text-shadow:0 1px 2px #0009;transition:none}
+
+/* Native fullscreen contains the canvas and every input group together. */
+#game-screen:fullscreen{width:100vw;height:100vh!important;height:100dvh!important;min-height:0;max-height:none;border:0;border-radius:0;box-shadow:none;background:#101512}
+#game-screen:-webkit-full-screen{width:100vw;height:100vh!important;height:100dvh!important;min-height:0;max-height:none;border:0;border-radius:0;box-shadow:none;background:#101512}
+
+@media(orientation:landscape){
+ #virtual-gamepad{--pad-size:156px;--pad-edge:16px;--action-size:60px;--action-gap:10px;--action-width:130px}
+ .touch-mode main{max-width:none;margin:0;padding:0}
+ .touch-mode header,.touch-mode aside,.touch-mode #status{display:none}
+ .touch-mode .layout{display:block}
+ .touch-mode .play-area{width:100%}
+ .touch-mode #game-screen{height:100vh;height:100dvh;min-height:0;max-height:none;width:100%;border:0;border-radius:0;box-shadow:none}
+ .touch-mode .buttons{position:fixed;left:8px;top:10px;left:calc(8px + env(safe-area-inset-left,0px));top:calc(10px + env(safe-area-inset-top,0px));z-index:5;margin:0;gap:0}
+ .touch-mode .buttons>button:not(#touch-mode){display:none}
+ .touch-mode #touch-mode{min-height:44px;max-width:132px;padding:7px 10px;font-size:11px;color:#fff;border:1px solid #ffffff80;background:#e7f7ec2e;box-shadow:0 1px 4px #0004}
+ .touch-mode #touch-hint{position:fixed;z-index:4;left:calc(184px + env(safe-area-inset-left,0px));right:calc(158px + env(safe-area-inset-right,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));margin:0;color:#e1eae3;font-size:11px;line-height:1.3;text-align:center;pointer-events:none;text-shadow:0 1px 2px #000}
+ .gamepad-menu{bottom:28px;bottom:calc(28px + env(safe-area-inset-bottom,0px))}
+ .gamepad-extras{left:calc(var(--pad-size) + var(--pad-edge) + 8px + env(safe-area-inset-left,0px));right:calc(var(--action-width) + var(--pad-edge) + 8px + env(safe-area-inset-right,0px))}
+ .gamepad-extra{min-width:44px;max-width:100%;flex:0 1 92px}
+}
+
+@media(orientation:landscape) and (max-height:360px){
+ #virtual-gamepad{--pad-size:132px;--pad-edge:10px;--action-size:50px;--action-gap:8px;--action-width:108px}
+ .gamepad-tools{top:8px;top:calc(8px + env(safe-area-inset-top,0px))}
+ .gamepad-exit{top:8px;top:calc(8px + env(safe-area-inset-top,0px))}
+ .gamepad-extras{top:58px;top:calc(58px + env(safe-area-inset-top,0px))}
+ .gamepad-extra{font-size:10px;padding:6px}
+ .touch-mode #touch-hint{left:calc(150px + env(safe-area-inset-left,0px));right:calc(126px + env(safe-area-inset-right,0px));font-size:10px}
+}
+@media(orientation:landscape) and (max-height:260px){.touch-mode #touch-hint{display:none}}
+/* On narrow portrait screens there is no horizontal gap for two 44px menu
+   targets. Lift both thumb groups, leaving a separate bottom-center row. */
+@media(orientation:portrait) and (max-width:520px){
+ #virtual-gamepad{--pad-lift:56px}
+}
+@media(orientation:portrait) and (max-width:360px){
+ #virtual-gamepad{--pad-edge:8px;--action-size:50px;--action-gap:6px;--action-width:106px}
+ .gamepad-menu .gamepad-button{font-size:10px}
+ .gamepad-extra{min-width:56px;max-width:90px;font-size:10px;padding:6px}
+}

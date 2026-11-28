@@ -1,0 +1,211 @@
+{
+  "id": "superc-silkworm-jackal",
+  "version": "0.1.0",
+  "title": "魂斗罗2 · 中东战争赤色要塞融合版",
+  "subtitle": "三作载具与原声融合 · 单人变身 / 本地双人",
+  "description": "横版中东战争、俯视赤色要塞，直升机与吉普合作闯魂斗罗2。",
+  "note": "单打默认吉普，左Shift+J切换吉普/直升机并共用武器等级；双打固定1P直升机、2P吉普。横版B射击；吉普A短按小跳36像素、长按大跳59像素，上下调炮塔，按住A落地会连跳；飞机A+B改变射击方向。第2、6关采用赤色要塞载具，B向上射击、A投弹；吉普八向投弹，飞机向前，满级飞机机枪为60度三束。第一关从运输直升机舱门出场：以吉普形态完成进场会摔爆扣一命后重生；飞机完成悬停进场后再变吉普可正常落地。0至3级武器逐级升级，换关保留、死亡回0级。横版与俯视关音效分别来自中东战争和赤色要塞。2P小键盘需开启Num Lock，触屏为单人。附加等级、选车及冷却暂不支持即时存读档。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动 / 飞行 / 调整炮塔",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击",
+      "keys": [
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "吉普短按小跳、长按大跳 / 飞机配合射击改变方向 / 俯视投弹",
+      "keys": [
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "单打切换吉普与直升机",
+      "keys": [
+        "ShiftLeft",
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择单人 / 双人",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 游戏内暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "移动 / 飞行 / 调整炮塔",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "射击",
+      "keys": [
+        "Numpad2"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "跳跃 / 改变射击方向 / 俯视投弹",
+      "keys": [
+        "Numpad3"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择",
+      "keys": [
+        "Numpad8"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始",
+      "keys": [
+        "Numpad9"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "A": [
+        "Numpad3"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "touchControls": [
+    {
+      "player": "1P",
+      "label": "移动 / 飞行 / 调整炮塔",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击",
+      "keys": [
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "吉普短按小跳、长按大跳 / 飞机配合射击改变方向 / 俯视投弹",
+      "keys": [
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "单打切换吉普与直升机",
+      "keys": [
+        "ShiftLeft",
+        "J"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择单人 / 双人",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 游戏内暂停",
+      "keys": [
+        "Enter"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "3f47051315209efcd3465f26f07496a5d65a9db88ebe504b5982a81314cd8036",
+  "lua": "game.c87b2dea3c0b.lua",
+  "sourceSha256": "160b5e8e112536268c9e8fcb0b10748baf41d181a6e74960698bef80202d999d",
+  "outputSha256": "c87b2dea3c0b3649ed904e168f6ed6bc9f95f5f8de5417d6aeec6bc662fa01ca",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

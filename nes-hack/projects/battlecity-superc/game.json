@@ -1,0 +1,177 @@
+{
+  "id": "battlecity-superc",
+  "version": "0.1.7",
+  "title": "坦克大战疯狂版",
+  "subtitle": "疯狂版 · 最多 6 敌同屏 · 即时补兵 · 单人 / 本地双人",
+  "description": "疯狂版 · 单人双人最多 6 敌同屏 · 空位即时补兵 · 每关 40 敌",
+  "note": "疯狂版：单人和双人同屏最多6敌，空位即时补兵；每关40敌，六处刷点。标题用左 Shift 选择单人或双人，Enter 开始；游戏中用1P Enter 暂停。支持八向移动与瞄准，按住射击键连续开火。吃星星按 N→M→S→L 升级，死亡回到 N；L 能破钢。消灭红闪敌会随机掉落道具，飞箱也能击落取物。保护基地，自己的子弹也会打坏基地。2P 小键盘请开启 Num Lock。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "八向移动 / 瞄准",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击（按住连发）",
+      "keys": [
+        "J",
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "标题选择人数",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "八向移动 / 瞄准",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "射击（按住连发）",
+      "keys": [
+        "Numpad2",
+        "Numpad3"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始",
+      "keys": [
+        "Numpad9"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择",
+      "keys": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "A": [
+        "Numpad3"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "touchControls": [
+    {
+      "player": "1P",
+      "label": "八向移动 / 瞄准",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击（按住连发）",
+      "keys": [
+        "J",
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "标题选择人数",
+      "keys": [
+        "ShiftLeft"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "5057efe7cc50e68f6f87ecf71eeccf3c1e8bc96469585f87901a570ee7a2e6e6",
+  "lua": "game.df95dc9e8adb.lua",
+  "sourceSha256": "d365f04b2a3b17fc3bd8e472f214277a85cf8f0e52b4868e5e6bf3371d4756d1",
+  "outputSha256": "df95dc9e8adb0a7a1032a385156424d566b902df985f3e44ccd85288eb674ff3",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN" data-manifest="game.json?v=0.1.2-7f61ae8ce8a2">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>NES 游戏</title>
+  <link rel="stylesheet" href="../../shared/player/style.css?v=53bdc782a345">
+  <link rel="stylesheet" href="../../shared/player/touch.css?v=53bdc782a345">
+</head>
+<body>
+  <svg class="icon-definitions" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="icon-play" viewBox="0 0 24 24"><path d="M8 5.5 19 12 8 18.5Z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke-width="3"/></symbol>
+      <symbol id="icon-restart" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1.8 7.3M4 4v6h6"/></symbol>
+      <symbol id="icon-volume" viewBox="0 0 24 24"><path d="m11 5-5 4H3v6h3l5 4ZM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/></symbol>
+      <symbol id="icon-volume-off" viewBox="0 0 24 24"><path d="m11 5-5 4H3v6h3l5 4ZM16 9l5 6m0-6-5 6"/></symbol>
+      <symbol id="icon-fullscreen" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+      <symbol id="icon-gamepad" viewBox="0 0 24 24"><path d="M7 7h10c2 0 3 2 3.5 4l1 6c.3 2-1.4 3-2.8 1.5L16 16H8l-2.7 2.5C3.9 20 2.2 19 2.5 17l1-6C4 9 5 7 7 7ZM7 10v5m-2.5-2.5h5M16 11h.01M18 14h.01"/></symbol>
+    </defs>
+  </svg>
+  <main>
+    <header>
+      <a class="back-link" href="../../index.html">← 游戏目录</a>
+      <span class="eyebrow">FC 改版游戏</span>
+      <h1 id="title">正在读取游戏信息…</h1>
+      <p id="subtitle"></p>
+    </header>
+    <div class="layout">
+      <section class="play-area" aria-label="游戏播放器">
+        <div class="screen" id="game-screen">
+          <canvas id="game" width="256" height="240" tabindex="0" aria-label="游戏画面"></canvas>
+          <div id="virtual-gamepad" role="group" aria-label="1P 触屏手柄" hidden></div>
+        </div>
+        <div class="buttons">
+          <button id="start" data-icon="play" aria-label="开始游戏" disabled><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-play"/></svg><span class="button-label">开始游戏</span></button>
+          <button class="secondary" id="pause" data-icon="pause" aria-label="暂停" aria-pressed="false" disabled><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-pause"/></svg><span class="button-label">暂停</span></button>
+          <button class="secondary" id="restart" data-icon="restart" aria-label="重新开始" disabled><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-restart"/></svg><span class="button-label">重新开始</span></button>
+          <button class="secondary" id="mute" data-icon="volume" aria-label="静音" aria-pressed="false" disabled><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-volume"/></svg><span class="button-label">静音</span></button>
+          <button class="secondary" id="fullscreen" data-icon="fullscreen" aria-label="全屏"><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-fullscreen"/></svg><span class="button-label">全屏</span></button>
+          <button class="secondary" id="touch-mode" data-icon="gamepad" aria-label="触屏模式" aria-pressed="false" disabled><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-gamepad"/></svg><span class="button-label">触屏模式</span></button>
+        </div>
+        <p id="status" role="status" aria-live="polite">正在读取游戏信息…</p>
+        <p id="touch-hint">触屏仅控制 1P，请选择单人模式。</p>
+        <div id="touch-controls" class="touch" aria-label="触屏按键"></div>
+      </section>
+      <aside>
+        <section class="keyboard-section" aria-labelledby="keyboard-title">
+          <h2 id="keyboard-title">键位一览</h2>
+          <div id="keyboard-diagram"></div>
+        </section>
+        <section class="instructions" aria-labelledby="controls-title">
+          <h2 id="controls-title">操作说明</h2>
+          <dl id="controls"></dl>
+          <p id="note" class="note" hidden></p>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <script type="module" src="../../shared/player/player.js?v=53bdc782a345"></script>
+</body>
+</html>

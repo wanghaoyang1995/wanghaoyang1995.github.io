@@ -1,0 +1,218 @@
+{
+  "id": "battlecity-enhanced",
+  "version": "0.1.1",
+  "title": "坦克大战原版增强版",
+  "subtitle": "原版资源 · 开场配置 · 单人 / 本地双人",
+  "description": "开场参数菜单 · 原版坦克与音效 · 双打五束散射",
+  "note": "开场配置菜单可调整敌我移速、各级原生弹速系数、每关敌人数、补兵间隔、出生点数量和等级锁定，设置同时作用于1P/2P。上下选择、左右调整，开始键确认进入原版标题；左Shift选择单人或双人，Enter开始。最高等级再吃一颗星升级为五束散射。等级锁定时死亡和拾星均不改变所选等级。1P用WASD移动、J/K射击、U/I连射；2P用方向键、小键盘2/3射击、5/6连射、8选择、9开始，请开启Num Lock。重开游戏会重新进入配置菜单。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动 / 配置菜单方向",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击 / 配置菜单确认",
+      "keys": [
+        "J",
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "连射",
+      "keys": [
+        "U",
+        "I"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 暂停 / 配置确认",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "标题选择单人或双人",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "移动 / 配置菜单方向",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "射击 / 配置菜单确认",
+      "keys": [
+        "Numpad2",
+        "Numpad3"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "连射",
+      "keys": [
+        "Numpad5",
+        "Numpad6"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始 / 暂停 / 配置确认",
+      "keys": [
+        "Numpad9"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "标题选择",
+      "keys": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "TurboB": [
+        "KeyU"
+      ],
+      "TurboA": [
+        "KeyI"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "A": [
+        "Numpad3"
+      ],
+      "TurboB": [
+        "Numpad5"
+      ],
+      "TurboA": [
+        "Numpad6"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "touchControls": [
+    {
+      "player": "1P",
+      "label": "移动 / 配置菜单方向",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击 / 配置菜单确认",
+      "keys": [
+        "J",
+        "K"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "连射",
+      "keys": [
+        "U",
+        "I"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 暂停 / 配置确认",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "标题选择单人或双人",
+      "keys": [
+        "ShiftLeft"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "5057efe7cc50e68f6f87ecf71eeccf3c1e8bc96469585f87901a570ee7a2e6e6",
+  "lua": "game.fc23a44d2036.lua",
+  "sourceSha256": "80c3324d93d6dec5e4c5f37ca8734876cfd5274923d67bc0d4f22008eda5144c",
+  "outputSha256": "fc23a44d2036c3abae46343534a379bc3122711c8fcf76a2a45342e620c095ca",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345",
+  "configuration": {
+    "mode": "startup-menu",
+    "initialValues": "built-in defaults",
+    "externalFileRead": false
+  }
+}

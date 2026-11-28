@@ -1,0 +1,229 @@
+{
+  "id": "shadow-silkworm",
+  "version": "0.1.6",
+  "title": "赤影战士 · 中东战争版",
+  "subtitle": "飞机与吉普合作 · 单人 / 本地双人",
+  "description": "蓝忍者选飞机 · 红忍者选吉普 · 两人各16命",
+  "note": "Enter 跳过开场，标题用左 Shift 选择单人/双人。在 PLAYER SELECT 按左 Shift 交换红蓝角色，Enter 确认：蓝忍者对应飞机，红忍者对应吉普。飞机自由飞行，动作键压低炮口；吉普在梯口按上/下爬梯，松键停留，动作键跳离；离梯后上下转炮塔，短按小跳、长按高跳，下＋动作穿下薄台。全部梯口已拓宽，剧情电梯自动登台、升降。血条表示命数，受伤即死；P 升级火力，1 加命，S 保护，B 清屏。2P 小键盘请开启 Num Lock，游戏内暂停用1P Enter。",
+  "controls": [
+    {
+      "player": "1P",
+      "label": "移动 / 飞行 / 炮塔",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击 / 连射",
+      "keys": [
+        "J",
+        "U"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "动作 / 连发动作",
+      "keys": [
+        "K",
+        "I"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择人数 / 交换红蓝角色",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 游戏内暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "单人换角色及载具",
+      "keys": [
+        "ShiftLeft",
+        "K"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "移动 / 飞行 / 炮塔",
+      "keys": [
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowDown",
+        "ArrowRight"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "射击 / 连射",
+      "keys": [
+        "Numpad2",
+        "Numpad5"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "动作 / 连发动作",
+      "keys": [
+        "Numpad3",
+        "Numpad6"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "选择",
+      "keys": [
+        "Numpad8"
+      ]
+    },
+    {
+      "player": "2P",
+      "label": "开始",
+      "keys": [
+        "Numpad9"
+      ]
+    }
+  ],
+  "controllerBindings": [
+    {
+      "port": 0,
+      "Up": [
+        "KeyW"
+      ],
+      "Down": [
+        "KeyS"
+      ],
+      "Left": [
+        "KeyA"
+      ],
+      "Right": [
+        "KeyD"
+      ],
+      "A": [
+        "KeyK"
+      ],
+      "B": [
+        "KeyJ"
+      ],
+      "TurboA": [
+        "KeyI"
+      ],
+      "TurboB": [
+        "KeyU"
+      ],
+      "Start": [
+        "Enter"
+      ],
+      "Select": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "port": 1,
+      "Up": [
+        "ArrowUp"
+      ],
+      "Down": [
+        "ArrowDown"
+      ],
+      "Left": [
+        "ArrowLeft"
+      ],
+      "Right": [
+        "ArrowRight"
+      ],
+      "A": [
+        "Numpad3"
+      ],
+      "B": [
+        "Numpad2"
+      ],
+      "TurboA": [
+        "Numpad6"
+      ],
+      "TurboB": [
+        "Numpad5"
+      ],
+      "Start": [
+        "Numpad9"
+      ],
+      "Select": [
+        "Numpad8"
+      ]
+    }
+  ],
+  "touchControls": [
+    {
+      "player": "1P",
+      "label": "移动 / 飞行 / 炮塔",
+      "keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "射击 / 连射",
+      "keys": [
+        "J",
+        "U"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "动作 / 连发动作",
+      "keys": [
+        "K",
+        "I"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "选择人数 / 角色",
+      "keys": [
+        "ShiftLeft"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "开始 / 暂停",
+      "keys": [
+        "Enter"
+      ]
+    },
+    {
+      "player": "1P",
+      "label": "单人换载具",
+      "keys": [
+        "ShiftLeft",
+        "K"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "rom": "game.nes",
+  "romSha256": "3ede04a9145cc9dbb5613e2afdf05c6c8ab77ecc2cc286a708153dfe8b3cae9d",
+  "lua": "game.8674d56e8e72.lua",
+  "sourceSha256": "03eba1b834b6cce03cfa07a238c7c5735ec907dfcfdf9de97bd26ccb3301bd3f",
+  "outputSha256": "8674d56e8e7263fe47ae2d920717cef9f33feb4c39609a77e0f782aa5d16d02f",
+  "obfuscation": {
+    "tool": "nes-hack-lua-obfuscate",
+    "version": "1.0.0",
+    "profile": "local-rename-v1",
+    "seed": "deterministic"
+  },
+  "sharedVersion": "53bdc782a345"
+}
